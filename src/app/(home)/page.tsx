@@ -12,8 +12,8 @@ export default function Home() {
     <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-auto">
       <div
         className="w-full border border-b border-neutral-1 bg-cover bg-right-top bg-no-repeat" // bg-[url('/assets/grid.svg')]
-        style={{ backgroundImage: `url('./assets/grid.svg')` }}
       >
+        <img src="./assets/grid.svg" alt="Test img" />
         <div className="bg-black/80 backdrop-blur-sm">
           <Container>
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
