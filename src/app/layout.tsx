@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Metadata } from 'next'
 import '../globals.css'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/Header'
@@ -9,7 +10,7 @@ const fontFamily = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700'],
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'ExpressoTS - Node.js Framework',
   description: 'A lightweight, fast and easy to use TypeScript Node.js framework',
   themeColor: '#161616',
@@ -20,7 +21,6 @@ export const metadata = {
     maximumScale: 1,
   },
   icons: {
-    favicon: '/icons/favicon/favicon.ico',
     icon: '/icons/windows11/Square150x150Logo.scale-100.png',
     shortcut: '/icons/windows11/Square150x150Logo.scale-100.png',
     apple: 'icons/ios/152.png',
@@ -28,6 +28,18 @@ export const metadata = {
       rel: 'icons/ios/152.png',
       url: 'icons/ios/152.png',
     },
+  },
+  openGraph: {
+    url: 'https://expresso-ts.com',
+    title: 'ExpressoTS - Node.js Framework',
+    description: 'The Developer-Friendly TypeScript Framework for Server-Side Applications',
+    images: [
+      {
+        url: './assets/logos/expressots.png',
+        width: 1200,
+        height: 628,
+      },
+    ],
   },
 }
 
