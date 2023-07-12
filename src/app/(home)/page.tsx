@@ -10,10 +10,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-auto">
-      <div
-        className="w-full border border-b border-neutral-1 bg-cover bg-right-top bg-no-repeat" // bg-[url('/assets/grid.svg')]
-      >
-        <img src="./assets/grid.svg" alt="Test img" />
+      <div className="w-full border border-b border-neutral-1 bg-[url('/assets/grid.svg')] bg-cover bg-right-top bg-no-repeat">
         <div className="bg-black/80 backdrop-blur-sm">
           <Container>
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
@@ -21,7 +18,7 @@ export default function Home() {
                 <Image
                   width={100}
                   height={100}
-                  src="/assets/logos/logo-primary.svg"
+                  src="./assets/logos/logo-primary.svg"
                   alt="Expresso Logo"
                 />
                 <h1 className="text-center text-6xl text-[clamp(48px_5vw_72px)] font-bold">

@@ -7,7 +7,6 @@ const BlitzCode = () => {
     sdk.embedProjectId('expressots-example-code', 'expressots', {
       forceEmbedLayout: true,
       openFile: 'src/app.controller.ts',
-      view: 'editor',
       theme: 'dark',
       height: 800,
     })
