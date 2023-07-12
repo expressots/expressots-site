@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,8 +10,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        grid: "url('/assets/grid.svg')",
-        oil: "url('/assets/topography.svg')",
+        grid: isProduction ? "url('/expressots-site/assets/grid.svg')" : "url('/assets/grid.svg')",
+        oil: isProduction
+          ? "url('/expressots-site/assets/topography.svg')"
+          : "url('/assets/topography.svg')",
       },
       colors: {
         base: {
