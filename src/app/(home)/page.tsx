@@ -18,7 +18,7 @@ export default function Home() {
                 <Image
                   width={100}
                   height={100}
-                  src="./assets/logos/logo-primary.svg"
+                  src="/assets/logos/logo-primary.svg"
                   alt="Expresso Logo"
                 />
                 <h1 className="text-center text-6xl text-[clamp(48px_5vw_72px)] font-bold">

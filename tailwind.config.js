@@ -7,9 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        noise: "url('./public/assets/noise.png')",
-      },
       colors: {
         base: {
           1: `rgb(var(--base-1) / <alpha-value>)`,

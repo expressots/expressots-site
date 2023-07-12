@@ -12,7 +12,7 @@ export const Header = () => {
           href="/"
           className="overlow-hidden group flex items-center justify-start gap-3 rounded-full border border-transparent hover:animate-ascend"
         >
-          <Image width={50} height={50} src="./assets/logos/logo-circular-dark.svg" alt="" />
+          <Image width={50} height={50} src="/assets/logos/logo-circular-dark.svg" alt="" />
         </Link>
         <div className="flex items-center gap-4 max-lg:hidden">
           <ul className="flex items-center justify-end gap-5">
