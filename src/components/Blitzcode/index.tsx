@@ -6,7 +6,7 @@ const BlitzCode = () => {
   useEffect(() => {
     sdk.embedProjectId('expressots-example-code', 'expressots', {
       forceEmbedLayout: true,
-      openFile: 'src/app.controller.ts',
+      openFile: 'src/app.usecase.ts',
       theme: 'dark',
       height: 800,
     })
