@@ -9,7 +9,7 @@ const nextConfig = (phase) => {
     output: 'export',
     // basePath: '/expressots-site',
     images: { unoptimized: true },
-    assetPrefix: isProduction ? 'https://expressots.github.io/expressots-site' : '',
+    assetPrefix: isProduction ? 'https://www.expresso-ts.com' : '',
   }
 }
 

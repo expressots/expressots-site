@@ -1,7 +1,7 @@
 {
   "name": "expressots-site",
   "version": "0.1.0",
-	"homepage": "https://expressots.github.io/expressots-site",
+	"homepage": "https://www.expresso-ts.com",
   "private": true,
   "scripts": {
     "dev": "next dev",
