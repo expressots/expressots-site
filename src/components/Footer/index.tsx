@@ -81,7 +81,15 @@ const Footer = () => {
               >
                 Daniel Gabriel
               </a>
-              , hosted by GitHub Pages
+              , hosted by{' '}
+              <a
+                href="https://pages.github.com/"
+                target="_blank"
+                className="text-base-5"
+                rel="noreferrer"
+              >
+                GitHub Pages
+              </a>
             </p>
           </div>
         </Container>
