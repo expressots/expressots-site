@@ -21,7 +21,7 @@ const Partners = ({ partners = PARTNERS }: TPartnersProps) => {
           >
             <Image
               alt={`Partner ${partner.name} logo`}
-              src={partner.image}
+              src={`.${partner.image}`}
               width={80}
               height={80}
             />
