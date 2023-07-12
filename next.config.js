@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
+  output: 'export',
   // basePath: '/expressots-site',
   /* images: {
     domains: ['localhost', 'expressots.github.io'],
