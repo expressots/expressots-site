@@ -18,7 +18,7 @@ const Footer = () => {
           <ul className="font-thin">
             <li className="pb-3 font-semibold">Docs</li>
             <li>
-              <Anchor name="Tutorial" link="https://expresso-ts.com/docs/tutorials/overview" />
+              <Anchor name="Tutorial" link="https://doc.expresso-ts.com/docs/tutorials/overview" />
             </li>
           </ul>
           <ul className="font-thin">

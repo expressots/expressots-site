@@ -28,7 +28,7 @@ export default function Home() {
                   The Developer-Friendly TypeScript Framework for Server-Side Applications
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
-                  <LinkButton href="https://expresso-ts.com/docs/hello">Get Started</LinkButton>
+                  <LinkButton href="https://doc.expresso-ts.com/docs/hello">Get Started</LinkButton>
                   <CopyInstalation code="npm i -g @expressots/cli" />
                 </div>
               </div>

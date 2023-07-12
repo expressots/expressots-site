@@ -16,15 +16,15 @@ export const Header = () => {
         </Link>
         <div className="flex items-center gap-4 max-lg:hidden">
           <ul className="flex items-center justify-end gap-5">
-            <MenuLi href="https://expresso-ts.com/docs/hello">
+            <MenuLi href="https://doc.expresso-ts.com/docs/hello">
               <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
               Documentation
             </MenuLi>
-            <MenuLi href="https://expresso-ts.com/docs/hello">
+            <MenuLi href="https://doc.expresso-ts.com/docs/hello">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
               Showcases
             </MenuLi>
-            <MenuLi href="https://expresso-ts.com/pt/docs/governance">
+            <MenuLi href="https://doc.expresso-ts.com/pt/docs/governance">
               <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
               Team
             </MenuLi>
