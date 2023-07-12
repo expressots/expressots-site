@@ -6,7 +6,7 @@ const nextConfig = {
   output: 'export',
   // basePath: '/expressots-site',
   images: { unoptimized: true },
-  assetPrefix: isProd ? 'https://expressots.github.io/expressots-site' : undefined,
+  assetPrefix: isProd ? '/expressots-site' : undefined,
 }
 
 module.exports = nextConfig
