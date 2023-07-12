@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'The Developer-Friendly TypeScript Framework for Server-Side Applications',
     images: [
       {
-        url: './assets/logos/expressots.png',
+        url: 'https://expresso-ts.com/assets/logos/expressots.png',
         width: 1200,
         height: 628,
       },
