@@ -5,7 +5,6 @@ import Partners from '@/components/Partner'
 import { CopyInstalation } from '@/components/ui/copy-instalation'
 import { LinkButton } from '@/components/ui/link-button'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
-import { url } from 'inspector'
 import Image from 'next/image'
 
 export default function Home() {
