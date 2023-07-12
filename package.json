@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_ENV=production next build",
+    "build": "next build & next export",
     "prod": "npx serve@latest out",
+		"export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
