@@ -5,6 +5,7 @@ const nextConfig = {
   // basePath: '/expressots-site',
   images: { unoptimized: true },
   assetPrefix: process.env.NODE_ENV === 'production' ? '/expressots-site' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/expressots-site' : '',
 }
 
 module.exports = nextConfig
