@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={IBMSans.className}>
         <div className="mx-auto min-h-screen w-full bg-neutral-950/90 text-neutral-100 antialiased selection:bg-base-6 selection:text-neutral-1">
-          <div className="pointer-events-none absolute z-0 h-screen w-full bg-[url('/public/assets/noise.png')] bg-repeat opacity-10" />
+          <div className="pointer-events-none absolute z-0 h-screen w-full bg-repeat opacity-10" />
           <Header />
           <div className="bg-black/80 backdrop-blur-sm">{children}</div>
           <Footer />
