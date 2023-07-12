@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Footer = () => {
   const Anchor = ({ link, name }: { link: string; name: string }) => {
     return (
-      <Link className="hover:text-base-6" target="_blank" href={link}>
+      <Link className="hover:text-base-6" target="_self" href={link}>
         {name}
       </Link>
     )
