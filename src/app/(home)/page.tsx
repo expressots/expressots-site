@@ -5,12 +5,16 @@ import Partners from '@/components/Partner'
 import { CopyInstalation } from '@/components/ui/copy-instalation'
 import { LinkButton } from '@/components/ui/link-button'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
+import { url } from 'inspector'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-auto">
-      <div className="w-full border border-b border-neutral-1 bg-[url('/assets/grid.svg')] bg-cover bg-right-top bg-no-repeat">
+      <div
+        className="w-full border border-b border-neutral-1 bg-cover bg-right-top bg-no-repeat" // bg-[url('/assets/grid.svg')]
+        style={{ backgroundImage: `url('./assets/grid.svg')` }}
+      >
         <div className="bg-black/80 backdrop-blur-sm">
           <Container>
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
