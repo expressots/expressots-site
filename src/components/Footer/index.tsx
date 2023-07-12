@@ -43,6 +43,48 @@ const Footer = () => {
             </li>
           </ul>
         </Container>
+        {/* Divider */}
+        <hr className="mt-5 border-t border-neutral-1" />
+
+        {/* Additional copyright information */}
+        <Container>
+          <div className="py-5 text-center text-sm">
+            <p>Released under the MIT License</p>
+            <p>Official ExpressoTS Site</p>
+            <p>
+              Copyright © 2021-2023{' '}
+              <a
+                href="https://www.linkedin.com/in/richardzampieri/"
+                target="_blank"
+                className="text-base-5"
+                rel="noreferrer"
+              >
+                Richard Zampieri
+              </a>
+            </p>
+            <p>
+              Designed by{' '}
+              <a
+                href="https://www.linkedin.com/in/ariel-betti/"
+                target="_blank"
+                className="text-base-5"
+                rel="noreferrer"
+              >
+                Ariel Betti
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://www.linkedin.com/in/daniel-gabriel-70a565267/"
+                target="_blank"
+                className="text-base-5"
+                rel="noreferrer"
+              >
+                Daniel Gabriel
+              </a>
+              , hosted by GitHub Pages
+            </p>
+          </div>
+        </Container>
       </div>
     </footer>
   )
