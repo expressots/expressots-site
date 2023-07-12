@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body className={fontFamily.className}>
         <div className="mx-auto min-h-screen w-full bg-neutral-950/90 text-neutral-100 antialiased selection:bg-base-6 selection:text-neutral-1">
