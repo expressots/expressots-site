@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'The Developer-Friendly TypeScript Framework for Server-Side Applications',
     images: [
       {
-        url: './assets/logos/expressots.png',
+        url: 'https://expresso-ts.com/assets/logos/expressots.png',
         width: 1200,
         height: 628,
       },
@@ -50,8 +50,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body className={fontFamily.className}>
-        <div className="mx-auto min-h-screen w-full bg-neutral-950/90 text-neutral-100 antialiased selection:bg-base-6 selection:text-neutral-1">
-          <div className="pointer-events-none absolute z-0 h-screen w-full bg-repeat opacity-10" />
+        <div className="w-full min-h-screen mx-auto antialiased bg-neutral-950/90 text-neutral-100 selection:bg-base-6 selection:text-neutral-1">
+          <div className="absolute z-0 w-full h-screen bg-repeat pointer-events-none opacity-10" />
           <Header />
           <div className="bg-black/80 backdrop-blur-sm">{children}</div>
           <Footer />
