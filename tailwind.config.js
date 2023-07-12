@@ -10,10 +10,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        grid: isProduction ? "url('/expressots-site/assets/grid.svg')" : "url('/assets/grid.svg')",
-        oil: isProduction
-          ? "url('/expressots-site/assets/topography.svg')"
-          : "url('/assets/topography.svg')",
+        grid: isProduction ? "url('/assets/grid.svg')" : "url('/assets/grid.svg')",
+        oil: isProduction ? "url('/assets/topography.svg')" : "url('/assets/topography.svg')",
       },
       colors: {
         base: {
