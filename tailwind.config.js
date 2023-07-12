@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        grid: "url('/assets/grid.svg')",
+        oil: "url('/assets/topography.svg')",
+      },
       colors: {
         base: {
           1: `rgb(var(--base-1) / <alpha-value>)`,

@@ -34,9 +34,9 @@
 		--neutral-11: 248 248 248;
 		--neutral-12: 252 252 252;
 	}
+	.pattern-green-oil {
+		background-color: #171717;
+		@apply bg-oil
+	}
 }
 
-.pattern-green-oil {
-	background-color: #171717;
-	background-image: url("/assets/topography.svg");
-}

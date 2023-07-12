@@ -12,7 +12,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="border-t border-neutral-1 bg-[url('/assets/grid.svg')] bg-cover bg-no-repeat">
+    <footer className="border-t border-neutral-1 bg-grid bg-cover bg-no-repeat">
       <div className="min-h-[250px] bg-neutral-950/90 py-5">
         <Container className="flex h-full flex-col items-start justify-center gap-10 md:flex-row">
           <ul className="font-thin">
