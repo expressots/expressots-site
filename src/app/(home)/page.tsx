@@ -25,7 +25,7 @@ export default function Home() {
                   ExpressoTS
                 </h1>
                 <p className="text-center text-xl text-neutral-10">
-                  The Developer-Friendly TypeScript Framework for Servers
+                  The Developer-Friendly TypeScript Framework for Server-Side Applications
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
                   <LinkButton href="https://expresso-ts.com/docs/hello">Get Started</LinkButton>
@@ -73,8 +73,8 @@ export default function Home() {
         <div className="bg-black/90">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
             <h2 className="m-0 p-0 text-4xl text-base-5">Current Partners</h2>
-            <p className="m-0 p-0 font-thin">
-              ExpressoTS is an MIT-licensed open-source project. consider supporting us!
+            <p className="m-0 p-0 font-normal">
+              ExpressoTS is an MIT-licensed open-source project. Consider supporting us!
             </p>
             <div className="py-10">
               <Partners />
@@ -86,8 +86,8 @@ export default function Home() {
         <div className="bg-neutral-950/80 py-10">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
             <h2 className="m-0 p-0 text-4xl text-base-4">Live preview</h2>
-            <p className="m-0 p-0 font-thin text-neutral-12">
-              See how ExpressoTS look like without leaving your personal browser.
+            <p className="m-0 p-0 font-normal text-neutral-12">
+              See how ExpressoTS look like without leaving your browser.
             </p>
             <div className="w-full overflow-hidden rounded-md">
               <BlitzCode />
