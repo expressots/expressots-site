@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build & next export",
+    "build": "next build",
     "prod": "npx serve@latest out",
 		"export": "next export",
     "start": "next start",
