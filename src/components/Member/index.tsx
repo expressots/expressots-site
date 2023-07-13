@@ -14,7 +14,7 @@ export const Member: React.FC<MemberProps> = ({ member }) => {
 
   return (
     <div key={member.name}>
-      <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg hover:shadow-2xl lg:hover:-translate-y-2">
+      <div className="relative transform overflow-hidden rounded shadow-lg transition duration-300 hover:shadow-2xl lg:hover:-translate-y-2">
         <Image
           width="100"
           height="256"
@@ -23,7 +23,7 @@ export const Member: React.FC<MemberProps> = ({ member }) => {
           alt={`avatar-${member.name}`}
           onError={() => setHasError(true)}
         />
-        <div className="absolute inset-0 flex flex-col justify-center px-5 py-5 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+        <div className="absolute inset-0 flex flex-col justify-center bg-black bg-opacity-75 px-5 py-5 text-center opacity-0 transition-opacity duration-300 hover:opacity-100">
           <p className="mb-1 text-lg font-bold text-gray-100">{member.name}</p>
           <p className="mb-4 text-xs text-gray-100">{member.position}</p>
           <p className="mb-4 text-xs tracking-wide text-gray-400">{member.resume}</p>
@@ -33,7 +33,7 @@ export const Member: React.FC<MemberProps> = ({ member }) => {
                 key={ind + social.name}
                 href={social.url}
                 target="blank"
-                className="text-white transition-colors duration-300 hover:text-teal-accent-400"
+                className="hover:text-teal-accent-400 text-white transition-colors duration-300"
               >
                 <Image
                   alt={`icon-${social.name}`}
