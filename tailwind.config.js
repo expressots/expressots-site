@@ -46,12 +46,12 @@ module.exports = {
       keyframes: {
         ascend: {
           '0%, 100%': {
-            border: '1px rgb(var(--base-10)) solid',
-            boxShadow: '0px 0px 0px rgb(var(--base-5))',
+            border: '2px rgb(var(--base-10)) solid',
+            boxShadow: '0px 0px 0px rgb(var(--base-12))',
           },
           '100%': {
-            border: '1px rgb(var(--base-5)) solid',
-            boxShadow: '0px 0px 10px rgb(var(--base-5))',
+            border: '2px rgb(var(--base-8)) solid',
+            boxShadow: '0px 0px 10px rgb(var(--base-10))',
           },
         },
         showup: {

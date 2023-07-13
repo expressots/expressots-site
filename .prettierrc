@@ -5,5 +5,9 @@
   "semi": false,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "printWidth": 100
+  "printWidth": 100,
+	"plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "pluginSearchDirs": false
 }
