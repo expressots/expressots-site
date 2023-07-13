@@ -13,7 +13,7 @@ const Tip = forwardRef<HTMLDivElement, TTipProps>(
     return (
       <div
         className={clsxm(
-          'flex min-h-[30px] min-w-max items-center justify-between gap-3 overflow-hidden rounded-full border border-neutral-2 bg-neutral-1/60 px-2 shadow-md backdrop-blur-sm',
+          'flex min-h-[30px] w-max items-center justify-between gap-3 overflow-hidden rounded-full border border-neutral-2 bg-neutral-1/60 px-2 shadow-md backdrop-blur-sm',
           className,
         )}
         ref={ref}
@@ -22,9 +22,9 @@ const Tip = forwardRef<HTMLDivElement, TTipProps>(
         <div className="flex items-center justify-start">{children}</div>
         <button
           onClick={() => setIsVisible(false)}
-          className="flex h-4 w-4 items-center justify-center overflow-hidden rounded-full border border-transparent transition-colors hover:border-red-500 hover:bg-red-950 hover:text-red-500"
+          className="flex items-center justify-center w-4 h-4 overflow-hidden transition-colors border border-transparent rounded-full hover:border-red-500 hover:bg-red-950 hover:text-red-500"
         >
-          <IconX className="h-3 w-3" />
+          <IconX className="w-3 h-3" />
         </button>
       </div>
     )
