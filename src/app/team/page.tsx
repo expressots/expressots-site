@@ -11,7 +11,7 @@ export default function Team() {
         <div className="my-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-3xl">
           <div>
             <h2 className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px font-semibold uppercase tracking-wider ">
-              Core Team
+              ExpressoTS Team
             </h2>
           </div>
           <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -34,15 +34,11 @@ export default function Team() {
                 </defs>
                 <rect fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)" width="52" height="24" />
               </svg>
-              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Bem-vindo</span>
+              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Core</span>
             </span>
-            <span className="text-base-6">Nossa talentosa equipe de contribuidores</span>
+            <span className="text-base-6">Team Contributors</span>
           </h2>
-          <p className="mt-4 text-base text-base-2 md:text-lg">
-            Atualmente, temos uma pequena equipe principal de colaboradores constantes. Estamos
-            procurando expandir esta equipe para incluir mais pessoas da comunidade com uma ampla
-            gama de habilidades e interesses.
-          </p>
+          <p className="mt-4 text-base text-base-2 md:text-lg">Current active core members.</p>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member: MemberType) => (
@@ -75,13 +71,12 @@ export default function Team() {
                 </defs>
                 <rect fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)" width="52" height="24" />
               </svg>
-              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Pessoas</span>
+              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Past</span>
             </span>
-            <span className="text-base-6">que contribuíram e somaram à nossa história</span>
+            <span className="text-base-6">Contributors</span>
           </h2>
           <p className="mt-4 text-base text-base-2 md:text-lg">
-            Para aqueles que já trabalharam conosco, saibam que valorizamos sua contribuição e
-            estamos abertos para reconectar e contar com vocês novamente.
+            This space is dedicated to acknowledging and thanking our past contributors.
           </p>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
