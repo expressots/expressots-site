@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   viewport: {
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 1,
+    maximumScale: 5,
   },
   icons: {
     icon: '/icons/windows11/Square150x150Logo.scale-100.png',
@@ -50,8 +50,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body className={fontFamily.className}>
-        <div className="mx-auto min-h-screen w-full bg-neutral-950/90 text-neutral-100 antialiased selection:bg-base-6 selection:text-neutral-1">
-          <div className="pointer-events-none absolute z-0 h-screen w-full bg-repeat opacity-10" />
+        <div className="w-full min-h-screen mx-auto antialiased bg-neutral-950/90 text-neutral-100 selection:bg-base-6 selection:text-neutral-1">
+          <div className="absolute z-0 w-full h-screen bg-repeat pointer-events-none opacity-10" />
           <Header />
           <div className="bg-black/80 backdrop-blur-sm">{children}</div>
           <Footer />
