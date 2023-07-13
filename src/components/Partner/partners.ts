@@ -21,4 +21,9 @@ export const PARTNERS: TPartner[] = [
     name: 'BlueShip',
     site: 'https://play.google.com/store/apps/details?id=com.blueship.mobile&hl=en_CA&gl=US',
   },
+  {
+    image: '/assets/logos/wenit.png',
+    name: 'Wenit',
+    site: 'https://wenit.com.br/',
+  },
 ]

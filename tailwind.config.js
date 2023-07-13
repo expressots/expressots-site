@@ -54,9 +54,20 @@ module.exports = {
             boxShadow: '0px 0px 10px rgb(var(--base-5))',
           },
         },
+        showup: {
+          '0%, 100%': {
+            transform: 'translateY(50px)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translateY(0px)',
+            opacity: 1,
+          },
+        },
       },
       animation: {
         ascend: 'ascend 0.25s ease-in forwards',
+        showup: 'showup 0.66s  ease forwards',
       },
     },
   },

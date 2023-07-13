@@ -2,6 +2,7 @@ import BlitzCode from '@/components/Blitzcode'
 import Container from '@/components/Container'
 import InfoCard from '@/components/InfoCard'
 import Partners from '@/components/Partner'
+import Tip from '@/components/Tip'
 import { CopyInstalation } from '@/components/ui/copy-instalation'
 import { LinkButton } from '@/components/ui/link-button'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
@@ -14,6 +15,11 @@ export default function Home() {
         <div className="bg-black/80 backdrop-blur-sm">
           <Container>
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
+              <div className="absolute left-1/2 top-24 z-40 -translate-x-1/2">
+                <Tip className="animate-showup text-sm text-neutral-6 transition-shadow">
+                  🎉 Production ready since v1.5.0
+                </Tip>
+              </div>
               <div className="flex  h-full flex-col items-center justify-center gap-4">
                 <Image
                   width={100}
