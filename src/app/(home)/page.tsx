@@ -88,8 +88,8 @@ export default function Home() {
           </Container>
         </div>
       </div>
-      <div className="pattern-green-oil relative min-h-[200px] w-full border-t border-neutral-2 bg-fixed shadow-[0px_-10px_50px] shadow-base-12/80">
-        <div className="bg-neutral-950/80 py-10">
+      <div className="pattern-green-oil relative hidden min-h-[200px] w-full border-t border-neutral-2 bg-fixed shadow-[0px_-10px_50px] shadow-base-12/80 md:flex">
+        <div className="w-full bg-neutral-950/80 py-10">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
             <h2 className="m-0 p-0 text-4xl text-base-4">Live preview</h2>
             <p className="m-0 p-0 font-normal text-neutral-12">
