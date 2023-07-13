@@ -9,6 +9,7 @@ import {
   IconUsersGroup,
   IconBrandGithub,
 } from '@tabler/icons-react'
+import Link from 'next/link'
 
 export function NavMobile() {
   return (
@@ -41,16 +42,20 @@ export function NavMobile() {
                       active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
                     } group flex w-full items-center rounded-md px-3 py-3 text-base font-medium`}
                   >
-                    <div className="flex items-center justify-start gap-1">
+                    <Link
+                      href="https://doc.expresso-ts.com/docs/hello"
+                      className="flex items-center justify-start gap-1"
+                    >
                       <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
                       Documentation
-                    </div>
+                    </Link>
                   </button>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <Link
+                    href="https://doc.expresso-ts.com/docs/hello"
                     className={`${
                       active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
                     } group flex w-full items-center rounded-md px-3 py-3 text-base font-medium`}
@@ -59,12 +64,13 @@ export function NavMobile() {
                       <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
                       Showcase
                     </div>
-                  </button>
+                  </Link>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <Link
+                    href="/team"
                     className={`${
                       active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
                     } group flex w-full items-center rounded-md px-3 py-3 text-base font-medium`}
@@ -73,12 +79,14 @@ export function NavMobile() {
                       <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
                       Team
                     </div>
-                  </button>
+                  </Link>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <button
+                  <Link
+                    href="https://github.com/expressots/expressots"
+                    target="_blank"
                     className={`${
                       active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
                     } group flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium`}
@@ -91,7 +99,7 @@ export function NavMobile() {
                       className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1 "
                       aria-hidden="true"
                     />
-                  </button>
+                  </Link>
                 )}
               </Menu.Item>
             </div>
