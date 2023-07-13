@@ -8,7 +8,7 @@ const BlitzCode = () => {
   const { width } = useWindowDimensions()
 
   useEffect(() => {
-    if (width >= 769 && !loadedSdk) {
+    if (Number(width) >= 769 && !loadedSdk) {
       sdk.embedProjectId('expressots-example-code', 'expressots', {
         forceEmbedLayout: true,
         openFile: 'src/app.usecase.ts',

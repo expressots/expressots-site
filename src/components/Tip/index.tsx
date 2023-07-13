@@ -22,9 +22,9 @@ const Tip = forwardRef<HTMLDivElement, TTipProps>(
         <div className="flex items-center justify-start">{children}</div>
         <button
           onClick={() => setIsVisible(false)}
-          className="flex items-center justify-center w-4 h-4 overflow-hidden transition-colors border border-transparent rounded-full hover:border-red-500 hover:bg-red-950 hover:text-red-500"
+          className="flex h-4 w-4 items-center justify-center overflow-hidden rounded-full border border-transparent transition-colors hover:border-red-500 hover:bg-red-950 hover:text-red-500"
         >
-          <IconX className="w-3 h-3" />
+          <IconX className="h-3 w-3" />
         </button>
       </div>
     )

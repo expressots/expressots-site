@@ -1,3 +1,4 @@
+'use client'
 import BlitzCode from '@/components/Blitzcode'
 import Container from '@/components/Container'
 import InfoCard from '@/components/InfoCard'
