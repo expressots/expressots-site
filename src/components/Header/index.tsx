@@ -24,7 +24,7 @@ export const Header = () => {
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
               Showcases
             </MenuLi>
-            <MenuLi href="https://doc.expresso-ts.com/pt/docs/governance">
+            <MenuLi href="/team">
               <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
               Team
             </MenuLi>

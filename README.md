@@ -11,6 +11,7 @@ A Typescript + [Node.js]("https://nodejs.org/en/") lightweight framework for qui
 - Here is our [Official Documentation](https://expresso-ts.com/)
 - Checkout our [First Steps documentation](https://expresso-ts.com/docs/overview/first-steps)
 - Our [CLI Documentation](https://expresso-ts.com/docs/category/cli)
+- Our [Team](https://expresso-ts.com/team)
 
 ## Questions
 
