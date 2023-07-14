@@ -86,7 +86,7 @@ const team: Member[] = [
     name: 'Felipe Fontana',
     position: 'Core developer',
     resume:
-      'Amante de processos, sempre buscando melhorar a vida das pessoas através da tecnologia.',
+      "Lover of processes, always looking to improve people's lives through technology.",
     photo: 'https://avatars.githubusercontent.com/u/6570783?v=4',
     socials: [
       {
