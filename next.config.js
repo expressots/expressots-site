@@ -6,6 +6,9 @@ const nextConfig = (phase) => {
   const isProduction = phase === PHASE_PRODUCTION_BUILD
 
   return {
+    experimental: {
+      appDir: true,
+    },
     output: 'export',
     // basePath: '/expressots-site',
     images: { unoptimized: true },
