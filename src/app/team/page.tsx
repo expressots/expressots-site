@@ -1,7 +1,5 @@
-import Container from '@/components/Container'
-
 import { alumni, team } from '@/data/members'
-import { Member } from '@/components/Member'
+import { Container, Member } from '@/components'
 import { Member as MemberType } from '@/components/Member/type'
 
 export default function Team() {

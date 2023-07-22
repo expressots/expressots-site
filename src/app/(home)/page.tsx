@@ -1,11 +1,14 @@
 'use client'
-import BlitzCode from '@/components/Blitzcode'
-import Container from '@/components/Container'
-import InfoCard from '@/components/InfoCard'
-import Partners from '@/components/Partner'
-import Tip from '@/components/Tip'
-import { CopyInstalation } from '@/components/ui/copy-instalation'
-import { LinkButton } from '@/components/ui/link-button'
+
+import {
+  Tip,
+  LinkButton,
+  CopyInstalation,
+  InfoCard,
+  Partners,
+  BlitzCode,
+  Container,
+} from '@/components'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
 import Image from 'next/image'
 

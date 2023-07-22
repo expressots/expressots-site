@@ -2,8 +2,7 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import '../globals.css'
 import { Inter } from 'next/font/google'
-import { Header } from '@/components/Header'
-import Footer from '@/components/Footer'
+import { Footer, Header } from '@/components'
 
 const fontFamily = Inter({
   subsets: ['latin'],
