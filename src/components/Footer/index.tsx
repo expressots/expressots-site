@@ -29,6 +29,9 @@ const Footer = () => {
             <li>
               <Anchor name="Discord" link="https://discord.com/invite/PyPJfGK" />
             </li>
+            <li>
+              <Anchor name="LinkedIn" link="https://www.linkedin.com/company/expresso-ts/" />
+            </li>
           </ul>
           <ul className="font-thin">
             <li className="pb-3 font-semibold">Code</li>
