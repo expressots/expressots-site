@@ -9,6 +9,7 @@ import {
   BlitzCode,
   Container,
 } from '@/components'
+import ProductHuntBadge from '@/components/ProductHuntBadge'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
 import Image from 'next/image'
 
@@ -41,18 +42,7 @@ export default function Home() {
                   <LinkButton href="https://doc.expresso-ts.com/docs/hello">Get Started</LinkButton>
                   <CopyInstalation code="npm i -g @expressots/cli" />
                 </div>
-                <div className="flex">
-                  <a
-                    href="https://www.producthunt.com/posts/expressots?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-expressots"
-                    target="_blank"
-                  >
-                    <img
-                      src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=407781&theme=light"
-                      alt="ExpressoTS - Developer&#0045;Friendly&#0032;TypeScript&#0032;Framework&#0032;for&#0032;Server&#0045;Side&#0032;Apps | Product Hunt"
-                      className="w-64 h-12"
-                    />
-                  </a>
-                </div>
+                <ProductHuntBadge />
               </div>
             </div>
           </Container>
