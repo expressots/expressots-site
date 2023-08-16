@@ -26,4 +26,9 @@ export const PARTNERS: TPartner[] = [
     name: 'Wenit',
     site: 'https://wenit.com.br/',
   },
+  {
+    image: '/assets/logos/holopin.png',
+    name: 'Holopin',
+    site: 'https://holopin.io',
+  },
 ]
