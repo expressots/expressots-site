@@ -116,10 +116,28 @@ const team: Member[] = [
     ],
   },
   {
+    // Aluisio
+    name: 'Aluisio Amorim',
+    position: 'Core developer',
+    resume: 'Full-stack, for real. Opening magic boxes and turning them into science.',
+    photo:
+      'https://avatars.githubusercontent.com/u/42624869?v=4',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/Amorim33',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/aluisio-amorim-b19a701ba/',
+      },
+    ],
+  },
+  {
     // Lucas
     name: 'Lucas Veiga',
     position: 'Core developer',
-    resume: 'Front-end Developer, passionate about studying and learning. "Always keep learning"',
+    resume: 'Front-end Developer. My passion is to be always evolving. "Always keep learning"',
     photo:
       'https://avatars.githubusercontent.com/u/99448942?s=400&u=e7de3941c2473bd91d39474448191622e4167255&v=4',
     socials: [
