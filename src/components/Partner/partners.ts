@@ -31,4 +31,9 @@ export const PARTNERS: TPartner[] = [
     name: 'Holopin',
     site: 'https://holopin.io',
   },
+  {
+    image: '/assets/logos/heart-devs.png',
+    name: 'HeartDevs',
+    site: 'https://heartdevs.com/',
+  },
 ]
