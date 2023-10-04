@@ -3628,10 +3628,10 @@ scheduler@^0.23.0:
   dependencies:
     loose-envify "^1.1.0"
 
-scrollen@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/scrollen/-/scrollen-0.0.1.tgz#b5d1ed2f1fdd30e845ec42a39aa225d80fd40993"
-  integrity sha512-EtX+NMGDXwOYlY5dYYo/YNdtD8nvnR1cTiMpDH0azLoYSPEYBsyA2R0VT8E1MeFxNENg+2l2Kok5zBRFxwB7Kw==
+scrollen@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/scrollen/-/scrollen-0.0.2.tgz#19476785ee52e7ed314f882ad4c3e9641c8f73df"
+  integrity sha512-zfsJ9CFoJGD6NJnnG1jfTHgDxRSfxBd7nlINGBNE+Yz3QWtytvFgZmTp2WW5LK3gmMc/EYwCdDqeGuTdAz/TYQ==
   dependencies:
     "@ariakit/core" "0.2.5"
     "@ariakit/react-core" "0.2.9"
