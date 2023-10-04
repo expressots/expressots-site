@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@uidotdev/usehooks": "^2.0.1",
     "autoprefixer": "10.4.16",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "eslint": "8.41.0",
     "eslint-config-next": "^13.5.4",
     "eslint-config-standard": "^17.1.0",
