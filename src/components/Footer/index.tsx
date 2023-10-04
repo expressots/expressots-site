@@ -5,16 +5,16 @@ import Link from 'next/link'
 const Footer = () => {
   const Anchor = ({ link, name }: { link: string; name: string }) => {
     return (
-      <Link className="flex items-center h-12 hover:text-base-6" target="_blank" href={link}>
+      <Link className="flex h-12 items-center hover:text-base-6" target="_blank" href={link}>
         {name}
       </Link>
     )
   }
 
   return (
-    <footer className="bg-no-repeat bg-cover border-t border-neutral-1 bg-grid">
+    <footer className="border-t border-neutral-1 bg-grid bg-cover bg-no-repeat">
       <div className="min-h-[250px] bg-neutral-950/90 py-5">
-        <Container className="flex flex-col items-start justify-center h-full gap-10 md:flex-row">
+        <Container className="flex h-full flex-col items-start justify-center gap-10 md:flex-row">
           <ul className="flex flex-col font-thin">
             <li className="pb-3 font-semibold">Docs</li>
             <li>
@@ -24,7 +24,7 @@ const Footer = () => {
           <ul className="font-thin">
             <li className="pb-3 font-semibold">Community</li>
             <li>
-              <Anchor name="Twitch TV" link="https://www.twitch.tv/richardzampieri" />
+              <Anchor name="Twitter" link="https://twitter.com/expressots" />
             </li>
             <li>
               <Anchor name="Discord" link="https://discord.com/invite/PyPJfGK" />
@@ -51,7 +51,7 @@ const Footer = () => {
 
         {/* Additional copyright information */}
         <Container>
-          <div className="py-5 text-sm text-center">
+          <div className="py-5 text-center text-sm">
             <p>Released under the MIT License</p>
             <p>Official ExpressoTS Site</p>
             <p>

@@ -13,7 +13,7 @@ const team: Member[] = [
   {
     // Richard
     name: 'Richard Zampieri',
-    position: 'Core developer',
+    position: 'Creator of @expressots',
     resume: 'Tech. Lead 📔 "True freedom blossoms in the realm of Open Source."',
     photo: 'https://avatars.githubusercontent.com/u/4088378?v=4',
     socials: [
@@ -120,8 +120,7 @@ const team: Member[] = [
     name: 'Aluisio Amorim',
     position: 'Core developer',
     resume: 'Full-stack, for real. Opening magic boxes and turning them into science.',
-    photo:
-      'https://avatars.githubusercontent.com/u/42624869?v=4',
+    photo: 'https://avatars.githubusercontent.com/u/42624869?v=4',
     socials: [
       {
         name: 'github',
@@ -134,30 +133,12 @@ const team: Member[] = [
     ],
   },
   {
-    // Lucas
-    name: 'Lucas Veiga',
-    position: 'Core developer',
-    resume: 'Front-end Developer. My passion is to be always evolving. "Always keep learning"',
-    photo:
-      'https://avatars.githubusercontent.com/u/99448942?s=400&u=e7de3941c2473bd91d39474448191622e4167255&v=4',
-    socials: [
-      {
-        name: 'github',
-        url: 'https://github.com/lucasveigaa',
-      },
-      {
-        name: 'linkedin',
-        url: 'https://www.linkedin.com/in/lucas-veiga-643bb7214/',
-      },
-    ],
-  },
-  {
     // Pedro
     name: 'Pedro Vargas',
     position: 'Product Manager',
     resume: 'I am a creator, and I am passionate about translating ideas into actionable insights.',
     photo:
-      'https://media.licdn.com/dms/image/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_200_200/0/1517520964466?e=1694649600&v=beta&t=DDapV4YDJ5Q83NcTao9B1Fhr8llW8-qpHxkoGWGzURQ',
+      'https://media.licdn.com/dms/image/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_800_800/0/1517520964466?e=1701907200&v=beta&t=Uih_pSiuYtJHXg4D8HRYOJ1DaSML3dmNvKvhXJRi8Lo',
     socials: [
       {
         name: 'linkedin',
@@ -201,6 +182,24 @@ const alumni: Member[] = [
       {
         name: 'linkedin',
         url: 'https://www.linkedin.com/in/daniel-gabriel-70a565267',
+      },
+    ],
+  },
+  {
+    // Lucas
+    name: 'Lucas Veiga',
+    position: 'Core developer',
+    resume: 'Front-end Developer. My passion is to be always evolving. "Always keep learning"',
+    photo:
+      'https://avatars.githubusercontent.com/u/99448942?s=400&u=e7de3941c2473bd91d39474448191622e4167255&v=4',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/lucasveigaa',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/lucas-veiga-643bb7214/',
       },
     ],
   },

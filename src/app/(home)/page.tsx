@@ -22,7 +22,7 @@ export default function Home() {
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
               <div className="absolute left-1/2 top-24 z-40 -translate-x-1/2 -translate-y-1/2 transform">
                 <Tip className="animate-showup text-sm text-neutral-6 transition-shadow">
-                  🎉 Production ready since v1.7.0
+                  🎉 Production version v2.4.0
                 </Tip>
               </div>
               <div className="mt-32 flex h-full flex-col items-center justify-center gap-4 sm:mt-0">
@@ -67,7 +67,7 @@ export default function Home() {
                   <p className="font-semibold">Focus on What Matters</p>
                 </>
               }
-              content="You can stop worrying about repetitive boilerplate tasks and focus on what really matters - coding your business logic and delivering a high-quality product."
+              content="You can stop worrying about repetitive tasks and focus on what really matters - coding your business logic and delivering a high-quality product."
             />
             <InfoCard
               header={

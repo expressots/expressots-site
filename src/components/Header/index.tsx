@@ -36,7 +36,7 @@ export const Header = () => {
               <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
               Documentation
             </MenuLi>
-            <MenuLi href="https://doc.expresso-ts.com/docs/hello">
+            <MenuLi href="/showcase">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
               Showcases
             </MenuLi>
