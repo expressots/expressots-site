@@ -22,7 +22,7 @@
     "@types/react": "18.2.24",
     "@types/react-dom": "18.2.4",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@uidotdev/usehooks": "^2.0.1",
+    "@uidotdev/usehooks": "^2.3.1",
     "autoprefixer": "10.4.16",
     "clsx": "^2.0.0",
     "eslint": "8.41.0",
