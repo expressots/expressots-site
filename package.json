@@ -8,7 +8,6 @@
     "build": "NODE_ENV=production next build",
     "build:v2": "next build",
     "prod": "npx serve@latest out",
-    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
