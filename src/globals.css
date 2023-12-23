@@ -3,40 +3,41 @@
 @tailwind utilities;
 
 @layer base {
-  h1, h2, h3 {
-    @apply font-bold text-xl
+  h1,
+  h2,
+  h3 {
+    @apply text-xl font-bold;
   }
 
-	:root {
-		--base-1: 251 254 252;
-		--base-2: 239 254 244;
-		--base-3: 218 254 229;
-		--base-4: 184 250 206;
-		--base-5: 128 245 168;
-		--base-6: 61 230 120;
-		--base-7: 25 206 89;
-		--base-8: 14 171 70;
-		--base-9: 15 134 57;
-		--base-10: 17 106 50;
-		--base-11: 16 87 43;
-		--base-12: 3 48 21;
+  :root {
+    --base-1: 251 254 252;
+    --base-2: 239 254 244;
+    --base-3: 218 254 229;
+    --base-4: 184 250 206;
+    --base-5: 128 245 168;
+    --base-6: 61 230 120;
+    --base-7: 25 206 89;
+    --base-8: 14 171 70;
+    --base-9: 15 134 57;
+    --base-10: 17 106 50;
+    --base-11: 16 87 43;
+    --base-12: 3 48 21;
 
-		--neutral-1: 23 23 23;
-		--neutral-2: 47 47 47;
-		--neutral-3: 96 96 96;
-		--neutral-4: 133 133 133;
-		--neutral-5: 171 171 171;
-		--neutral-6: 199 199 199;
-		--neutral-7: 219 219 219;
-		--neutral-8: 232 232 232;
-		--neutral-9: 237 237 237;
-		--neutral-10: 243 243 243;
-		--neutral-11: 248 248 248;
-		--neutral-12: 252 252 252;
-	}
-	.pattern-green-oil {
-		background-color: #171717;
-		@apply bg-oil
-	}
+    --neutral-1: 23 23 23;
+    --neutral-2: 47 47 47;
+    --neutral-3: 96 96 96;
+    --neutral-4: 133 133 133;
+    --neutral-5: 171 171 171;
+    --neutral-6: 199 199 199;
+    --neutral-7: 219 219 219;
+    --neutral-8: 232 232 232;
+    --neutral-9: 237 237 237;
+    --neutral-10: 243 243 243;
+    --neutral-11: 248 248 248;
+    --neutral-12: 252 252 252;
+  }
+  .pattern-green-oil {
+    background-color: #171717;
+    @apply bg-oil;
+  }
 }
-

@@ -7,6 +7,7 @@ export default function ProductHuntBadge() {
       <a
         href="https://www.producthunt.com/posts/expressots?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-expressots"
         target="_blank"
+        rel="noreferrer"
       >
         <Image
           id="product-hunt-badge"

@@ -1,6 +1,4 @@
-import { team } from '@/data/members'
-import { Container, Member } from '@/components'
-import { Member as MemberType } from '@/components/Member/type'
+import { Container } from '@/components'
 
 export default function Showcase() {
   return (

@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "NODE_ENV=production next build",
+    "build:v2": "next build",
     "prod": "npx serve@latest out",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -35,7 +37,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "next": "^13.5.4",
+    "next": "^14.0.4",
     "postcss": "8.4.31",
     "prettier": "^3.0.3",
     "react": "18.2.0",

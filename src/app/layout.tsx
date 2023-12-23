@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import '../globals.css'
 import { Inter } from 'next/font/google'
 import { Footer, Header } from '@/components'
@@ -9,16 +9,17 @@ const fontFamily = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700'],
 })
 
+export const viewPort: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#161616',
+}
+
 export const metadata: Metadata = {
   title: 'ExpressoTS - Node.js Framework',
   description: 'A lightweight, fast and easy to use TypeScript Node.js framework',
-  themeColor: '#161616',
   category: 'technology',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   icons: {
     icon: '/icons/windows11/Square150x150Logo.scale-100.png',
     shortcut: '/icons/windows11/Square150x150Logo.scale-100.png',
