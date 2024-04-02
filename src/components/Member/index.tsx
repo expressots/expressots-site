@@ -11,14 +11,18 @@ interface MemberProps {
 
 export const Member: React.FC<MemberProps> = ({ member }) => {
   const [hasError, setHasError] = useState(false)
-
   return (
     <div key={member.name}>
-      <div className="relative transform overflow-hidden rounded shadow-lg transition duration-300 hover:shadow-2xl lg:hover:-translate-y-2">
+      <div
+        className="relative transform overflow-hidden rounded shadow-lg transition duration-300 hover:shadow-2xl lg:hover:-translate-y-2"
+        style={{ width: '80%' }}
+      >
         <Image
-          width="100"
-          height="256"
-          className={`h-56 w-full md:h-64 xl:h-80 ${hasError ? 'object-fill' : 'object-cover'}`}
+          width={100}
+          height={256}
+          className={`relative h-56 w-full md:h-64 xl:h-40 ${
+            hasError ? 'object-fill' : 'object-cover'
+          }`}
           src={hasError ? './assets/logos/logo-primary.svg' : member.photo}
           alt={`avatar-${member.name}`}
           onError={() => setHasError(true)}
@@ -26,7 +30,7 @@ export const Member: React.FC<MemberProps> = ({ member }) => {
         <div className="absolute inset-0 flex flex-col justify-center bg-black bg-opacity-75 px-5 py-5 text-center opacity-0 transition-opacity duration-300 hover:opacity-100">
           <p className="mb-1 text-lg font-bold text-gray-100">{member.name}</p>
           <p className="mb-4 text-xs text-gray-100">{member.position}</p>
-          <p className="mb-4 text-xs tracking-wide text-gray-400">{member.resume}</p>
+          {/* <p className="mb-4 text-xs tracking-wide text-gray-400">{member.resume}</p> */}
           <div className="flex items-center justify-center space-x-3">
             {member.socials.map((social: any, ind: number) => (
               <a

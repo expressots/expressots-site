@@ -28,38 +28,33 @@ const team: Member[] = [
     ],
   },
   {
-    // Daniel
-    name: 'Daniel Boll',
+    // Juliano
+    name: 'Juliano Soares',
     position: 'Core developer',
-    resume:
-      "Sorcerer Boll, code mystique, In Rust, C++, Typescript's streak. Open source magic he'll deploy, Coding realms, he'll skillfully toy.",
-    photo: 'https://avatars.githubusercontent.com/u/43689101?v=4',
+    resume: '💻 Researcher and student of artificial intelligence and machine learning',
+    photo: 'https://avatars.githubusercontent.com/u/37117169?v=4',
     socials: [
       {
         name: 'github',
-        url: 'https://github.com/Daniel-Boll',
+        url: 'https://github.com/juliano-soares',
       },
       {
         name: 'linkedin',
-        url: 'https://www.linkedin.com/in/daniel-boll',
+        url: 'https://www.linkedin.com/in/juliano-leonardo-soares',
       },
     ],
   },
   {
-    // Vitor
-    name: 'Vitor Caminha',
-    position: 'Core developer',
-    resume:
-      'Passionate about Artificial Intelligence and Python. Falling in love with JavaScript and its wonderful technologies.',
-    photo: 'https://avatars.githubusercontent.com/u/50715987?v=4',
+    // Pedro
+    name: 'Pedro Vargas',
+    position: 'Product Manager',
+    resume: 'I am a creator, and I am passionate about translating ideas into actionable insights.',
+    photo:
+      'https://media.licdn.com/dms/image/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_200_200/0/1517520966833?e=1717632000&v=beta&t=DrB25zU1i-6fziW03QqqC_E_RKDbeLx1jSBMK_2mfNU',
     socials: [
       {
-        name: 'github',
-        url: 'https://github.com/VitorCaminha',
-      },
-      {
         name: 'linkedin',
-        url: 'https://www.linkedin.com/in/vitorcaminha',
+        url: 'https://www.linkedin.com/in/pedroavargas',
       },
     ],
   },
@@ -81,6 +76,27 @@ const team: Member[] = [
       },
     ],
   },
+]
+
+const alumni: Member[] = [
+  {
+    // Daniel
+    name: 'Daniel Boll',
+    position: 'Core developer',
+    resume:
+      "Sorcerer Boll, code mystique, In Rust, C++, Typescript's streak. Open source magic he'll deploy, Coding realms, he'll skillfully toy.",
+    photo: 'https://avatars.githubusercontent.com/u/43689101?v=4',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/Daniel-Boll',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/daniel-boll',
+      },
+    ],
+  },
   {
     // Felipe
     name: 'Felipe Fontana',
@@ -99,56 +115,23 @@ const team: Member[] = [
     ],
   },
   {
-    // Juliano
-    name: 'Juliano Soares',
+    // Vitor
+    name: 'Vitor Caminha',
     position: 'Core developer',
-    resume: '💻 Researcher and student of artificial intelligence and machine learning',
-    photo: 'https://avatars.githubusercontent.com/u/37117169?v=4',
+    resume:
+      'Passionate about Artificial Intelligence and Python. Falling in love with JavaScript and its wonderful technologies.',
+    photo: 'https://avatars.githubusercontent.com/u/50715987?v=4',
     socials: [
       {
         name: 'github',
-        url: 'https://github.com/juliano-soares',
+        url: 'https://github.com/VitorCaminha',
       },
       {
         name: 'linkedin',
-        url: 'https://www.linkedin.com/in/juliano-leonardo-soares',
+        url: 'https://www.linkedin.com/in/vitorcaminha',
       },
     ],
   },
-  {
-    // Aluisio
-    name: 'Aluisio Amorim',
-    position: 'Core developer',
-    resume: 'Full-stack, for real. Opening magic boxes and turning them into science.',
-    photo: 'https://avatars.githubusercontent.com/u/42624869?v=4',
-    socials: [
-      {
-        name: 'github',
-        url: 'https://github.com/Amorim33',
-      },
-      {
-        name: 'linkedin',
-        url: 'https://www.linkedin.com/in/aluisio-amorim-b19a701ba/',
-      },
-    ],
-  },
-  {
-    // Pedro
-    name: 'Pedro Vargas',
-    position: 'Product Manager',
-    resume: 'I am a creator, and I am passionate about translating ideas into actionable insights.',
-    photo:
-      'https://media.licdn.com/dms/image/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_800_800/0/1517520964466?e=1701907200&v=beta&t=Uih_pSiuYtJHXg4D8HRYOJ1DaSML3dmNvKvhXJRi8Lo',
-    socials: [
-      {
-        name: 'linkedin',
-        url: 'https://www.linkedin.com/in/pedroavargas',
-      },
-    ],
-  },
-]
-
-const alumni: Member[] = [
   {
     // Rodrigo da Hora
     name: 'Rodrigo da Hora',
@@ -200,6 +183,23 @@ const alumni: Member[] = [
       {
         name: 'linkedin',
         url: 'https://www.linkedin.com/in/lucas-veiga-643bb7214/',
+      },
+    ],
+  },
+  {
+    // Aluisio
+    name: 'Aluisio Amorim',
+    position: 'Core developer',
+    resume: 'Full-stack, for real. Opening magic boxes and turning them into science.',
+    photo: 'https://avatars.githubusercontent.com/u/42624869?v=4',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/Amorim33',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/aluisio-amorim-b19a701ba/',
       },
     ],
   },

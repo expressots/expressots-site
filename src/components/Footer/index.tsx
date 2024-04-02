@@ -55,7 +55,7 @@ const Footer = () => {
             <p>Released under the MIT License</p>
             <p>Official ExpressoTS Site</p>
             <p>
-              Copyright © 2021-2023{' '}
+              Copyright © 2021-2024{' '}
               <a
                 href="https://www.linkedin.com/in/richardzampieri/"
                 target="_blank"

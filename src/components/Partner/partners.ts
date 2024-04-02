@@ -2,6 +2,16 @@ import { TPartner } from './types'
 
 export const PARTNERS: TPartner[] = [
   {
+    image: '/assets/logos/logo-loja-conectada.png',
+    name: 'Loja Conectada',
+    site: 'https://www.lojaconectada.com.br/',
+  },
+  {
+    image: '/assets/logos/coffee-logo.png',
+    name: 'BuscaCafé',
+    site: 'https://www.buscacafe.com.br/',
+  },
+  {
     image: '/assets/logos/pokebattle.png',
     name: 'PokeBattle',
     site: 'https://pokemonbattle.vercel.app/',

@@ -36,13 +36,13 @@ export const Header = () => {
               <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
               Documentation
             </MenuLi>
+            <MenuLi href="/team">
+              <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
+              Contributors
+            </MenuLi>
             <MenuLi href="/showcase">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
               Showcases
-            </MenuLi>
-            <MenuLi href="/team">
-              <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
-              Team
             </MenuLi>
             <MenuLi href="https://github.com/expressots/expressots">
               <IconBrandGithub className="mr-2 h-5 w-5" aria-hidden="true" />
