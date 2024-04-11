@@ -10,6 +10,8 @@ import {
   Container,
 } from '@/components'
 import ProductHuntBadge from '@/components/ProductHuntBadge'
+import { IconAB } from '@tabler/icons-react'
+import { Icon360View } from '@tabler/icons-react'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
 import Image from 'next/image'
 
@@ -22,7 +24,7 @@ export default function Home() {
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
               <div className="absolute left-1/2 top-24 z-40 -translate-x-1/2 -translate-y-1/2 transform">
                 <Tip className="animate-showup text-sm text-neutral-6 transition-shadow">
-                  🎉 Production version v2.10.0
+                  🎉 Production version v2.11.0
                 </Tip>
               </div>
               <div className="mt-32 flex h-full flex-col items-center justify-center gap-4 sm:mt-0">
@@ -36,13 +38,15 @@ export default function Home() {
                   ExpressoTS
                 </h1>
                 <p className="text-center text-xl text-neutral-10">
-                  The Developer-Friendly TypeScript Framework for Server-Side Applications
+                  The Developer-Friendly Node.js framework for creating
+                  <br />
+                  <span>highly maintainable server-side applications.</span>
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
                   <LinkButton href="https://doc.expresso-ts.com/docs/hello">Get Started</LinkButton>
                   <CopyInstalation code="npm i -g @expressots/cli" />
                 </div>
-                <ProductHuntBadge />
+                {/* <ProductHuntBadge /> */}
               </div>
             </div>
           </Container>
@@ -55,24 +59,33 @@ export default function Home() {
               header={
                 <>
                   <IconApps className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <p className="font-semibold">Easy to use</p>
+                  <p className="font-semibold">Weakly & Strongly Opinionated</p>
                 </>
               }
-              content="Built on a modular architecture and designed with simplicity in mind, it empowers developers to quickly create powerful applications."
-            />
-            <InfoCard
-              header={
-                <>
-                  <IconViewfinder className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <p className="font-semibold">Focus on What Matters</p>
-                </>
-              }
-              content="You can stop worrying about repetitive tasks and focus on what really matters - coding your business logic and delivering a high-quality product."
+              content="Two project templates, Weakly opinionated frameworks offer flexibility; strongly opinionated ones dictate best practices."
             />
             <InfoCard
               header={
                 <>
                   <IconPackages className="mr-2 h-5 w-5" aria-hidden="true" />
+                  <p className="font-semibold">Modular</p>
+                </>
+              }
+              content="ExpressoTS is architected as a modular framework, offering developers the flexibility to plug in only the components they need. Its design encourages lean and efficient development, avoiding the overhead of unused features."
+            />
+            <InfoCard
+              header={
+                <>
+                  <IconViewfinder className="mr-2 h-5 w-5" aria-hidden="true" />
+                  <p className="font-semibold">Best Practices</p>
+                </>
+              }
+              content="ExpressoTS embodies best practices through its architecture, promoting clean code, type safety, and a clear separation of concerns."
+            />
+            <InfoCard
+              header={
+                <>
+                  <IconAB className="mr-2 h-5 w-5" aria-hidden="true" />
                   <p className="font-semibold">Extensible</p>
                 </>
               }

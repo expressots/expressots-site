@@ -15,12 +15,6 @@ const Footer = () => {
     <footer className="border-t border-neutral-1 bg-grid bg-cover bg-no-repeat">
       <div className="min-h-[250px] bg-neutral-950/90 py-5">
         <Container className="flex h-full flex-col items-start justify-center gap-10 md:flex-row">
-          <ul className="flex flex-col font-thin">
-            <li className="pb-3 font-semibold">Docs</li>
-            <li>
-              <Anchor name="Tutorial" link="https://doc.expresso-ts.com/docs/category/tutorials" />
-            </li>
-          </ul>
           <ul className="font-thin">
             <li className="pb-3 font-semibold">Community</li>
             <li>
