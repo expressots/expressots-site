@@ -43,7 +43,7 @@ export function NavMobile() {
                     } group flex w-full items-center rounded-md px-3 py-3 text-base font-medium`}
                   >
                     <Link
-                      href="https://doc.expresso-ts.com/docs/hello"
+                      href="https://doc.expresso-ts.com/"
                       className="flex items-center justify-start gap-1"
                     >
                       <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -70,14 +70,14 @@ export function NavMobile() {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="https://doc.expresso-ts.com/docs/hello"
+                    href="https://doc.expresso-ts.com/"
                     className={`${
                       active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
                     } group flex w-full items-center rounded-md px-3 py-3 text-base font-medium`}
                   >
                     <div className="flex items-center justify-start gap-1">
                       <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
-                      Showcase
+                      App Store
                     </div>
                   </Link>
                 )}

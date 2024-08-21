@@ -24,7 +24,7 @@ export default function Home() {
             <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
               <div className="absolute left-1/2 top-24 z-40 -translate-x-1/2 -translate-y-1/2 transform">
                 <Tip className="animate-showup text-sm text-neutral-6 transition-shadow">
-                  🎉 Production version v2.15
+                  🎉 Production version v2.16
                 </Tip>
               </div>
               <div className="mt-32 flex h-full flex-col items-center justify-center gap-4 sm:mt-0">
@@ -43,7 +43,7 @@ export default function Home() {
                   <span>highly maintainable server-side applications.</span>
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
-                  <LinkButton href="https://doc.expresso-ts.com/docs/hello">Get Started</LinkButton>
+                  <LinkButton href="https://doc.expresso-ts.com/">Get Started</LinkButton>
                   <CopyInstalation code="npm i -g @expressots/cli" />
                 </div>
                 {/* <ProductHuntBadge /> */}

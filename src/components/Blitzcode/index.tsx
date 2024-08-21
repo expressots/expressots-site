@@ -11,7 +11,8 @@ const BlitzCode = () => {
     if (Number(width) >= 769 && !loadedSdk) {
       sdk.embedProjectId('expressots-example-code', 'expressots', {
         forceEmbedLayout: true,
-        openFile: 'src/app.usecase.ts',
+        openFile: 'src/main.ts',
+        hideExplorer: false,
         theme: 'dark',
         height: 800,
       })

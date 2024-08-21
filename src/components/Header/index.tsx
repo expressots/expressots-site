@@ -32,7 +32,7 @@ export const Header = () => {
         </Link>
         <div className="flex items-center gap-4 max-lg:hidden">
           <ul className="flex items-center justify-end gap-5">
-            <MenuLi href="https://doc.expresso-ts.com/docs/hello">
+            <MenuLi href="https://doc.expresso-ts.com">
               <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
               Documentation
             </MenuLi>
@@ -40,9 +40,9 @@ export const Header = () => {
               <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
               Contributors
             </MenuLi>
-            <MenuLi href="/showcase">
+            <MenuLi href="/store">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
-              Showcases
+              App Store
             </MenuLi>
             <MenuLi href="https://github.com/expressots/expressots">
               <IconBrandGithub className="mr-2 h-5 w-5" aria-hidden="true" />
