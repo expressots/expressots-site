@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Tip,
   LinkButton,
@@ -14,6 +12,7 @@ import { IconAB } from '@tabler/icons-react'
 import { Icon360View } from '@tabler/icons-react'
 import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
 import Image from 'next/image'
+import { VideoPlayer } from '@/components/ui/videoplayer'
 
 export default function Home() {
   return (
@@ -27,31 +26,46 @@ export default function Home() {
                   🎉 Production version v2.16
                 </Tip>
               </div>
-              <div className="mt-32 flex h-full flex-col items-center justify-center gap-4 sm:mt-0">
-                <Image
-                  width={100}
-                  height={100}
-                  src="./assets/logos/logo-primary.svg"
-                  alt="Expresso Logo"
-                />
-                <h1 className="text-center text-6xl text-[clamp(48px_5vw_72px)] font-bold">
-                  ExpressoTS
-                </h1>
-                <p className="text-center text-xl text-neutral-10">
-                  The Developer-Friendly Node.js framework for creating
-                  <br />
-                  <span>highly maintainable server-side applications.</span>
-                </p>
-                <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
-                  <LinkButton href="https://doc.expresso-ts.com/">Get Started</LinkButton>
-                  <CopyInstalation code="npm i -g @expressots/cli" />
+              <div className="mt-32 flex h-full w-full flex-col items-center justify-center gap-4 sm:mt-0">
+                <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
+                  {/* Left side content */}
+                  <div className="flex flex-col items-center justify-center md:w-1/2">
+                    <Image
+                      width={120}
+                      height={120}
+                      src="./assets/logos/logo-primary.svg"
+                      alt="Expresso Logo"
+                    />
+                    <h1 className="text-center text-6xl text-[clamp(48px_5vw_72px)] font-bold md:text-left">
+                      ExpressoTS
+                    </h1>
+                    <br />
+                    <p className="text-center text-xl text-neutral-10 md:text-left">
+                      The Developer-Friendly Node.js framework for creating
+                      <br />
+                      <span className="block text-center">
+                        highly maintainable server-side applications.
+                      </span>
+                    </p>
+                    <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
+                      <LinkButton href="https://doc.expresso-ts.com/">Get Started</LinkButton>
+                      <CopyInstalation code="npm i -g @expressots/cli" />
+                    </div>
+                  </div>
+                  {/* Right side video */}
+                  <div className="flex items-center justify-center md:w-1/2">
+                    <VideoPlayer
+                      src="https://www.youtube.com/embed/_Z4WLZW4zMk"
+                      title="ExpressoTS Introduction"
+                    />
+                  </div>
                 </div>
-                {/* <ProductHuntBadge /> */}
               </div>
             </div>
           </Container>
         </div>
       </div>
+      {/* The rest of your content remains unchanged */}
       <div className="pattern-green-oil relative min-h-[200px] w-full bg-fixed">
         <div className="bg-black/90">
           <Container className="flex h-full flex-col items-center justify-center gap-5 py-10 text-center md:flex-row">

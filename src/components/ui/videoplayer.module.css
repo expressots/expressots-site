@@ -1,0 +1,23 @@
+@keyframes light-bottom {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-light-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to top, rgba(0, 255, 0, 0.5), transparent);
+  opacity: 0;
+  animation: light-bottom 10s infinite;
+}
