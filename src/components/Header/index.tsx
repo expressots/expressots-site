@@ -2,7 +2,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { MenuLi } from '../ui/menu-li'
-import { IconBook, IconBrandGithub, IconBriefcase, IconUsersGroup } from '@tabler/icons-react'
+import {
+  IconBook,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBriefcase,
+  IconUsersGroup,
+} from '@tabler/icons-react'
 import { NavMobile } from './nav-mobile'
 import { clsxm } from '@/utils/clsxm'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
@@ -34,19 +40,23 @@ export const Header = () => {
           <ul className="flex items-center justify-end gap-5">
             <MenuLi href="https://doc.expresso-ts.com">
               <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
-              Documentation
+              DOCUMENTATION
             </MenuLi>
             <MenuLi href="/team">
               <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
-              Contributors
+              CONTRIBUTORS
             </MenuLi>
             <MenuLi href="/store">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
-              App Store
+              APP STORE
             </MenuLi>
+          </ul>
+          <ul className="ml-4 flex items-center justify-end gap-2">
             <MenuLi href="https://github.com/expressots/expressots">
-              <IconBrandGithub className="mr-2 h-5 w-5" aria-hidden="true" />
-              Github
+              <IconBrandGithub className="h-5 w-5" aria-hidden="true" />
+            </MenuLi>
+            <MenuLi href="https://www.linkedin.com/company/expresso-ts/">
+              <IconBrandLinkedin className="h-5 w-5" aria-hidden="true" />
             </MenuLi>
           </ul>
         </div>

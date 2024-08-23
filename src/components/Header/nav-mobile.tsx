@@ -8,6 +8,7 @@ import {
   IconExternalLink,
   IconUsersGroup,
   IconBrandGithub,
+  IconBrandLinkedin,
 } from '@tabler/icons-react'
 import Link from 'next/link'
 
@@ -94,6 +95,26 @@ export function NavMobile() {
                     <div className="flex items-center justify-start gap-1">
                       <IconBrandGithub className="mr-2 h-5 w-5" aria-hidden="true" />
                       Github
+                    </div>
+                    <IconExternalLink
+                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1 "
+                      aria-hidden="true"
+                    />
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href="https://www.linkedin.com/company/expresso-ts/"
+                    target="_blank"
+                    className={`${
+                      active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
+                    } group flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium`}
+                  >
+                    <div className="flex items-center justify-start gap-1">
+                      <IconBrandLinkedin className="mr-2 h-5 w-5" aria-hidden="true" />
+                      LinkedIn
                     </div>
                     <IconExternalLink
                       className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1 "
