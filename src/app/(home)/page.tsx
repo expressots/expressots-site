@@ -117,9 +117,15 @@ export default function Home() {
       <div className="pattern-green-oil relative min-h-[200px] w-full bg-fixed">
         <div className="bg-black/90">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
-            <h2 className="m-0 p-0 text-4xl text-base-5">Current Partners</h2>
+            <h2 className="m-0 p-0 text-4xl text-base-5">PARTNERS</h2>
             <p className="m-0 p-0 font-normal">
-              ExpressoTS is an MIT-licensed open-source project. Consider supporting us!
+              Are you using ExpressoTS? Share your use case with us—
+              <a
+                href="mailto:richard.zampieri@expresso-ts.com"
+                className="text-base-5 underline hover:text-base-6"
+              >
+                we’d love to hear about it!
+              </a>
             </p>
             <div className="py-10">
               <Partners />
@@ -130,12 +136,28 @@ export default function Home() {
       <div className="pattern-green-oil relative hidden min-h-[200px] w-full border-t border-neutral-2 bg-fixed shadow-[0px_-10px_50px] shadow-base-12/80 md:flex">
         <div className="w-full bg-neutral-950/80 py-10">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
-            <h2 className="m-0 p-0 text-4xl text-base-4">Live preview</h2>
+            <h2 className="m-0 p-0 text-4xl text-base-4">LIVE PREVIEW</h2>
             <p className="m-0 p-0 font-normal text-neutral-12">
               See how ExpressoTS look like without leaving your browser.
             </p>
             <div className="w-full overflow-hidden rounded-md">
               <BlitzCode />
+            </div>
+          </Container>
+        </div>
+      </div>
+      <div className="pattern-green-oil relative hidden min-h-[200px] w-full border-t border-neutral-2 bg-fixed shadow-[0px_-10px_50px] shadow-base-12/80 md:flex">
+        <div className="w-full bg-neutral-950/80">
+          <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
+            <h2 className="m-0 p-0 text-4xl text-base-4">SUPPORT US ❤️</h2>
+            <p className="text- m-0 p-0 text-lg font-normal text-neutral-12">
+              ExpressoTS is an open-source project. Consider sponsoring us to support ongoing
+              development.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+              <LinkButton href="https://github.com/sponsors/expressots">
+                Become a Sponsor
+              </LinkButton>
             </div>
           </Container>
         </div>

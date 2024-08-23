@@ -46,8 +46,7 @@ const Footer = () => {
         {/* Additional copyright information */}
         <Container>
           <div className="py-5 text-center text-sm">
-            <p>Released under the MIT License</p>
-            <p>Official ExpressoTS Site</p>
+            <p>Released under the MIT License. Official ExpressoTS Site</p>
             <p>
               Copyright © 2021-2024{' '}
               <a
@@ -57,35 +56,6 @@ const Footer = () => {
                 rel="noreferrer"
               >
                 Richard Zampieri
-              </a>
-            </p>
-            <p>
-              Designed by{' '}
-              <a
-                href="https://www.linkedin.com/in/ariel-betti/"
-                target="_blank"
-                className="text-base-5"
-                rel="noreferrer"
-              >
-                Ariel Betti
-              </a>{' '}
-              and{' '}
-              <a
-                href="https://www.linkedin.com/in/daniel-gabriel-70a565267/"
-                target="_blank"
-                className="text-base-5"
-                rel="noreferrer"
-              >
-                Daniel Gabriel
-              </a>
-              , hosted by{' '}
-              <a
-                href="https://pages.github.com/"
-                target="_blank"
-                className="text-base-5"
-                rel="noreferrer"
-              >
-                GitHub Pages
               </a>
             </p>
           </div>
