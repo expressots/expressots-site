@@ -35,7 +35,7 @@ export function NavMobile() {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md border border-neutral-900 bg-neutral-950 backdrop-blur-sm focus:outline-none">
-            <div className="px-2 py-2 ">
+            <div className="px-2 py-2">
               <Menu.Item>
                 {({ active }) => (
                   <button
@@ -97,7 +97,7 @@ export function NavMobile() {
                       Github
                     </div>
                     <IconExternalLink
-                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1 "
+                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1"
                       aria-hidden="true"
                     />
                   </Link>
@@ -117,7 +117,7 @@ export function NavMobile() {
                       LinkedIn
                     </div>
                     <IconExternalLink
-                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1 "
+                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1"
                       aria-hidden="true"
                     />
                   </Link>
