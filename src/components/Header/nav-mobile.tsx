@@ -8,6 +8,7 @@ import {
   IconExternalLink,
   IconUsersGroup,
   IconBrandGithub,
+  IconBrandLinkedin,
 } from '@tabler/icons-react'
 import Link from 'next/link'
 
@@ -34,7 +35,7 @@ export function NavMobile() {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md border border-neutral-900 bg-neutral-950 backdrop-blur-sm focus:outline-none">
-            <div className="px-2 py-2 ">
+            <div className="px-2 py-2">
               <Menu.Item>
                 {({ active }) => (
                   <button
@@ -96,7 +97,27 @@ export function NavMobile() {
                       Github
                     </div>
                     <IconExternalLink
-                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1 "
+                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href="https://www.linkedin.com/company/expresso-ts/"
+                    target="_blank"
+                    className={`${
+                      active ? 'bg-base-6 text-neutral-1' : 'text-neutral-8'
+                    } group flex w-full items-center justify-between rounded-md px-3 py-3 text-base font-medium`}
+                  >
+                    <div className="flex items-center justify-start gap-1">
+                      <IconBrandLinkedin className="mr-2 h-5 w-5" aria-hidden="true" />
+                      LinkedIn
+                    </div>
+                    <IconExternalLink
+                      className="mr-2 h-5 w-5 text-neutral-3 group-hover:text-neutral-1"
                       aria-hidden="true"
                     />
                   </Link>

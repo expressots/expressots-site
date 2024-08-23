@@ -12,7 +12,7 @@ export const MenuLi = ({ children, href }: Props) => {
       <Link
         href={href}
         target="_self"
-        className="flex items-center justify-center gap-2 rounded-md border border-transparent text-lg text-neutral-200 antialiased duration-150 ease-out hover:text-base-6"
+        className="flex items-center justify-center gap-2 rounded-md border border-transparent text-base text-neutral-200 antialiased duration-150 ease-out hover:text-base-6"
       >
         {children}
       </Link>{' '}
