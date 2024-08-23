@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Tip,
   LinkButton,
@@ -7,23 +9,20 @@ import {
   BlitzCode,
   Container,
 } from '@/components'
-import ProductHuntBadge from '@/components/ProductHuntBadge'
-import { IconAB } from '@tabler/icons-react'
-import { Icon360View } from '@tabler/icons-react'
-import { IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
+import { IconAB, IconApps, IconPackages, IconViewfinder } from '@tabler/icons-react'
 import Image from 'next/image'
 import { VideoPlayer } from '@/components/ui/videoplayer'
 
 export default function Home() {
   return (
-    <main className="flex h-full min-h-screen flex-col items-center justify-center overflow-auto">
-      <div className="w-full border border-b border-neutral-1 bg-grid bg-cover bg-right-top bg-no-repeat">
+    <main className="pattern-background flex h-full min-h-screen flex-col items-center justify-center overflow-auto">
+      <div className="w-full border border-b border-neutral-1 bg-cover bg-no-repeat">
         <div className="bg-black/80 backdrop-blur-sm">
           <Container>
-            <div className="relative flex min-h-[calc(85vh)] w-full flex-col items-center justify-center">
+            <div className="relative flex min-h-[calc(70vh)] w-full flex-col items-center justify-center">
               <div className="absolute left-1/2 top-24 z-40 -translate-x-1/2 -translate-y-1/2 transform">
                 <Tip className="animate-showup text-sm text-neutral-6 transition-shadow">
-                  🎉 Production version v2.16
+                  🎉 v2.16
                 </Tip>
               </div>
               <div className="mt-32 flex h-full w-full flex-col items-center justify-center gap-4 sm:mt-0">
@@ -36,8 +35,9 @@ export default function Home() {
                       src="./assets/logos/logo-primary.svg"
                       alt="Expresso Logo"
                     />
-                    <h1 className="text-center text-6xl text-[clamp(48px_5vw_72px)] font-bold md:text-left">
-                      ExpressoTS
+                    <br />
+                    <h1 className="text-center text-6xl text-[clamp(48px_5vw_72px)] font-bold text-neutral-12 md:text-left">
+                      EXPRESSO<span className="text-green-500">TS</span>
                     </h1>
                     <br />
                     <p className="text-center text-xl text-neutral-10 md:text-left">
@@ -65,49 +65,55 @@ export default function Home() {
           </Container>
         </div>
       </div>
-      {/* The rest of your content remains unchanged */}
-      <div className="pattern-green-oil relative min-h-[200px] w-full bg-fixed">
+      {/* Updated section with InfoCards */}
+      <div className="relative min-h-[200px] w-full bg-gradient-to-br from-neutral-900 via-neutral-800 to-black bg-fixed">
         <div className="bg-black/90">
           <Container className="flex h-full flex-col items-center justify-center gap-5 py-10 text-center md:flex-row">
             <InfoCard
               header={
                 <>
-                  <IconApps className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <p className="font-semibold">Weakly & Strongly Opinionated</p>
+                  <IconApps className="mr-2 h-6 w-6 text-green-500" aria-hidden="true" />
+                  <p className="text-2xl font-semibold text-green-500">TEMPLATES</p>
                 </>
               }
-              content="Two project templates, Weakly opinionated frameworks offer flexibility; strongly opinionated ones dictate best practices."
+              content={
+                <>
+                  Choose flexible or opinionated templates: one offers freedom, the other enforces a
+                  structure.
+                </>
+              }
             />
             <InfoCard
               header={
                 <>
-                  <IconPackages className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <p className="font-semibold">Modular</p>
+                  <IconPackages className="mr-2 h-6 w-6 text-green-500" aria-hidden="true" />
+                  <p className="text-2xl font-semibold text-green-500">MODULAR</p>
                 </>
               }
-              content="ExpressoTS is architected as a modular framework, offering developers the flexibility to plug in only the components they need. Its design encourages lean and efficient development, avoiding the overhead of unused features."
+              content={<>Use only whats needed for lean, efficient development.</>}
             />
             <InfoCard
               header={
                 <>
-                  <IconViewfinder className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <p className="font-semibold">Best Practices</p>
+                  <IconViewfinder className="mr-2 h-6 w-6 text-green-500" aria-hidden="true" />
+                  <p className="text-2xl font-semibold text-green-500">BEST PRACTICES</p>
                 </>
               }
-              content="ExpressoTS embodies best practices through its architecture, promoting clean code, type safety, and a clear separation of concerns."
+              content={<>Promotes clean code, type safety, and clear separation of concerns.</>}
             />
             <InfoCard
               header={
                 <>
-                  <IconAB className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <p className="font-semibold">Extensible</p>
+                  <IconAB className="mr-2 h-6 w-6 text-green-500" aria-hidden="true" />
+                  <p className="text-2xl font-semibold text-green-500">EXTENSIBLE</p>
                 </>
               }
-              content="Ability to easily create adapters/providers that seamlessly integrate with the rest of the application."
+              content={<>Easily create adapters/providers that integrate seamlessly.</>}
             />
           </Container>
         </div>
       </div>
+      {/* The rest of your content remains unchanged */}
       <div className="pattern-green-oil relative min-h-[200px] w-full bg-fixed">
         <div className="bg-black/90">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">

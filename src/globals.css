@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 @layer base {
   h1,
   h2,
   h3 {
     @apply text-xl font-bold;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
   }
 
   :root {
@@ -39,5 +46,80 @@
   .pattern-green-oil {
     background-color: #171717;
     @apply bg-oil;
+  }
+
+  .pattern-background {
+    background: linear-gradient(135deg, rgba(var(--neutral-1), 0.6), rgba(var(--neutral-2), 0.6)),
+      radial-gradient(circle at top left, rgba(var(--base-7), 0.15), transparent 70%);
+    background-blend-mode: overlay, overlay;
+    background-size: cover;
+    animation: subtleBackgroundMove 20s ease infinite;
+  }
+
+  @keyframes subtleBackgroundMove {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .navbar {
+    background-color: rgba(var(--base-7), 0.8);
+    box-shadow: 0 4px 10px rgba(var(--base-7), 0.3);
+  }
+
+  .navbar a {
+    color: var(--neutral-12);
+  }
+
+  .navbar a:hover {
+    color: var(--base-5); /* bright green to stand out */
+  }
+
+  .section-transition {
+    background: linear-gradient(
+      180deg,
+      rgba(var(--neutral-1), 0.9) 0%,
+      rgba(var(--base-7), 0.85) 50%,
+      rgba(var(--neutral-1), 0.9) 100%
+    );
+  }
+
+  .info-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(var(--base-6), 0.4);
+  }
+
+  .info-card-header {
+    color: var(--base-5);
+    transition: color 0.3s ease;
+  }
+
+  .info-card:hover .info-card-header {
+    color: var(--base-6);
+  }
+
+  .info-card-content {
+    transition: color 0.3s ease;
+  }
+
+  .info-card:hover .info-card-content {
+    color: var(--neutral-10);
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(135deg, rgba(var(--neutral-1), 0.8), rgba(var(--base-7), 0.4));
+    backdrop-filter: blur(10px);
   }
 }
