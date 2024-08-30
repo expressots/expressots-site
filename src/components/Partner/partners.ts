@@ -22,6 +22,11 @@ export const PARTNERS: TPartner[] = [
     site: 'https://www.loopygo.app/',
   },
   {
+    image: '/assets/logos/definya-logo-v1.png',
+    name: 'Definya',
+    site: 'https://play.definya.com/',
+  },
+  {
     image: '/assets/logos/jopneus.png',
     name: 'Jopneus',
     site: 'https://www.jopneus.com.br/',
