@@ -51,4 +51,9 @@ export const PARTNERS: TPartner[] = [
     name: 'HeartDevs',
     site: 'https://heartdevs.com/',
   },
+  {
+    image: '/assets/logos/early.png',
+    name: 'Early AI',
+    site: 'https://www.startearly.ai/',
+  },
 ]
