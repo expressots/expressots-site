@@ -10,7 +10,7 @@ const Partners = ({ partners = PARTNERS }: TPartnersProps) => {
   if (!partners) return null
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-10">
+    <div className="grid grid-cols-7 place-items-center justify-center gap-10">
       {partners.map((partner) => (
         <Tooltips key={partner.name} message={partner.name}>
           <Link
