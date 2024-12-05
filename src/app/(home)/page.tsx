@@ -22,7 +22,7 @@ export default function Home() {
             <div className="relative flex min-h-[calc(70vh)] w-full flex-col items-center justify-center">
               <div className="absolute left-1/2 top-24 z-40 -translate-x-1/2 -translate-y-1/2 transform">
                 <Tip className="animate-showup text-sm text-neutral-6 transition-shadow">
-                  🎉 v2.16
+                  🎉 v3.0
                 </Tip>
               </div>
               <div className="mt-32 flex h-full w-full flex-col items-center justify-center gap-4 sm:mt-0">
@@ -49,7 +49,10 @@ export default function Home() {
                     </p>
                     <div className="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start">
                       <LinkButton href="https://doc.expresso-ts.com/">Get Started</LinkButton>
-                      <CopyInstalation code="npm i -g @expressots/cli" />
+                      <LinkButton href="https://opencollective.com/expressots">
+                        Become a Sponsor ❤️
+                      </LinkButton>
+                      {/* <CopyInstalation code="npm i -g @expressots/cli" /> */}
                     </div>
                   </div>
                   {/* Right side video */}
@@ -118,14 +121,8 @@ export default function Home() {
         <div className="bg-black/90">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
             <h2 className="m-0 p-0 text-4xl text-base-5">PARTNERS</h2>
-            <p className="m-0 p-0 font-normal">
-              Are you using ExpressoTS? Share your use case with us—
-              <a
-                href="mailto:richard.zampieri@expresso-ts.com"
-                className="text-base-5 underline hover:text-base-6"
-              >
-                we’d love to hear about it!
-              </a>
+            <p className="text- m-0 p-0 text-lg font-normal text-neutral-12">
+              Our Current Partners
             </p>
             <div className="py-10">
               <Partners />
@@ -146,7 +143,7 @@ export default function Home() {
           </Container>
         </div>
       </div>
-      <div className="pattern-green-oil relative hidden min-h-[200px] w-full border-t border-neutral-2 bg-fixed shadow-[0px_-10px_50px] shadow-base-12/80 md:flex">
+      {/* <div className="pattern-green-oil relative hidden min-h-[200px] w-full border-t border-neutral-2 bg-fixed shadow-[0px_-10px_50px] shadow-base-12/80 md:flex">
         <div className="w-full bg-neutral-950/80">
           <Container className="flex h-full flex-col items-center gap-5 py-10 text-center">
             <h2 className="m-0 p-0 text-4xl text-base-4">SUPPORT US ❤️</h2>
@@ -161,7 +158,7 @@ export default function Home() {
             </div>
           </Container>
         </div>
-      </div>
+      </div> */}
     </main>
   )
 }
