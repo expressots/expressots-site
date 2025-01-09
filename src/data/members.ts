@@ -50,7 +50,7 @@ const team: Member[] = [
     position: 'Product Manager',
     resume: 'I am a creator, and I am passionate about translating ideas into actionable insights.',
     photo:
-      'https://media.licdn.com/dms/image/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_200_200/0/1517520966833?e=1717632000&v=beta&t=DrB25zU1i-6fziW03QqqC_E_RKDbeLx1jSBMK_2mfNU',
+      'https://media.licdn.com/dms/image/v2/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517520965765?e=1741824000&v=beta&t=p7UbO-5f7NcwMzDpIXQ-Hbg2Pznm4RYmVXHl7dtJWqw',
     socials: [
       {
         name: 'linkedin',
@@ -85,7 +85,8 @@ const alumni: Member[] = [
     position: 'Core developer',
     resume:
       "Sorcerer Boll, code mystique, In Rust, C++, Typescript's streak. Open source magic he'll deploy, Coding realms, he'll skillfully toy.",
-    photo: 'https://avatars.githubusercontent.com/u/43689101?v=4',
+    photo:
+      'https://media.licdn.com/dms/image/v2/C4D03AQGtxkyN6YLr_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1619953388438?e=1741824000&v=beta&t=xa4CNk8hkPxCYKo7ooMdyk9OFE67ldAqMHVUjF9Fprg',
     socials: [
       {
         name: 'github',
