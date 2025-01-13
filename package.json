@@ -19,7 +19,7 @@
     "@radix-ui/react-navigation-menu": "1.2.1",
     "@radix-ui/react-tooltip": "1.1.2",
     "@stackblitz/sdk": "1.11.0",
-    "@tabler/icons-react": "3.14.0",
+    "@tabler/icons-react": "3.26.0",
     "@types/node": "22.10.1",
     "@types/react": "18.3.13",
     "@types/react-dom": "18.3.1",
