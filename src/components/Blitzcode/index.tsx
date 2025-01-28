@@ -10,6 +10,7 @@ const BlitzCode = () => {
   useEffect(() => {
     if (Number(width) >= 769 && !loadedSdk) {
       sdk.embedProjectId('expressots-example-code', 'expressots', {
+        clickToLoad: true,
         forceEmbedLayout: true,
         openFile: 'src/main.ts',
         hideExplorer: false,
