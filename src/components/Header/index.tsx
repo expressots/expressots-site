@@ -8,6 +8,7 @@ import {
   IconBrandLinkedin,
   IconBriefcase,
   IconUsersGroup,
+  IconArticle,
 } from '@tabler/icons-react'
 import { NavMobile } from './nav-mobile'
 import { clsxm } from '@/utils/clsxm'
@@ -46,9 +47,13 @@ export const Header = () => {
               <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
               CONTRIBUTORS
             </MenuLi>
-            <MenuLi href="/store">
+            <MenuLi href="https://store.expresso-ts.com">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
               APP STORE
+            </MenuLi>
+            <MenuLi href="/blog">
+              <IconArticle className="mr-2 h-5 w-5" aria-hidden="true" />
+              BLOG
             </MenuLi>
           </ul>
           <ul className="ml-4 flex items-center justify-end gap-2">

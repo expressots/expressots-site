@@ -122,4 +122,18 @@
     background: linear-gradient(135deg, rgba(var(--neutral-1), 0.8), rgba(var(--base-7), 0.4));
     backdrop-filter: blur(10px);
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus, 
+  select:-webkit-autofill {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+    -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
