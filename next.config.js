@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 
+const exp = require('constants')
 const { PHASE_PRODUCTION_BUILD } = require('next/dist/shared/lib/constants')
 
 const nextConfig = (phase) => {
