@@ -1,36 +1,39 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
+import { Disclosure } from '@headlessui/react'
 import { IconChevronDown, IconMessageCircleQuestion } from '@tabler/icons-react'
 import Container from '../../components/Container'
 import { faqs } from '@/data/faqs'
+import ReactMarkdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 
-const renderAnswerWithLinks = (answer: string) => {
-  return answer.split(/(https?:\/\/[^\s]+)/g).map((part, index) => {
-    if (part.match(/https?:\/\/[^\s]+/)) {
-      return (
-        <a
-          key={index}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-green-400 underline hover:text-green-300"
-        >
-          {part}
-        </a>
-      )
-    }
-    return part
-  })
+const renderAnswerWithLinks = (content: any) => {
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeHighlight, rehypeRaw]}
+      components={{
+        h1: ({ children }) => (
+          <h1 className="border-b-2 border-green-500 pb-2 text-4xl font-bold text-green-400">
+            {children}
+          </h1>
+        ),
+        h2: ({ children }) => (
+          <h2 className="mt-6 text-3xl font-semibold text-green-300">{children}</h2>
+        ),
+        p: ({ children }) => <p className="mt-3 text-lg text-neutral-300">{children}</p>,
+        a: ({ children }) => <a className="text-green-400 hover:underline">{children}</a>,
+      }}
+    >
+      {content}
+    </ReactMarkdown>
+  )
 }
 
 const FAQs = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
     <section className="min-h-screen bg-neutral-950/90 py-12">
       <Container>
@@ -48,31 +51,25 @@ const FAQs = () => {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="overflow-hidden rounded-lg bg-neutral-800 shadow-md transition-all duration-300"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="group flex w-full items-center justify-between p-5 text-left focus:outline-none"
-                >
-                  <span className="text-lg font-medium text-white transition-colors group-hover:text-green-400">
-                    {faq.question}
-                  </span>
-                  <IconChevronDown
-                    className={`h-5 w-5 text-green-400 transition-transform duration-300 ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-48' : 'max-h-0'
-                  }`}
-                >
-                  <p className="p-5 pt-0 text-neutral-300">{renderAnswerWithLinks(faq.answer)}</p>
-                </div>
-              </div>
+              <Disclosure key={index}>
+                {({ open }) => (
+                  <div className="overflow-hidden rounded-lg bg-neutral-800 shadow-md transition-all duration-300">
+                    <Disclosure.Button className="group flex w-full items-center justify-between p-5 text-left focus:outline-none">
+                      <span className="text-lg font-medium text-white transition-colors group-hover:text-green-400">
+                        {faq.question}
+                      </span>
+                      <IconChevronDown
+                        className={`h-5 w-5 text-green-400 transition-transform duration-300 ${
+                          open ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="p-5 pt-0">
+                      {renderAnswerWithLinks(faq.answer)}
+                    </Disclosure.Panel>
+                  </div>
+                )}
+              </Disclosure>
             ))}
           </div>
 
