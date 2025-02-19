@@ -33,7 +33,7 @@ export const Header = () => {
           <Image
             width={50}
             height={50}
-            src="./assets/logos/logo-circular-dark.svg"
+            src="/assets/logos/logo-circular-dark.svg"
             alt="logo-circular-dark"
           />
         </Link>

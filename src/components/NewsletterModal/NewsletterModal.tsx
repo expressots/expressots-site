@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { IconSend, IconMail, IconSquareX } from '@tabler/icons-react'
 
 interface NewsletterModalProps {
@@ -10,6 +11,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     if (isOpen) {
@@ -19,15 +21,29 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
     }
   }, [isOpen])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => {
-      onClose()
-      setIsSubmitted(false)
-      setName('')
-      setEmail('')
-    }, 2000)
+    setError('')
+    try {
+      const response = await axios.post('https://api.expresso-ts.com/newsletter/subscribe', {
+        name,
+        email,
+      })
+
+      if (!response.data.success) {
+        throw new Error('Error submitting the subscription.')
+      }
+
+      setIsSubmitted(true)
+      setTimeout(() => {
+        onClose()
+        setIsSubmitted(false)
+        setName('')
+        setEmail('')
+      }, 2000)
+    } catch (err) {
+      setError('Failed to submit the subscription. Please try again later.')
+    }
   }
 
   if (!isOpen) return null
@@ -49,7 +65,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
 
           <h2 className="mb-2 text-2xl font-bold text-white">Stay Updated!</h2>
           <p className="mb-6 text-gray-400">
-            Subscribe to our newsletter to receive the latest updates and news.
+            Subscribe to our newsletter to receive the latest news and updates.
           </p>
         </div>
 
@@ -75,6 +91,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
                 className="w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-500"
               />
             </div>
+            {error && <p className="text-red-500">{error}</p>}
             <button
               type="submit"
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 py-3 font-medium text-white transition-colors hover:bg-green-500"
@@ -86,7 +103,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
         ) : (
           <div className="py-4 text-center text-green-400">
             <p className="font-medium">Thank you for subscribing, {name}! 🎉</p>
-            <p className="text-sm text-gray-400">Youll receive our updates soon.</p>
+            <p className="text-sm text-gray-400">You&apos;ll receive our updates soon.</p>
           </div>
         )}
       </div>
