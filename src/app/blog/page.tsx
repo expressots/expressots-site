@@ -26,8 +26,7 @@ export default function Blog() {
                   <Image
                     src={post.image}
                     alt={post.title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
                     className="transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
