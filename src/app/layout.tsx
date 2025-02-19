@@ -49,6 +49,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <link rel="icon" href="./favicon.ico" sizes="any" />
+        <script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=_turnstileCb"
+          defer
+        ></script>
       </head>
       <body className={fontFamily.className}>
         {/* Renderiza o NewsletterProvider sem quebrar o layout */}

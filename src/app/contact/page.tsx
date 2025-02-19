@@ -1,9 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Container from '../../components/Container'
+import { Turnstile } from 'next-turnstile'
+import axios from 'axios'
 
 const ContactUs = () => {
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    'success' | 'error' | 'expired' | 'required'
+  >('required')
+  const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,20 +26,44 @@ const ContactUs = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setError(null)
+    setIsLoading(true)
 
-    setSuccessMessage(true)
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      message: '',
-    })
+    if (!formRef.current) {
+      setIsLoading(false)
+      return
+    }
 
-    setTimeout(() => {
-      setSuccessMessage(false)
-    }, 3000)
+    if (turnstileStatus !== 'success') {
+      setError('Please verify you are not a robot')
+      setIsLoading(false)
+      return
+    }
+
+    try {
+      const response = await axios.post('https://api.expresso-ts.com/contact', formData)
+
+      if (!response.data.ok) {
+        throw new Error('Failed to send email')
+      }
+
+      setSuccessMessage(true)
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: '',
+      })
+      setTimeout(() => {
+        setSuccessMessage(false)
+      }, 3000)
+    } catch (err) {
+      setError('An error occurred. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -42,15 +75,19 @@ const ContactUs = () => {
             Fill out the form below and we’ll get back to you as soon as possible.
           </p>
 
-          {/* Mensagem de sucesso */}
           {successMessage && (
             <div className="mb-4 mt-4 rounded-lg bg-green-600 px-4 py-3 text-center text-white">
               ✅ Your message has been sent successfully!
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-            {/* First & Last Name */}
+          {error && (
+            <div className="mb-4 rounded-lg bg-red-600 px-4 py-3 text-center text-white">
+              ❌ {error}
+            </div>
+          )}
+
+          <form ref={formRef} onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div>
                 <label className="block text-sm font-medium text-neutral-400">First name *</label>
@@ -60,7 +97,7 @@ const ContactUs = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white autofill:bg-neutral-800 autofill:text-white focus:ring-2 focus:ring-green-500"
+                  className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white focus:ring-2 focus:ring-green-500"
                 />
               </div>
               <div>
@@ -71,12 +108,11 @@ const ContactUs = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white placeholder-gray-400 autofill:bg-neutral-800 autofill:text-white focus:ring-2 focus:ring-green-500"
+                  className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white focus:ring-2 focus:ring-green-500"
                 />
               </div>
             </div>
 
-            {/* Email */}
             <div>
               <label className="block text-sm font-medium text-neutral-400">Email *</label>
               <input
@@ -85,11 +121,10 @@ const ContactUs = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white placeholder-gray-400 autofill:bg-neutral-800 autofill:text-white focus:ring-2 focus:ring-green-500"
+                className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white focus:ring-2 focus:ring-green-500"
               />
             </div>
 
-            {/* Message */}
             <div>
               <label className="block text-sm font-medium text-neutral-400">Message</label>
               <textarea
@@ -97,17 +132,28 @@ const ContactUs = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white placeholder-gray-400 autofill:bg-neutral-800 autofill:text-white focus:ring-2 focus:ring-green-500"
+                className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white focus:ring-2 focus:ring-green-500"
               ></textarea>
             </div>
 
-            {/* Submit Button */}
+            <div className="flex justify-center">
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                retry="auto"
+                refreshExpired="auto"
+                onError={() => setTurnstileStatus('error')}
+                onExpire={() => setTurnstileStatus('expired')}
+                onVerify={() => setTurnstileStatus('success')}
+              />
+            </div>
+
             <div className="text-center">
               <button
                 type="submit"
                 className="w-full rounded-lg bg-green-600 px-6 py-3 font-medium text-white transition-all hover:bg-green-500"
+                disabled={isLoading}
               >
-                Submit
+                {isLoading ? 'Submitting...' : 'Submit'}
               </button>
             </div>
           </form>
