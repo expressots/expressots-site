@@ -19,7 +19,7 @@ const BlitzCode = () => {
       })
       setLoadedSdk(true)
     }
-  }, [width])
+  }, [width, loadedSdk])
 
   return <div id="expressots-example-code"></div>
 }

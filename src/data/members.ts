@@ -45,6 +45,24 @@ const team: Member[] = [
     ],
   },
   {
+    // Tatiana
+    name: 'Tatiana Barros',
+    position: 'Tech Evangelist',
+    resume:
+      '🚀 Programming Ambassador | Tech Media Ninja Columnist | I talk about Technology and Innovation, Design and Creativity, Community Building, and Technical Documentation.',
+    photo: 'https://avatars.githubusercontent.com/u/172347696?v=4',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/tatyquebralayout',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/umataldetatiana/',
+      },
+    ],
+  },
+  {
     // Pedro
     name: 'Pedro Vargas',
     position: 'Product Manager',

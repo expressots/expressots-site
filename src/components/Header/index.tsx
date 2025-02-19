@@ -41,13 +41,13 @@ export const Header = () => {
           <ul className="flex items-center justify-end gap-5">
             <MenuLi href="https://doc.expresso-ts.com">
               <IconBook className="mr-2 h-5 w-5" aria-hidden="true" />
-              DOCUMENTATION
+              DOC
             </MenuLi>
             <MenuLi href="/team">
               <IconUsersGroup className="mr-2 h-5 w-5" aria-hidden="true" />
               CONTRIBUTORS
             </MenuLi>
-            <MenuLi href="https://store.expresso-ts.com">
+            <MenuLi href="https://store.expresso-ts.com" aria-hidden="true">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
               APP STORE
             </MenuLi>

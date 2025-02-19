@@ -4,7 +4,7 @@
   "homepage": "https://www.expresso-ts.com",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "NODE_ENV=production next build",
     "build:v2": "next build",
     "export": "next export",
@@ -19,17 +19,17 @@
     "@radix-ui/react-navigation-menu": "1.2.1",
     "@radix-ui/react-tooltip": "1.1.2",
     "@stackblitz/sdk": "1.11.0",
-    "@tabler/icons-react": "3.14.0",
+    "@tabler/icons-react": "3.30.0",
     "@types/node": "22.10.1",
-    "@types/react": "18.3.13",
-    "@types/react-dom": "18.3.1",
-    "@typescript-eslint/eslint-plugin": "8.17.0",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@typescript-eslint/eslint-plugin": "8.24.1",
     "@uidotdev/usehooks": "2.4.0",
     "autoprefixer": "10.4.20",
     "axios": "^1.7.9",
     "clsx": "2.1.1",
     "eslint": "8.57.0",
-    "eslint-config-next": "^13.5.6",
+    "eslint-config-next": "15.1.7",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "6.9.0",
@@ -39,12 +39,12 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "4.6.2",
     "gray-matter": "^4.0.3",
-    "next": "^14.2.10",
+    "next": "15.1.7",
     "next-turnstile": "^1.0.2",
     "postcss": "8.4.41",
-    "prettier": "3.3.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "prettier": "^3.5.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-markdown": "^9.0.3",
     "rehype-highlight": "^7.0.2",
     "rehype-raw": "^7.0.0",
@@ -57,5 +57,9 @@
   "devDependencies": {
     "eslint-config-prettier": "9.1.0",
     "prettier-plugin-tailwindcss": "0.6.6"
+  },
+  "overrides": {
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
   }
 }
