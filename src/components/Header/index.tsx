@@ -49,7 +49,11 @@ export const Header = () => {
             </MenuLi>
             <MenuLi href="https://store.expresso-ts.com">
               <IconBriefcase className="mr-2 h-5 w-5" aria-hidden="true" />
-              STORE
+              APP STORE
+            </MenuLi>
+            <MenuLi href="/blog">
+              <IconArticle className="mr-2 h-5 w-5" aria-hidden="true" />
+              BLOG
             </MenuLi>
             <MenuLi href="/blog">
               <IconArticle className="mr-2 h-5 w-5" aria-hidden="true" />
