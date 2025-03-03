@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "4.6.2",
     "next": "15.1.7",
     "postcss": "8.4.41",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "scrollen": "^0.0.2",
