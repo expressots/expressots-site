@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { IconSend, IconMail, IconSquareX } from '@tabler/icons-react'
+import { IconSend, IconMail, IconSquareX, IconLoader2 } from '@tabler/icons-react'
 
 interface NewsletterModalProps {
   isOpen: boolean
@@ -12,37 +14,43 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [showTooltip, setShowTooltip] = useState(false)
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'auto'
+      setName('')
+      setEmail('')
+      setIsSubmitted(false)
+      setError('')
+      setShowTooltip(false)
     }
   }, [isOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+    setIsLoading(true)
+    setShowTooltip(false)
+
     try {
-      const response = await axios.post('https://api.expresso-ts.com/newsletter/subscribe', {
-        name,
-        email,
-      })
+      const apiUrl = process.env.NEXT_PUBLIC_URL_SUBSCRIBE_NEWSLETTER as string;
+      const response = await axios.post(apiUrl, { name, email });
 
       if (!response.data.success) {
-        throw new Error('Error submitting the subscription.')
+        setError(response.data.message)
+        setShowTooltip(true)
+      } else {
+        setIsSubmitted(true)
       }
-
-      setIsSubmitted(true)
-      setTimeout(() => {
-        onClose()
-        setIsSubmitted(false)
-        setName('')
-        setEmail('')
-      }, 2000)
     } catch (err) {
       setError('Failed to submit the subscription. Please try again later.')
+      setShowTooltip(true)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -91,14 +99,25 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
                 className="w-full rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-3 text-white outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-500"
               />
             </div>
-            {error && <p className="text-red-500">{error}</p>}
-            <button
-              type="submit"
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 py-3 font-medium text-white transition-colors hover:bg-green-500"
-            >
-              <IconSend size={20} />
-              Subscribe
-            </button>
+
+            <div className="relative">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 font-medium text-white transition-colors 
+                  ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-600 hover:bg-green-500'}`}
+              >
+                {isLoading ? <IconLoader2 className="h-5 w-5 animate-spin" /> : <IconSend size={20} />}
+                {isLoading ? 'Processing...' : 'Subscribe'}
+              </button>
+
+              {/* Tooltip de erro */}
+              {showTooltip && (
+                <div className="fixed top-4 left-1/2 -translate-x-1/2 w-max rounded-lg bg-red-600 px-4 py-2 text-sm text-white shadow-lg">
+                  {error}
+                </div>    
+              )}
+            </div>
           </form>
         ) : (
           <div className="py-4 text-center text-green-400">

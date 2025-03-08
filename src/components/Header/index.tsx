@@ -55,14 +55,6 @@ export const Header = () => {
               <IconArticle className="mr-2 h-5 w-5" aria-hidden="true" />
               BLOG
             </MenuLi>
-            <MenuLi href="/blog">
-              <IconArticle className="mr-2 h-5 w-5" aria-hidden="true" />
-              BLOG
-            </MenuLi>
-            <MenuLi href="/blog">
-              <IconArticle className="mr-2 h-5 w-5" aria-hidden="true" />
-              BLOG
-            </MenuLi>
           </ul>
           <ul className="ml-4 flex items-center justify-end gap-2">
             <MenuLi href="https://github.com/expressots/expressots">
