@@ -37,8 +37,8 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
     setShowTooltip(false)
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_URL_SUBSCRIBE_NEWSLETTER as string;
-      const response = await axios.post(apiUrl, { name, email });
+      const apiUrl = process.env.NEXT_PUBLIC_URL_SUBSCRIBE_NEWSLETTER as string
+      const response = await axios.post(apiUrl, { name, email })
 
       if (!response.data.success) {
         setError(response.data.message)
@@ -72,9 +72,11 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
           </div>
 
           <h2 className="mb-2 text-2xl font-bold text-white">Stay Updated!</h2>
-          <p className="mb-6 text-gray-400">
-            Subscribe to our newsletter to receive the latest news and updates.
-          </p>
+          {!isSubmitted && (
+            <p className="mb-6 text-gray-400">
+              Subscribe to our newsletter to receive the latest news and updates.
+            </p>
+          )}
         </div>
 
         {!isSubmitted ? (
@@ -104,18 +106,21 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 font-medium text-white transition-colors 
-                  ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-600 hover:bg-green-500'}`}
+                className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 font-medium text-white transition-colors ${isLoading ? 'cursor-not-allowed bg-gray-500' : 'bg-green-600 hover:bg-green-500'}`}
               >
-                {isLoading ? <IconLoader2 className="h-5 w-5 animate-spin" /> : <IconSend size={20} />}
+                {isLoading ? (
+                  <IconLoader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <IconSend size={20} />
+                )}
                 {isLoading ? 'Processing...' : 'Subscribe'}
               </button>
 
               {/* Tooltip de erro */}
               {showTooltip && (
-                <div className="fixed top-4 left-1/2 -translate-x-1/2 w-max rounded-lg bg-red-600 px-4 py-2 text-sm text-white shadow-lg">
+                <div className="fixed left-1/2 top-4 w-max -translate-x-1/2 rounded-lg bg-red-600 px-4 py-2 text-sm text-white shadow-lg">
                   {error}
-                </div>    
+                </div>
               )}
             </div>
           </form>
