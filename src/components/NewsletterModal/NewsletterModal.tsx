@@ -30,6 +30,18 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
     }
   }, [isOpen])
 
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+    if (showTooltip) {
+      timeoutId = setTimeout(() => {
+        setShowTooltip(false)
+      }, 5000) // Hide after 5 seconds
+    }
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId)
+    }
+  }, [showTooltip])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
@@ -45,6 +57,10 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
         setShowTooltip(true)
       } else {
         setIsSubmitted(true)
+        // Close modal after 2 seconds on success
+        setTimeout(() => {
+          onClose()
+        }, 2000)
       }
     } catch (err) {
       setError('Failed to submit the subscription. Please try again later.')
@@ -116,9 +132,8 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
                 {isLoading ? 'Processing...' : 'Subscribe'}
               </button>
 
-              {/* Tooltip de erro */}
               {showTooltip && (
-                <div className="fixed left-1/2 top-4 w-max -translate-x-1/2 rounded-lg bg-red-600 px-4 py-2 text-sm text-white shadow-lg">
+                <div className="fixed left-1/2 top-4 w-max -translate-x-1/2 rounded-lg bg-red-600 px-4 py-2 text-sm text-white shadow-lg transition-opacity duration-300">
                   {error}
                 </div>
               )}
