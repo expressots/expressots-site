@@ -20,7 +20,7 @@
     "@radix-ui/react-tooltip": "1.1.2",
     "@stackblitz/sdk": "1.11.0",
     "@tabler/icons-react": "3.30.0",
-    "@types/node": "22.10.1",
+    "@types/node": "22.13.11",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@typescript-eslint/eslint-plugin": "8.24.1",
