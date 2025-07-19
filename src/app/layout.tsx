@@ -6,19 +6,20 @@ import { Footer, Header } from '@/components'
 
 const fontFamily = Inter({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
 export const viewPort: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#161616',
+  themeColor: '#17aa56',
 }
 
 export const metadata: Metadata = {
-  title: 'ExpressoTS - Node.js Framework',
-  description: 'A lightweight, fast and easy to use TypeScript Node.js framework',
+  title: 'ExpressoTS - Modern Node.js Framework',
+  description:
+    'A modern, developer-friendly TypeScript Node.js framework for building scalable server-side applications',
   category: 'technology',
   icons: {
     icon: '/icons/windows11/Square150x150Logo.scale-100.png',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: 'https://expresso-ts.com',
-    title: 'ExpressoTS - Node.js Framework',
+    title: 'ExpressoTS - Modern Node.js Framework',
     description: 'The Developer-Friendly TypeScript Framework for Server-Side Applications',
     images: [
       {
@@ -50,10 +51,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body className={fontFamily.className}>
-        <div className="mx-auto min-h-screen w-full bg-neutral-950/90 text-neutral-100 antialiased selection:bg-base-6 selection:text-neutral-1">
-          <div className="pointer-events-none absolute z-0 h-screen w-full bg-repeat opacity-10" />
+        <div className="mx-auto min-h-screen w-full bg-neutral-1 text-neutral-12 antialiased selection:bg-base-6/20 selection:text-base-5">
+          <div className="pattern-hexagon-premium pointer-events-none absolute z-0 h-screen w-full opacity-20" />
           <Header />
-          <div className="bg-black/80 backdrop-blur-sm">{children}</div>
+          <main className="relative z-10">{children}</main>
           <Footer />
         </div>
       </body>

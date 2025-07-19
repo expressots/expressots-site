@@ -13,7 +13,7 @@ const Tip = forwardRef<HTMLDivElement, TTipProps>(
     return (
       <div
         className={clsxm(
-          'flex min-h-[30px] w-max items-center justify-between gap-3 overflow-hidden rounded-full border border-neutral-2 bg-neutral-1/60 px-2 shadow-md backdrop-blur-sm',
+          'flex min-h-[32px] w-max items-center justify-between gap-3 overflow-hidden rounded-full border border-base-6/20 bg-base-6/10 px-3 py-1 shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-base-6/30 hover:bg-base-6/15',
           className,
         )}
         ref={ref}
@@ -23,7 +23,7 @@ const Tip = forwardRef<HTMLDivElement, TTipProps>(
         <button
           name="close-tip"
           onClick={() => setIsVisible(false)}
-          className="flex h-4 w-4 items-center justify-center overflow-hidden rounded-full border border-transparent transition-colors hover:border-red-500 hover:bg-red-950 hover:text-red-500"
+          className="flex h-5 w-5 items-center justify-center overflow-hidden rounded-full border border-transparent transition-all duration-300 hover:border-red-400/50 hover:bg-red-500/10 hover:text-red-400"
         >
           <IconX className="h-3 w-3" />
         </button>
