@@ -1,9 +1,10 @@
 'use client'
 
 import { alumni, team } from '@/data/members'
-import { Container, Member } from '@/components'
+import { Container } from '@/components'
 import { Member as MemberType } from '@/components/Member/type'
 import { IconUsers, IconHeart, IconStar } from '@tabler/icons-react'
+import Image from 'next/image'
 
 export default function Team() {
   return (
@@ -14,12 +15,12 @@ export default function Team() {
 
         <Container className="relative z-10">
           <div className="text-center">
-            <div className="animate-fadeInScale mb-8">
+            <div className="mb-8 animate-fadeInScale">
               <h1 className="mb-4 text-5xl font-bold leading-tight text-neutral-12 lg:text-6xl">
                 Meet Our <span className="text-gradient-premium">Team</span>
               </h1>
             </div>
-            <div className="animate-slideInUp mx-auto max-w-3xl">
+            <div className="mx-auto max-w-3xl animate-slideInUp">
               <p className="text-xl leading-relaxed text-neutral-8 lg:text-2xl">
                 The passionate developers and contributors building the future of TypeScript
                 frameworks.
@@ -54,14 +55,16 @@ export default function Team() {
             {team.map((member: MemberType, index: number) => (
               <div
                 key={member.name}
-                className="animate-slideInUp glass-card-premium group overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105"
+                className="glass-card-premium group animate-slideInUp overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="mb-4 flex justify-center">
                   <div className="relative overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src={member.photo}
                       alt={member.name}
+                      width={96}
+                      height={96}
                       className="h-24 w-24 object-cover transition-transform duration-300 group-hover:scale-110"
                       onError={(e) => {
                         e.currentTarget.src = './assets/logos/logo-primary.svg'
@@ -85,9 +88,11 @@ export default function Team() {
                         rel="noopener noreferrer"
                         className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:scale-110 hover:bg-base-6/20"
                       >
-                        <img
+                        <Image
                           src={`./assets/icons/socials/${social.name}.svg`}
                           alt={social.name}
+                          width={16}
+                          height={16}
                           className="h-4 w-4"
                         />
                       </a>
@@ -124,14 +129,16 @@ export default function Team() {
             {alumni.map((member: MemberType, index: number) => (
               <div
                 key={member.name}
-                className="animate-slideInUp glass-card-premium group overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105"
+                className="glass-card-premium group animate-slideInUp overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="mb-4 flex justify-center">
                   <div className="relative overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src={member.photo}
                       alt={member.name}
+                      width={96}
+                      height={96}
                       className="h-24 w-24 object-cover transition-transform duration-300 group-hover:scale-110"
                       onError={(e) => {
                         e.currentTarget.src = './assets/logos/logo-primary.svg'
@@ -155,9 +162,11 @@ export default function Team() {
                         rel="noopener noreferrer"
                         className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:scale-110 hover:bg-base-6/20"
                       >
-                        <img
+                        <Image
                           src={`./assets/icons/socials/${social.name}.svg`}
                           alt={social.name}
+                          width={16}
+                          height={16}
                           className="h-4 w-4"
                         />
                       </a>

@@ -1,14 +1,6 @@
 'use client'
 
-import {
-  Tip,
-  LinkButton,
-  CopyInstalation,
-  InfoCard,
-  Partners,
-  BlitzCode,
-  Container,
-} from '@/components'
+import { LinkButton, InfoCard, Container } from '@/components'
 import {
   IconRocket,
   IconArrowRight,
@@ -25,7 +17,6 @@ import {
   IconX,
   IconBrandStackoverflow,
 } from '@tabler/icons-react'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import sdk from '@stackblitz/sdk'
 
@@ -41,7 +32,6 @@ const AnimatedCounter = ({ target, suffix = '', duration = 2000 }: AnimatedCount
 
   useEffect(() => {
     const startTime = Date.now()
-    const endTime = startTime + duration
 
     const updateCount = () => {
       const now = Date.now()
