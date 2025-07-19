@@ -1,26 +1,28 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
+import { clsxm } from '@/utils/clsxm'
 
 type Props = {
   children: ReactNode
   href: string
+  className?: string
 }
 
-export const LinkButton = ({ children, href }: Props) => {
+export const LinkButton = ({ children, href, className }: Props) => {
   return (
-    <button className="group relative flex items-center justify-center overflow-hidden rounded-md border border-base-5 bg-base-7 duration-300 ease-out hover:scale-105 active:scale-95">
-      <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-green-700 via-green-600 to-green-500 transition-all duration-500 ease-out group-hover:rotate-180"></div>
-      <div className="absolute inset-0 h-full w-full bg-black opacity-20 mix-blend-multiply transition-all duration-500 ease-out group-hover:opacity-30"></div>
-      <Link
-        target="_blank"
-        href={href}
-        draggable={false}
-        className="relative z-10 flex h-14 select-none items-center justify-center px-6 py-3 text-lg font-bold text-white duration-300 ease-out group-hover:text-neutral-12"
-      >
-        <span className="transform transition-transform duration-300 group-hover:tracking-wider">
-          {children}
-        </span>
-      </Link>
-    </button>
+    <Link
+      target="_blank"
+      href={href}
+      draggable={false}
+      className={clsxm(
+        'group relative inline-flex items-center justify-center overflow-hidden rounded-xl border border-base-6/30 bg-base-7/10 px-6 py-3 text-lg font-semibold text-neutral-12 transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95',
+        className,
+      )}
+    >
+      <span className="relative z-10 transform transition-all duration-300 group-hover:tracking-wider">
+        {children}
+      </span>
+      <div className="absolute inset-0 bg-gradient-to-r from-base-6/20 to-base-5/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    </Link>
   )
 }

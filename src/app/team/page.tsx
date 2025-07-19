@@ -1,129 +1,215 @@
+'use client'
+
 import { alumni, team } from '@/data/members'
 import { Container, Member } from '@/components'
 import { Member as MemberType } from '@/components/Member/type'
+import { IconUsers, IconHeart, IconStar } from '@tabler/icons-react'
 
 export default function Team() {
   return (
-    <Container>
-      <div className="mx-auto min-h-[calc(85vh)] px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
-        <div className="my-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-3xl">
-          <div>
-            <h2 className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px font-semibold uppercase tracking-wider">
-              ExpressoTS Team
-            </h2>
+    <main className="relative min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-1 via-neutral-2/30 to-neutral-1" />
+
+        <Container className="relative z-10">
+          <div className="text-center">
+            <div className="animate-fadeInScale mb-8">
+              <h1 className="mb-4 text-5xl font-bold leading-tight text-neutral-12 lg:text-6xl">
+                Meet Our <span className="text-gradient-premium">Team</span>
+              </h1>
+            </div>
+            <div className="animate-slideInUp mx-auto max-w-3xl">
+              <p className="text-xl leading-relaxed text-neutral-8 lg:text-2xl">
+                The passionate developers and contributors building the future of TypeScript
+                frameworks.
+              </p>
+            </div>
           </div>
-          <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-            <span className="relative inline-block text-base-3">
-              <svg
-                viewBox="0 0 52 24"
-                fill="currentColor"
-                className="text-blue-gray-100 absolute left-0 top-0 z-0 -ml-20 -mt-8 hidden w-32 sm:block lg:-ml-28 lg:-mt-10 lg:w-32"
-              >
-                <defs>
-                  <pattern
-                    id="1d4040f3-9f3e-4ac7-b117-7d4009658ced"
-                    x="0"
-                    y="0"
-                    width=".135"
-                    height=".30"
-                  >
-                    <circle cx="1" cy="1" r=".7" />
-                  </pattern>
-                </defs>
-                <rect fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)" width="52" height="24" />
-              </svg>
-              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Core</span>
-            </span>
-            <span className="text-base-6">Team</span>
-          </h2>
-          <p className="mt-4 text-base text-base-2 md:text-lg">Current active core members.</p>
-        </div>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-6">
-          {team.map((member: MemberType) => (
-            <Member key={member.name} member={member} />
-          ))}
-        </div>
-        {/*  CLI */}
-        {/* <div className="my-20 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-3xl">
-          <div>
-            <h2 className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px font-semibold uppercase tracking-wider ">
-              Alumni Team
+        </Container>
+      </section>
+
+      {/* Core Team Section */}
+      <section className="relative py-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-1 to-neutral-2" />
+
+        <Container className="relative z-10">
+          <div className="mb-16 text-center">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-base-6/10 px-6 py-3">
+              <IconUsers className="h-6 w-6 text-base-6" />
+              <span className="text-base font-semibold uppercase tracking-wider text-base-6">
+                Core Team
+              </span>
+            </div>
+            <h2 className="mb-4 text-4xl font-bold text-neutral-12 lg:text-5xl">
+              The <span className="text-gradient-premium">Builders</span>
             </h2>
+            <p className="mx-auto max-w-2xl text-xl text-neutral-7">
+              Our dedicated core team members who drive innovation and maintain the ExpressoTS
+              ecosystem.
+            </p>
           </div>
-          <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-            <span className="relative inline-block text-base-3">
-              <svg
-                viewBox="0 0 52 24"
-                fill="currentColor"
-                className="text-blue-gray-100 absolute left-0 top-0 z-0 -ml-20 -mt-8 hidden w-32 sm:block lg:-ml-28 lg:-mt-10 lg:w-32"
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {team.map((member: MemberType, index: number) => (
+              <div
+                key={member.name}
+                className="animate-slideInUp glass-card-premium group overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <defs>
-                  <pattern
-                    id="1d4040f3-9f3e-4ac7-b117-7d4009658ced"
-                    x="0"
-                    y="0"
-                    width=".135"
-                    height=".30"
-                  >
-                    <circle cx="1" cy="1" r=".7" />
-                  </pattern>
-                </defs>
-                <rect fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)" width="52" height="24" />
-              </svg>
-              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Past</span>
-            </span>
-            <span className="text-base-6">Contributors</span>
-          </h2>
-          <p className="mt-4 text-base text-base-2 md:text-lg">
-            We also want to thank all past members for their invaluable contributions!
-          </p>
-        </div>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-6">
-          {alumni.map((member: MemberType) => (
-            <Member key={member.name} member={member} />
-          ))}
-        </div> */}
-        {/* Past Members */}
-        <div className="my-20 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-3xl">
-          <div>
-            <h2 className="bg-teal-accent-400 mb-4 inline-block rounded-full px-3 py-px font-semibold uppercase tracking-wider">
-              Alumni Team
+                <div className="mb-4 flex justify-center">
+                  <div className="relative overflow-hidden rounded-full">
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="h-24 w-24 object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.src = './assets/logos/logo-primary.svg'
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-base-6/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="mb-2 text-lg font-bold text-neutral-12">{member.name}</h3>
+                  <p className="mb-3 text-sm font-medium text-base-6">{member.position}</p>
+                  <p className="mb-4 text-xs leading-relaxed text-neutral-7">{member.resume}</p>
+
+                  <div className="flex justify-center gap-3">
+                    {member.socials.map((social: any, socialIndex: number) => (
+                      <a
+                        key={socialIndex}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:scale-110 hover:bg-base-6/20"
+                      >
+                        <img
+                          src={`./assets/icons/socials/${social.name}.svg`}
+                          alt={social.name}
+                          className="h-4 w-4"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Alumni Section */}
+      <section className="relative py-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-2 to-neutral-1" />
+
+        <Container className="relative z-10">
+          <div className="mb-16 text-center">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-base-6/10 px-6 py-3">
+              <IconHeart className="h-6 w-6 text-base-6" />
+              <span className="text-base font-semibold uppercase tracking-wider text-base-6">
+                Alumni
+              </span>
+            </div>
+            <h2 className="mb-4 text-4xl font-bold text-neutral-12 lg:text-5xl">
+              Past <span className="text-gradient-premium">Contributors</span>
             </h2>
+            <p className="mx-auto max-w-2xl text-xl text-neutral-7">
+              We honor and thank all past members for their invaluable contributions to ExpressoTS.
+            </p>
           </div>
-          <h2 className="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-            <span className="relative inline-block text-base-3">
-              <svg
-                viewBox="0 0 52 24"
-                fill="currentColor"
-                className="text-blue-gray-100 absolute left-0 top-0 z-0 -ml-20 -mt-8 hidden w-32 sm:block lg:-ml-28 lg:-mt-10 lg:w-32"
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {alumni.map((member: MemberType, index: number) => (
+              <div
+                key={member.name}
+                className="animate-slideInUp glass-card-premium group overflow-hidden rounded-xl p-6 transition-all duration-300 hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <defs>
-                  <pattern
-                    id="1d4040f3-9f3e-4ac7-b117-7d4009658ced"
-                    x="0"
-                    y="0"
-                    width=".135"
-                    height=".30"
-                  >
-                    <circle cx="1" cy="1" r=".7" />
-                  </pattern>
-                </defs>
-                <rect fill="url(#1d4040f3-9f3e-4ac7-b117-7d4009658ced)" width="52" height="24" />
-              </svg>
-              <span className="relative mr-2 bg-base-6 px-2 text-base-12">Past</span>
-            </span>
-            <span className="text-base-6">Contributors</span>
-          </h2>
-          <p className="mt-4 text-base text-base-2 md:text-lg">
-            We also want to thank all past members for their invaluable contributions!
-          </p>
-        </div>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-6">
-          {alumni.map((member: MemberType) => (
-            <Member key={member.name} member={member} />
-          ))}
-        </div>
-      </div>
-    </Container>
+                <div className="mb-4 flex justify-center">
+                  <div className="relative overflow-hidden rounded-full">
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="h-24 w-24 object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.src = './assets/logos/logo-primary.svg'
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-base-6/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="mb-2 text-lg font-bold text-neutral-12">{member.name}</h3>
+                  <p className="mb-3 text-sm font-medium text-base-6">{member.position}</p>
+                  <p className="mb-4 text-xs leading-relaxed text-neutral-7">{member.resume}</p>
+
+                  <div className="flex justify-center gap-3">
+                    {member.socials.map((social: any, socialIndex: number) => (
+                      <a
+                        key={socialIndex}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:scale-110 hover:bg-base-6/20"
+                      >
+                        <img
+                          src={`./assets/icons/socials/${social.name}.svg`}
+                          alt={social.name}
+                          className="h-4 w-4"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Community Stats Section */}
+      <section className="relative py-16">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-1 to-neutral-2" />
+
+        <Container className="relative z-10">
+          <div className="text-center">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-base-6/10 px-6 py-3">
+              <IconStar className="h-6 w-6 text-base-6" />
+              <span className="text-base font-semibold uppercase tracking-wider text-base-6">
+                Community Impact
+              </span>
+            </div>
+            <h2 className="mb-4 text-4xl font-bold text-neutral-12 lg:text-5xl">
+              Building <span className="text-gradient-premium">Together</span>
+            </h2>
+            <p className="mx-auto mb-12 max-w-2xl text-xl text-neutral-7">
+              Our community continues to grow with passionate developers from around the world.
+            </p>
+
+            <div className="flex flex-col items-center gap-12 lg:flex-row lg:justify-center lg:gap-20">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-12 lg:text-5xl">{team.length}</div>
+                <div className="mt-2 text-lg text-neutral-7">Core Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-12 lg:text-5xl">
+                  {alumni.length}
+                </div>
+                <div className="mt-2 text-lg text-neutral-7">Alumni</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-neutral-12 lg:text-5xl">
+                  {team.length + alumni.length}
+                </div>
+                <div className="mt-2 text-lg text-neutral-7">Total Contributors</div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </main>
   )
 }
