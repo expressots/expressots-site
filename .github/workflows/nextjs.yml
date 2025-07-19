@@ -57,22 +57,24 @@ jobs:
         uses: actions/configure-pages@v3
         # Removed static_site_generator to prevent auto-injection of conflicting configs
         # We manage our own Next.js configuration in next.config.js
-      - name: Restore cache
+      - name: Cache Next.js build
         uses: actions/cache@v3
         with:
           path: |
-            .next/cache
+            ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx', '!node_modules/**') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         env:
           NODE_ENV: ${{ secrets.NODE_ENV }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
       #- name: Static HTML export with Next.js
       #run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
