@@ -7,9 +7,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   transpilePackages: ['@tabler/icons-react'],
-  experimental: {
-    // Explicitly define experimental features to prevent conflicts
-  },
+
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Fix for module resolution
     config.resolve.fallback = {
