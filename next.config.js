@@ -1,17 +1,18 @@
 /** @type {import('next').NextConfig} */
 
-const exp = require('constants')
-const { PHASE_PRODUCTION_BUILD } = require('next/dist/shared/lib/constants')
-
-const nextConfig = (phase) => {
-  const isProduction = phase === PHASE_PRODUCTION_BUILD
-
-  return {
-    output: 'export',
-    // basePath: '/expressots-site',
-    images: { unoptimized: true },
-    assetPrefix: isProduction ? 'https://expresso-ts.com' : '',
-  }
+const nextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
+  trailingSlash: true,
+  transpilePackages: ['@tabler/icons-react'],
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Fix for module resolution
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+    }
+    return config
+  },
 }
 
 module.exports = nextConfig
