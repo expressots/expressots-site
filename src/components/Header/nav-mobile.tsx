@@ -14,10 +14,10 @@ import Link from 'next/link'
 
 export function NavMobile() {
   return (
-    <div className="w-56 text-right">
+    <div className="w-auto max-w-[200px] text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="group inline-flex w-full justify-center rounded-xl border border-neutral-2 bg-neutral-1/50 px-5 py-3 text-sm font-medium text-neutral-8 transition-all duration-300 hover:bg-neutral-2/50 hover:text-base-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-6 focus-visible:ring-opacity-75">
+          <Menu.Button className="group inline-flex w-full justify-center rounded-xl border border-neutral-2 bg-neutral-1/50 px-4 py-3 text-sm font-medium text-neutral-8 transition-all duration-300 hover:bg-neutral-2/50 hover:text-base-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-6 focus-visible:ring-opacity-75">
             Menu
             <IconChevronDown
               className={`-mr-1 ml-2 h-5 w-5 text-neutral-6 transition-colors duration-300 group-hover:text-base-6`}
@@ -34,7 +34,7 @@ export function NavMobile() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-neutral-2 rounded-xl border border-neutral-2 bg-neutral-1/90 shadow-2xl backdrop-blur-xl focus:outline-none">
+          <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right divide-y divide-neutral-2 rounded-xl border border-neutral-2 bg-neutral-1/90 shadow-2xl backdrop-blur-xl focus:outline-none sm:w-56">
             <div className="px-2 py-2">
               <Menu.Item>
                 {({ active }) => (

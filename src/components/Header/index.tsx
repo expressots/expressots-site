@@ -18,7 +18,7 @@ export const Header = () => {
         Number(height) > 30 && 'nav-glass-premium border-b-neutral-2/50',
       )}
     >
-      <div className="container mx-auto flex items-center justify-between px-6">
+      <div className="container mx-auto flex max-w-full items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           aria-label="Home"
           href="/"
@@ -41,25 +41,25 @@ export const Header = () => {
           </div>
         </Link>
 
-        <div className="flex items-center gap-6 max-lg:hidden">
-          <ul className="flex items-center justify-end gap-6">
+        <div className="flex items-center gap-4 max-lg:hidden lg:gap-6">
+          <ul className="flex items-center justify-end gap-4 lg:gap-6">
             <MenuLi href="/#playground">Playground</MenuLi>
             <MenuLi href="/#ecosystem">Ecosystem</MenuLi>
             <MenuLi href="/team">Team</MenuLi>
           </ul>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 lg:gap-3">
             <Link
               href="https://github.com/expressots/expressots"
-              className="flex items-center gap-2 rounded-lg px-4 py-2 text-neutral-8 transition-all duration-300 hover:bg-white/5 hover:text-base-6"
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-neutral-8 transition-all duration-300 hover:bg-white/5 hover:text-base-6 lg:px-4"
               target="_blank"
               aria-label="GitHub"
             >
               <IconBrandGithub className="h-5 w-5" />
-              GitHub
+              <span className="hidden sm:inline">GitHub</span>
             </Link>
             <LinkButton
               href="https://doc.expresso-ts.com/"
-              className="btn-primary-premium rounded-lg px-6 py-2 text-sm font-semibold"
+              className="btn-primary-premium rounded-lg px-4 py-2 text-sm font-semibold lg:px-6"
             >
               Get Started
             </LinkButton>

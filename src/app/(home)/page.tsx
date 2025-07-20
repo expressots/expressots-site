@@ -132,11 +132,11 @@ const VideoModal = ({ isOpen, onClose, videoId }: VideoModalProps) => {
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal Content */}
-      <div className="animate-fadeInScale relative z-10 mx-4 w-full max-w-4xl">
+      <div className="relative z-10 mx-4 w-full max-w-4xl animate-fadeInScale">
         <div className="glass-card-premium overflow-hidden rounded-2xl">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-neutral-6/20 p-6">
-            <h3 className="text-xl font-bold text-neutral-12">Welcome to ExpressoTS</h3>
+          <div className="flex items-center justify-between border-b border-neutral-6/20 p-4 sm:p-6">
+            <h3 className="text-lg font-bold text-neutral-12 sm:text-xl">Welcome to ExpressoTS</h3>
             <button
               onClick={onClose}
               className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:bg-red-500/20 hover:text-red-400"
@@ -146,7 +146,7 @@ const VideoModal = ({ isOpen, onClose, videoId }: VideoModalProps) => {
           </div>
 
           {/* Video Container */}
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl">
               <iframe
                 width="100%"
@@ -194,7 +194,7 @@ const PlaygroundModal = ({ isOpen, onClose }: PlaygroundModalProps) => {
             openFile: 'src/main.ts',
             hideExplorer: false,
             theme: 'dark',
-            height: 600,
+            height: window.innerWidth < 640 ? 400 : 600,
             width: '100%',
           })
           setIsLoaded(true)
@@ -228,11 +228,11 @@ const PlaygroundModal = ({ isOpen, onClose }: PlaygroundModalProps) => {
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal Content */}
-      <div className="animate-fadeInScale relative z-10 mx-4 w-full max-w-6xl">
+      <div className="relative z-10 mx-4 w-full max-w-6xl animate-fadeInScale">
         <div className="glass-card-premium overflow-hidden rounded-2xl">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-neutral-6/20 p-6">
-            <h3 className="text-xl font-bold text-neutral-12">Playground</h3>
+          <div className="flex items-center justify-between border-b border-neutral-6/20 p-4 sm:p-6">
+            <h3 className="text-lg font-bold text-neutral-12 sm:text-xl">Playground</h3>
             <button
               onClick={onClose}
               className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:bg-red-500/20 hover:text-red-400"
@@ -242,10 +242,10 @@ const PlaygroundModal = ({ isOpen, onClose }: PlaygroundModalProps) => {
           </div>
 
           {/* StackBlitz Container */}
-          <div className="p-6">
-            <div className="relative min-h-[600px] w-full overflow-hidden rounded-xl bg-neutral-1">
+          <div className="p-4 sm:p-6">
+            <div className="relative min-h-[400px] w-full overflow-hidden rounded-xl bg-neutral-1 sm:min-h-[600px]">
               {!isLoaded && (
-                <div className="flex h-[600px] items-center justify-center">
+                <div className="flex h-[400px] items-center justify-center sm:h-[600px]">
                   <div className="text-center">
                     <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-base-6/30 border-t-base-6"></div>
                     <p className="text-neutral-7">Loading ExpressoTS Playground...</p>
@@ -274,15 +274,15 @@ export default function Home() {
         <Container className="relative z-10 w-full">
           <div className="flex flex-col items-center justify-center py-20 text-center">
             {/* Main Headline */}
-            <div className="animate-fadeInScale mb-8">
-              <h1 className="mb-6 text-5xl font-bold leading-tight lg:text-7xl">
+            <div className="mb-8 animate-fadeInScale">
+              <h1 className="mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                 Build Modern APIs with <span className="text-gradient-premium">Confidence</span>
               </h1>
             </div>
 
             {/* Tagline */}
-            <div className="animate-slideInUp mb-12 max-w-3xl">
-              <p className="text-xl leading-relaxed text-neutral-8 lg:text-2xl">
+            <div className="mb-12 max-w-3xl animate-slideInUp">
+              <p className="text-lg leading-relaxed text-neutral-8 sm:text-xl lg:text-2xl">
                 A type-safe TypeScript framework for building fast, scalable APIs with minimal setup
                 and developer-first design.
               </p>
@@ -292,7 +292,7 @@ export default function Home() {
             <div className="mb-16 flex flex-col items-center gap-4 lg:flex-row">
               <LinkButton
                 href="https://doc.expresso-ts.com/"
-                className="btn-primary-premium min-w-[220px] rounded-lg px-8 py-4 text-lg font-semibold [&>span]:flex [&>span]:flex-nowrap [&>span]:items-center [&>span]:gap-2"
+                className="btn-primary-premium flex-shrink-0 rounded-lg px-6 py-4 text-lg font-semibold sm:px-8 [&>span]:flex [&>span]:flex-nowrap [&>span]:items-center [&>span]:gap-2"
               >
                 <IconRocket className="h-5 w-5 flex-shrink-0" />
                 <span>Quick Start</span>
@@ -300,7 +300,7 @@ export default function Home() {
               </LinkButton>
               <button
                 onClick={() => setIsVideoModalOpen(true)}
-                className="btn-secondary-premium group relative flex inline-flex min-w-[220px] items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border border-base-6/30 bg-base-7/10 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95"
+                className="btn-secondary-premium group relative flex flex-shrink-0 items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border border-base-6/30 bg-base-7/10 px-6 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95 sm:px-8"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-base-6/20 to-base-5/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <span className="relative z-10 flex transform items-center gap-2 transition-all duration-300 group-hover:tracking-wider">
@@ -311,24 +311,24 @@ export default function Home() {
             </div>
 
             {/* Statistics */}
-            <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
+            <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row lg:gap-20">
               <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-12 lg:text-5xl">
+                <div className="text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
                   <AnimatedCounter target={130000} suffix="+" />
                 </div>
-                <div className="mt-2 text-lg text-neutral-7">Weekly Downloads</div>
+                <div className="mt-2 text-base text-neutral-7 sm:text-lg">Weekly Downloads</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-12 lg:text-5xl">
+                <div className="text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
                   <AnimatedCounter target={1800} suffix="+" />
                 </div>
-                <div className="mt-2 text-lg text-neutral-7">GitHub Stars</div>
+                <div className="mt-2 text-base text-neutral-7 sm:text-lg">GitHub Stars</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-neutral-12 lg:text-5xl">
+                <div className="text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
                   <AnimatedCounter target={56} suffix="+" />
                 </div>
-                <div className="mt-2 text-lg text-neutral-7">Contributors</div>
+                <div className="mt-2 text-base text-neutral-7 sm:text-lg">Contributors</div>
               </div>
             </div>
           </div>
@@ -347,16 +347,16 @@ export default function Home() {
                 Try It Now
               </span>
             </div>
-            <h2 className="mb-4 text-4xl font-bold text-neutral-12 lg:text-5xl">
+            <h2 className="mb-4 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
               Interactive <span className="text-gradient-premium">Playground</span>
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-xl text-neutral-7">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-neutral-7 sm:text-xl">
               Experience ExpressoTS directly in your browser. No installation required.
             </p>
 
             <button
               onClick={() => setIsPlaygroundModalOpen(true)}
-              className="btn-primary-premium group relative mx-auto flex inline-flex min-w-[220px] items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border border-base-6/30 bg-base-7/10 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95"
+              className="btn-primary-premium group relative mx-auto flex w-full max-w-[280px] items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border border-base-6/30 bg-base-7/10 px-6 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95 sm:px-8"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-base-6/20 to-base-5/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <span className="relative z-10 flex transform items-center gap-2 transition-all duration-300 group-hover:tracking-wider">
@@ -374,15 +374,15 @@ export default function Home() {
 
         <Container className="relative z-10">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-neutral-12 lg:text-5xl">
+            <h2 className="mb-4 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
               Complete <span className="text-gradient-premium">Ecosystem</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-xl text-neutral-7">
+            <p className="mx-auto max-w-2xl text-lg text-neutral-7 sm:text-xl">
               Everything you need to build, test, and deploy production-ready applications.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
             <InfoCard
               header={
                 <>
@@ -513,19 +513,19 @@ export default function Home() {
 
         <Container className="relative z-10">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-neutral-12 lg:text-5xl">
+            <h2 className="mb-4 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
               Start Building <span className="text-gradient-premium">Today</span>
             </h2>
-            <p className="text-xl text-neutral-7">
+            <p className="text-lg text-neutral-7 sm:text-xl">
               Get up and running with ExpressoTS in under 5 minutes.
             </p>
           </div>
 
           <div className="mx-auto max-w-2xl">
             {/* Installation Command */}
-            <div className="glass-card-premium mb-8 rounded-xl p-6">
-              <div className="flex items-center justify-between">
-                <code className="font-mono text-lg text-neutral-8">
+            <div className="glass-card-premium mb-8 rounded-xl p-4 sm:p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <code className="break-all font-mono text-sm text-neutral-8 sm:break-normal sm:text-lg">
                   npx @expressots/cli new my-app
                 </code>
                 <CopyButton command="npx @expressots/cli new my-app" />
@@ -536,13 +536,13 @@ export default function Home() {
             <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-center">
               <LinkButton
                 href="https://doc.expresso-ts.com/"
-                className="btn-primary-premium rounded-lg px-8 py-4 text-lg font-semibold"
+                className="btn-primary-premium w-full max-w-[200px] rounded-lg px-6 py-4 text-lg font-semibold sm:px-8"
               >
                 Get Started
               </LinkButton>
               <LinkButton
                 href="https://github.com/expressots/expressots"
-                className="btn-secondary-premium rounded-lg px-8 py-4 text-lg font-semibold"
+                className="btn-secondary-premium w-full max-w-[200px] rounded-lg px-6 py-4 text-lg font-semibold sm:px-8"
               >
                 View on GitHub
               </LinkButton>
