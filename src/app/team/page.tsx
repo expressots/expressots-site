@@ -1,6 +1,6 @@
 'use client'
 
-import { alumni, team } from '@/data/members'
+import { alumni, team, socialIcons } from '@/data/members'
 import { Container } from '@/components'
 import { Member as MemberType } from '@/components/Member/type'
 import { IconUsers, IconHeart, IconStar } from '@tabler/icons-react'
@@ -89,7 +89,7 @@ export default function Team() {
                         className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:scale-110 hover:bg-base-6/20"
                       >
                         <Image
-                          src={`./assets/icons/socials/${social.name}.svg`}
+                          src={socialIcons(social.name)}
                           alt={social.name}
                           width={16}
                           height={16}
@@ -163,7 +163,7 @@ export default function Team() {
                         className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:scale-110 hover:bg-base-6/20"
                       >
                         <Image
-                          src={`./assets/icons/socials/${social.name}.svg`}
+                          src={socialIcons(social.name)}
                           alt={social.name}
                           width={16}
                           height={16}

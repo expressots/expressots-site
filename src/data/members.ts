@@ -1,8 +1,8 @@
 import { Member, SocialIcons } from '@/components/Member/type'
 
 const socialIconsMap: SocialIcons = {
-  github: './assets/icons/socials/github.svg',
-  linkedin: './assets/icons/socials/linkedin.svg',
+  github: '/assets/icons/socials/github.svg',
+  linkedin: '/assets/icons/socials/linkedin.svg',
 }
 
 const socialIcons = (name: string): string => {

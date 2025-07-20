@@ -43,8 +43,8 @@ export const Header = () => {
 
         <div className="flex items-center gap-6 max-lg:hidden">
           <ul className="flex items-center justify-end gap-6">
-            <MenuLi href="#playground">Playground</MenuLi>
-            <MenuLi href="#ecosystem">Ecosystem</MenuLi>
+            <MenuLi href="/#playground">Playground</MenuLi>
+            <MenuLi href="/#ecosystem">Ecosystem</MenuLi>
             <MenuLi href="/team">Team</MenuLi>
           </ul>
           <div className="flex items-center gap-3">
