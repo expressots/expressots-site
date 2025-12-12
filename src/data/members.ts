@@ -68,7 +68,7 @@ const team: Member[] = [
     position: 'Product Manager',
     resume: 'I am a creator, and I am passionate about translating ideas into actionable insights.',
     photo:
-      'https://media.licdn.com/dms/image/v2/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517520965765?e=1755734400&v=beta&t=Gt_oJpTtx1Y7pLxQ9XLVz8_GrZLsOpvKab9b9S4u_cE',
+      'https://media.licdn.com/dms/image/v2/C5603AQGM4BZY9DLwzw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517520965765?e=1767225600&v=beta&t=7FbzZOJ_eYojh4P-wKDuq_h-RYEE6NFSpUrz3SqRgGM',
     socials: [
       {
         name: 'linkedin',
@@ -91,6 +91,24 @@ const team: Member[] = [
       {
         name: 'linkedin',
         url: 'https://www.linkedin.com/in/ariel-betti',
+      },
+    ],
+  },
+  {
+    // Lucas Silva
+    name: 'Lucas Silva',
+    position: 'Core developer',
+    resume:
+      '💻 Software Dev in the making | Big fan of AI & Clean Code. Enjoys building full-stack apps with JavaScript, TypeScript, React and Node.',
+    photo: 'https://avatars.githubusercontent.com/LuSilvaDeveloper',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/LuSilvaDeveloper',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/lucas-assuncao-silva/',
       },
     ],
   },
