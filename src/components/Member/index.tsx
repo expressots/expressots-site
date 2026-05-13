@@ -23,7 +23,7 @@ export const Member: React.FC<MemberProps> = ({ member }) => {
           className={`relative h-56 w-full md:h-64 xl:h-40 ${
             hasError ? 'object-fill' : 'object-cover'
           }`}
-          src={hasError ? './assets/logos/logo-primary.svg' : member.photo}
+          src={hasError ? '/assets/logos/logo-primary.svg' : member.photo}
           alt={`avatar-${member.name}`}
           onError={() => setHasError(true)}
         />

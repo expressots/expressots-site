@@ -14,7 +14,7 @@ const team: Member[] = [
     // Richard
     name: 'Richard Zampieri',
     position: 'Creator of @expressots',
-    resume: 'Tech. Lead 📔 "True freedom blossoms in the realm of Open Source."',
+    resume: 'Tech Lead. "True freedom blossoms in the realm of Open Source."',
     photo: 'https://avatars.githubusercontent.com/u/4088378?v=4',
     socials: [
       {
@@ -31,7 +31,7 @@ const team: Member[] = [
     // Juliano
     name: 'Juliano Soares',
     position: 'Core developer',
-    resume: '💻 Researcher and student of artificial intelligence and machine learning',
+    resume: 'Researcher and student of artificial intelligence and machine learning.',
     photo: 'https://avatars.githubusercontent.com/u/37117169?v=4',
     socials: [
       {
@@ -49,7 +49,7 @@ const team: Member[] = [
     name: 'Tatiana Barros',
     position: 'Tech Evangelist',
     resume:
-      '🚀 Programming Ambassador | Tech Media Ninja Columnist | I talk about Technology and Innovation, Design and Creativity, Community Building, and Technical Documentation.',
+      'Programming Ambassador and Tech Media Columnist. Talks about technology, innovation, design, community building, and technical documentation.',
     photo: 'https://avatars.githubusercontent.com/u/172347696?v=4',
     socials: [
       {
@@ -81,7 +81,7 @@ const team: Member[] = [
     name: 'Ariel Betti',
     position: 'Core developer',
     resume:
-      '🏆 World Champion of NASA Space Apps 🏅1º Maratona IBM Behind The Code. Aggressive software engineer.',
+      'World Champion of NASA Space Apps. 1st place Maratona IBM Behind The Code. Software engineer.',
     photo: 'https://avatars.githubusercontent.com/u/42379076?v=4',
     socials: [
       {
@@ -99,7 +99,7 @@ const team: Member[] = [
     name: 'Lucas Silva',
     position: 'Core developer',
     resume:
-      '💻 Software Dev in the making | Big fan of AI & Clean Code. Enjoys building full-stack apps with JavaScript, TypeScript, React and Node.',
+      'Software developer. Big fan of AI and Clean Code. Enjoys building full-stack apps with JavaScript, TypeScript, React, and Node.',
     photo: 'https://avatars.githubusercontent.com/LuSilvaDeveloper',
     socials: [
       {
@@ -174,7 +174,7 @@ const alumni: Member[] = [
     name: 'Rodrigo da Hora',
     position: 'Product Designer',
     resume:
-      'Minha missão é continuar minha jornada profissional, explorando novos desafios e oportunidades para aprender, evoluir e alcançar resultados expressivos.',
+      'Product Designer driven by new challenges and opportunities to learn, evolve, and deliver expressive results.',
     photo: 'https://avatars.githubusercontent.com/u/81840077?v=4',
     socials: [
       {
@@ -192,7 +192,7 @@ const alumni: Member[] = [
     name: 'Daniel Gabriel',
     position: 'Frontend Developer',
     resume:
-      '⚡️Front-end Developer⚡️- Specializing in front-end and a design lover | Mainly working with JavaScript, TypeScript and CSS.',
+      'Front-end developer and design lover. Mainly working with JavaScript, TypeScript, and CSS.',
     photo: 'https://avatars.githubusercontent.com/u/56942108?v=4',
     socials: [
       {
