@@ -295,7 +295,10 @@ const V4FeatureCard = ({ icon: Icon, title, description, href, tag }: V4FeatureC
 
 const InstallCommand = () => {
   const [copied, setCopied] = useState(false)
-  const command = 'npx @expressots/create my-app'
+  // During the v4 preview window the published CLI lives behind the `next`
+  // dist-tag (v3 still owns `latest`). The `@next` qualifier guarantees the
+  // user gets the v4 scaffolder regardless of which version is on `latest`.
+  const command = 'npx @expressots/cli@next new my-app'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command)
@@ -895,9 +898,9 @@ export default function Home() {
             <div className="glass-card-premium mb-8 rounded-xl p-4 sm:p-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <code className="break-all font-mono text-sm text-neutral-8 sm:break-normal sm:text-lg">
-                  npx @expressots/cli new my-app
+                  npx @expressots/cli@next new my-app
                 </code>
-                <CopyButton command="npx @expressots/cli new my-app" />
+                <CopyButton command="npx @expressots/cli@next new my-app" />
               </div>
             </div>
 
