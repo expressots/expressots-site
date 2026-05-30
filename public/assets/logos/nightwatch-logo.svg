@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" fill="none">
+  <circle cx="18" cy="20" r="10" stroke="#a78bfa" stroke-width="2" fill="none"/>
+  <path d="M18 12 C14 16, 14 24, 18 28 C20 24, 20 16, 18 12Z" fill="#a78bfa"/>
+  <text x="36" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#e2e8f0" letter-spacing="0.5">Night Watch</text>
+  <text x="172" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#94a3b8" letter-spacing="0.5">CLI</text>
+</svg>

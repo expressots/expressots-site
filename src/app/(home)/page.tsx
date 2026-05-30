@@ -1,6 +1,6 @@
 'use client'
 
-import { LinkButton, InfoCard, Container } from '@/components'
+import { LinkButton, InfoCard, Container, UsedBy } from '@/components'
 import {
   IconRocket,
   IconArrowRight,
@@ -295,10 +295,7 @@ const V4FeatureCard = ({ icon: Icon, title, description, href, tag }: V4FeatureC
 
 const InstallCommand = () => {
   const [copied, setCopied] = useState(false)
-  // During the v4 preview window the published CLI lives behind the `next`
-  // dist-tag (v3 still owns `latest`). The `@next` qualifier guarantees the
-  // user gets the v4 scaffolder regardless of which version is on `latest`.
-  const command = 'npx @expressots/cli@next new my-app'
+  const command = 'npx @expressots/cli new my-app'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command)
@@ -310,7 +307,7 @@ const InstallCommand = () => {
     <div className="mb-8 animate-slideInUp">
       <button
         onClick={handleCopy}
-        className="group inline-flex items-center gap-3 rounded-xl border border-neutral-2/60 bg-neutral-1/80 px-5 py-3 font-mono text-sm text-neutral-8 backdrop-blur-sm transition-all duration-300 hover:border-base-6/40 hover:bg-neutral-2/60 sm:text-base"
+        className="group inline-flex items-center gap-3 rounded-xl border border-neutral-2/60 bg-neutral-1/80 px-5 py-3 font-mono text-sm text-neutral-8 backdrop-blur-sm transition-all duration-150 hover:border-base-6/40 hover:bg-neutral-2/60 sm:text-base"
       >
         <span className="text-base-6">$</span>
         <span>{command}</span>
@@ -342,90 +339,91 @@ export default function Home() {
                 href="https://doc.expresso-ts.com/docs/prologue/release"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full border border-base-6/30 bg-base-6/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-base-6 transition-all duration-300 hover:border-base-6/60 hover:bg-base-6/20 sm:text-sm"
+                className="group inline-flex items-center gap-2 rounded-full border border-base-6/30 bg-base-6/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-base-6 transition-all duration-150 hover:border-base-6/60 hover:bg-base-6/20 sm:text-sm"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-base-6 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-base-6" />
                 </span>
                 ExpressoTS v4.0 is live
-                <IconArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                <IconArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
               </a>
             </div>
 
             {/* Main Headline */}
-            <div className="mb-6 animate-fadeInScale">
-              <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                Ship TypeScript APIs{' '}
-                <span className="text-gradient-premium">You&apos;re Proud Of</span>
+            <div className="mb-4 animate-fadeInScale">
+              <h1 className="max-w-3xl text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                Ship Node.js services.{' '}
+                <span className="text-gradient-premium">Without the boilerplate.</span>
               </h1>
             </div>
 
             {/* Tagline */}
-            <div className="mb-8 max-w-3xl animate-slideInUp">
-              <p className="text-lg leading-relaxed text-neutral-8 sm:text-xl lg:text-2xl">
-                Stop wiring middleware by hand. ExpressoTS gives you{' '}
-                <span className="font-semibold text-neutral-12">interceptors</span>,{' '}
-                <span className="font-semibold text-neutral-12">typed events</span>,{' '}
-                <span className="font-semibold text-neutral-12">lazy loading</span>, and a{' '}
-                <span className="font-semibold text-neutral-12">built-in observability platform</span>{' '}
-                so you can focus on your product, not your plumbing.
-              </p>
-            </div>
+            <p className="mb-8 max-w-lg text-balance text-base leading-relaxed text-neutral-7 animate-slideInUp">
+              TypeScript, DI, interceptors, events, and Studio — built in.
+            </p>
 
             {/* Quick install command */}
             <InstallCommand />
 
             {/* CTA Buttons */}
-            <div className="mb-16 flex flex-col items-center gap-4 lg:flex-row">
+            <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row">
               <LinkButton
                 href="https://doc.expresso-ts.com/docs/core/first-steps"
-                className="btn-primary-premium flex-shrink-0 rounded-lg px-6 py-4 text-lg font-semibold sm:px-8 [&>span]:flex [&>span]:flex-nowrap [&>span]:items-center [&>span]:gap-2"
+                className="btn-primary-premium rounded-lg px-6 py-3 text-base font-semibold"
               >
-                <IconRocket className="h-5 w-5 flex-shrink-0" />
-                <span>Get Started</span>
-                <IconArrowRight className="h-5 w-5 flex-shrink-0" />
+                <IconRocket className="h-4 w-4" />
+                Get Started
+                <IconArrowRight className="h-4 w-4" />
               </LinkButton>
               <button
                 onClick={() => setIsPlaygroundModalOpen(true)}
-                className="btn-secondary-premium group relative flex flex-shrink-0 items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border border-base-6/30 bg-base-7/10 px-6 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95 sm:px-8"
+                className="btn-secondary-premium flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-6 py-3 text-base font-semibold"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-base-6/20 to-base-5/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="relative z-10 flex transform items-center gap-2 transition-all duration-300 group-hover:tracking-wider">
-                  <IconCode className="h-5 w-5 flex-shrink-0" />
-                  <span>Try in Browser</span>
-                </span>
+                <IconCode className="h-4 w-4" />
+                Try in Browser
               </button>
               <button
                 onClick={() => setIsVideoModalOpen(true)}
-                className="group relative flex flex-shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg px-6 py-4 text-lg font-semibold text-neutral-8 transition-all duration-300 hover:text-neutral-12"
+                className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-4 py-3 text-sm font-medium text-neutral-6 transition-colors duration-150 hover:text-neutral-12"
               >
-                <IconPlayerPlay className="h-5 w-5 flex-shrink-0" />
-                <span>Watch Demo</span>
+                <IconPlayerPlay className="h-4 w-4" />
+                Watch demo
               </button>
             </div>
 
             {/* Statistics */}
-            <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row lg:gap-20">
+            <div className="mb-14 flex flex-col items-center gap-6 sm:flex-row sm:gap-10 lg:gap-16">
               <div className="text-center">
-                <div className="text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
+                <div className="text-2xl font-bold text-neutral-12 sm:text-3xl">
                   <AnimatedCounter target={130000} suffix="+" />
                 </div>
-                <div className="mt-2 text-base text-neutral-7 sm:text-lg">Weekly Downloads</div>
+                <div className="mt-1 text-xs uppercase tracking-[0.12em] text-neutral-6">
+                  Weekly downloads
+                </div>
               </div>
+              <div className="hidden h-8 w-px bg-neutral-2/60 sm:block" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
+                <div className="text-2xl font-bold text-neutral-12 sm:text-3xl">
                   <AnimatedCounter target={1800} suffix="+" />
                 </div>
-                <div className="mt-2 text-base text-neutral-7 sm:text-lg">GitHub Stars</div>
+                <div className="mt-1 text-xs uppercase tracking-[0.12em] text-neutral-6">
+                  GitHub stars
+                </div>
               </div>
+              <div className="hidden h-8 w-px bg-neutral-2/60 sm:block" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
+                <div className="text-2xl font-bold text-neutral-12 sm:text-3xl">
                   <AnimatedCounter target={56} suffix="+" />
                 </div>
-                <div className="mt-2 text-base text-neutral-7 sm:text-lg">Contributors</div>
+                <div className="mt-1 text-xs uppercase tracking-[0.12em] text-neutral-6">
+                  Contributors
+                </div>
               </div>
             </div>
+
+            {/* Trusted-by logo carousel — inside the hero */}
+            <UsedBy />
           </div>
         </Container>
       </section>
@@ -716,13 +714,10 @@ export default function Home() {
 
             <button
               onClick={() => setIsPlaygroundModalOpen(true)}
-              className="btn-primary-premium group relative mx-auto flex w-full max-w-[280px] items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border border-base-6/30 bg-base-7/10 px-6 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:border-base-6/50 hover:bg-base-6/20 active:scale-95 sm:px-8"
+              className="btn-primary-premium mx-auto flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-8 py-3.5 text-base font-semibold"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-base-6/20 to-base-5/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <span className="relative z-10 flex transform items-center gap-2 transition-all duration-300 group-hover:tracking-wider">
-                <IconBrandStackoverflow className="h-5 w-5 flex-shrink-0" />
-                <span>Open Playground</span>
-              </span>
+              <IconCode className="h-5 w-5" />
+              Open Playground
             </button>
           </div>
         </Container>
@@ -884,38 +879,49 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-1 to-neutral-2" />
 
         <Container className="relative z-10">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
               Start Building <span className="text-gradient-premium">Today</span>
             </h2>
-            <p className="text-lg text-neutral-7 sm:text-xl">
-              Get up and running with ExpressoTS v4 in under 5 minutes.
+            <p className="text-base text-neutral-7 sm:text-lg">
+              Up and running in under 5 minutes.
             </p>
           </div>
 
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-xl">
             {/* Installation Command */}
-            <div className="glass-card-premium mb-8 rounded-xl p-4 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <code className="break-all font-mono text-sm text-neutral-8 sm:break-normal sm:text-lg">
-                  npx @expressots/cli@next new my-app
-                </code>
-                <CopyButton command="npx @expressots/cli@next new my-app" />
+            <div className="glass-card-premium mb-8 rounded-xl p-4 sm:p-5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3 font-mono text-sm text-neutral-8 sm:text-base">
+                  <span className="text-base-6">$</span>
+                  <code>npx @expressots/cli new my-app</code>
+                </div>
+                <CopyButton command="npx @expressots/cli new my-app" />
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-center">
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <LinkButton
                 href="https://doc.expresso-ts.com/docs/core/first-steps"
-                className="btn-primary-premium w-full max-w-[200px] rounded-lg px-6 py-4 text-lg font-semibold sm:px-8"
+                className="btn-primary-premium w-full rounded-lg px-6 py-3 text-base font-semibold sm:w-auto"
               >
+                <IconRocket className="h-4 w-4" />
                 Get Started
+                <IconArrowRight className="h-4 w-4" />
               </LinkButton>
               <LinkButton
                 href="https://github.com/expressots/expressots"
-                className="btn-secondary-premium w-full max-w-[200px] rounded-lg px-6 py-4 text-lg font-semibold sm:px-8"
+                className="btn-secondary-premium w-full rounded-lg px-6 py-3 text-base font-semibold sm:w-auto"
               >
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
                 View on GitHub
               </LinkButton>
             </div>

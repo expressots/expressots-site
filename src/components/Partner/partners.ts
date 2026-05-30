@@ -56,4 +56,24 @@ export const PARTNERS: TPartner[] = [
     name: 'Early AI',
     site: 'https://www.startearly.ai/',
   },
+  {
+    image: '/assets/logos/fintrack-logo.png',
+    name: 'Fintrack AI',
+    site: 'https://www.fintrackai.app/',
+  },
+  {
+    image: '/assets/logos/autopilotrank-logo.png',
+    name: 'AutopilotRank',
+    site: 'https://autopilotrank.com/',
+  },
+  {
+    image: '/assets/logos/convertbanktoexcel-logo.png',
+    name: 'ConvertBankToExcel',
+    site: 'https://convertbanktoexcel.com/',
+  },
+  {
+    image: '/assets/logos/nightwatch-logo.svg',
+    name: 'Night Watch CLI',
+    site: 'https://nightwatchcli.com/',
+  },
 ]
