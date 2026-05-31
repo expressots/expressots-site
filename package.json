@@ -10,8 +10,10 @@
     "export": "next export",
     "prod": "npx serve@latest out",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write ."
+    "lint": "next lint --cache --cache-location node_modules/.cache/eslint/",
+    "lint:fix": "next lint --fix --cache --cache-location node_modules/.cache/eslint/",
+    "format": "prettier --write . --cache",
+    "prepare": "husky"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",
@@ -39,6 +41,8 @@
     "postcss": "^8.5.14"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@typescript-eslint/eslint-plugin": "^8.59.3",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
@@ -52,7 +56,18 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.6.6"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --cache-location node_modules/.cache/eslint/ --fix",
+      "prettier --write --cache"
+    ],
+    "*.{json,md,mdx,css,scss}": [
+      "prettier --write --cache"
+    ]
   }
 }
