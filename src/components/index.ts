@@ -10,6 +10,7 @@ import InfoCard from './InfoCard'
 import Partners from './Partner'
 import Tip from './Tip'
 import Tooltip from './Tooltip'
+import UsedBy from './UsedBy'
 
 export {
   BlitzCode,
@@ -24,4 +25,5 @@ export {
   Partners,
   Tip,
   Tooltip,
+  UsedBy,
 }

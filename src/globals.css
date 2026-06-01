@@ -21,6 +21,7 @@
   body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
   }
 
   :root {
@@ -64,118 +65,75 @@
     --accent-800: 107 33 168;
     --accent-900: 88 28 135;
     --accent-950: 59 7 100;
+
+    /* ---------------------------------------------------------------
+       Shared docs design-token aliases.
+       The docs site uses --xt-* tokens; we mirror that vocabulary
+       here so the same design language applies across both sites.
+       --------------------------------------------------------------- */
+    --xt-brand: rgb(var(--base-5));
+    --xt-brand-strong: rgb(var(--base-7));
+    --xt-brand-light: rgb(var(--base-4));
+    --xt-brand-soft: rgba(var(--base-6), 0.06);
+    --xt-brand-glow: rgba(var(--base-6), 0.18);
+
+    --xt-bg-base: rgb(var(--neutral-1));
+    --xt-bg-elev-1: rgb(23 24 27);
+    --xt-bg-elev-2: rgb(31 32 36);
+    --xt-bg-elev-3: rgb(37 38 43);
+
+    --xt-fg-primary: rgb(var(--neutral-12));
+    --xt-fg-secondary: rgb(var(--neutral-7));
+    --xt-fg-muted: rgb(var(--neutral-5));
+
+    --xt-stroke-1: rgba(255, 255, 255, 0.06);
+    --xt-stroke-2: rgba(255, 255, 255, 0.1);
+    --xt-stroke-3: rgba(255, 255, 255, 0.16);
+
+    --xt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --xt-dur-fast: 150ms;
+    --xt-dur-normal: 200ms;
   }
 
-  /* Animated pulsing circles for hero background */
+  /* Hero ambient glow -- single calm gradient, no rotation/pulse */
   .pulsing-circles {
     position: relative;
     overflow: hidden;
     max-width: 100vw;
   }
 
-  .pulsing-circles::before,
-  .pulsing-circles::after {
+  .pulsing-circles::before {
     content: '';
     position: absolute;
-    border-radius: 50%;
+    inset: 0;
     background: radial-gradient(
-      circle,
-      rgba(var(--base-6), 0.3) 0%,
-      rgba(var(--base-6), 0.1) 50%,
-      transparent 70%
+      ellipse 900px 500px at 50% -10%,
+      var(--xt-brand-glow) 0%,
+      transparent 65%
     );
-    animation: pulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .pulsing-circles::before {
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    right: -100px;
-    animation-delay: 0s;
-    /* Ensure it doesn't overflow on smaller screens */
-    @media (max-width: 768px) {
-      width: 300px;
-      height: 300px;
-      top: -50px;
-      right: -50px;
-    }
+  /* Calmer page-level pattern. Single low-opacity dot field. */
+  .pattern-hexagon-premium {
+    background-image: radial-gradient(
+      circle at 50% 0%,
+      rgba(var(--base-6), 0.05) 0%,
+      transparent 50%
+    );
   }
 
-  .pulsing-circles::after {
-    width: 300px;
-    height: 300px;
-    bottom: -50px;
-    left: -50px;
-    animation-delay: 2s;
-    /* Ensure it doesn't overflow on smaller screens */
-    @media (max-width: 768px) {
-      width: 200px;
-      height: 200px;
-      bottom: -25px;
-      left: -25px;
-    }
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      transform: scale(1);
-      opacity: 0.3;
-    }
-    50% {
-      transform: scale(1.2);
-      opacity: 0.6;
-    }
-  }
-
-  /* Modern premium background patterns */
   .pattern-tech-grid {
     background-image:
-      linear-gradient(rgba(var(--base-6), 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(var(--base-6), 0.1) 1px, transparent 1px);
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     background-size: 60px 60px;
-    animation: gridPulse 8s ease-in-out infinite;
-  }
-
-  .pattern-hexagon-premium {
-    background-image:
-      radial-gradient(circle at 25% 25%, rgba(var(--base-5), 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(var(--accent-500), 0.1) 0%, transparent 50%),
-      linear-gradient(45deg, transparent 40%, rgba(var(--base-6), 0.08) 50%, transparent 60%);
-    background-size:
-      200px 200px,
-      300px 300px,
-      100px 100px;
-    animation: geometricFloat 20s ease-in-out infinite;
   }
 
   .pattern-dots-premium {
-    background-image: radial-gradient(circle, rgba(var(--base-5), 0.2) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 25px 25px;
-  }
-
-  @keyframes geometricFloat {
-    0%,
-    100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-10px) rotate(1deg);
-    }
-    66% {
-      transform: translateY(5px) rotate(-1deg);
-    }
-  }
-
-  @keyframes gridPulse {
-    0%,
-    100% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 0.6;
-    }
   }
 
   @keyframes glowPulse {
@@ -220,72 +178,94 @@
     }
   }
 
-  /* Premium glass card styles */
+  /* Premium glass card -- hairline border, calm hover */
   .glass-card-premium {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(var(--base-6), 0.1);
-    transition: all 0.3s ease;
+    background: var(--xt-bg-elev-1);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--xt-stroke-1);
+    border-radius: 14px;
+    transition:
+      border-color var(--xt-dur-fast) var(--xt-ease),
+      background-color var(--xt-dur-fast) var(--xt-ease),
+      transform var(--xt-dur-fast) var(--xt-ease);
   }
 
   .glass-card-premium:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(var(--base-6), 0.3);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(var(--base-6), 0.2);
+    background: var(--xt-bg-elev-2);
+    border-color: var(--xt-stroke-3);
+    transform: translateY(-2px);
+    box-shadow: none;
   }
 
-  /* Premium button styles */
+  /* Premium button -- restrained primary, neutral secondary */
   .btn-primary-premium {
-    background: linear-gradient(135deg, rgb(var(--base-7)), rgb(var(--base-8)));
-    border: 1px solid rgba(var(--base-6), 0.3);
-    transition: all 0.3s ease;
+    background: var(--xt-brand);
+    color: var(--xt-bg-base);
+    border: 1px solid var(--xt-brand);
+    transition:
+      background-color var(--xt-dur-fast) var(--xt-ease),
+      transform var(--xt-dur-fast) var(--xt-ease),
+      box-shadow var(--xt-dur-fast) var(--xt-ease);
   }
 
   .btn-primary-premium:hover {
-    background: linear-gradient(135deg, rgb(var(--base-6)), rgb(var(--base-7)));
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(var(--base-6), 0.4);
+    background: rgb(var(--base-4));
+    color: var(--xt-bg-base);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px var(--xt-brand-glow);
+  }
+
+  .btn-primary-premium:focus-visible {
+    outline: 2px solid var(--xt-brand);
+    outline-offset: 2px;
   }
 
   .btn-secondary-premium {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(var(--base-6), 0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    background: transparent;
+    color: var(--xt-fg-primary) !important;
+    border: 1px solid var(--xt-stroke-2);
+    transition:
+      background-color var(--xt-dur-fast) var(--xt-ease),
+      border-color var(--xt-dur-fast) var(--xt-ease),
+      transform var(--xt-dur-fast) var(--xt-ease);
   }
 
   .btn-secondary-premium:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(var(--base-6), 0.4);
+    background: var(--xt-bg-elev-1);
+    border-color: var(--xt-stroke-3);
+    transform: translateY(-1px);
   }
 
   /* Premium typography enhancements */
   .text-gradient-premium {
-    background: linear-gradient(135deg, rgb(var(--base-5)), rgb(var(--base-6)));
+    background: linear-gradient(90deg, rgb(var(--base-5)), rgb(var(--base-4)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  /* No glow -- docs design language drops text-shadow on links */
   .text-glow-premium {
-    text-shadow: 0 0 20px rgba(var(--base-6), 0.5);
+    text-shadow: none;
   }
 
-  /* Premium navigation */
+  /* Navigation -- hairline border, matches docs */
   .nav-glass-premium {
-    background: rgba(23, 23, 23, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(var(--base-6), 0.1);
+    background: rgba(15, 15, 17, 0.78);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    border-bottom: 1px solid var(--xt-stroke-1);
+    box-shadow: none;
   }
 
-  /* Premium section transitions */
+  /* Section divider -- neutral hairline */
   .section-divider-premium {
     height: 1px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(var(--base-6), 0.5) 50%,
+      var(--xt-stroke-2) 20%,
+      var(--xt-stroke-2) 80%,
       transparent 100%
     );
   }
@@ -348,4 +328,17 @@
     font-size: 14px;
     color: rgb(var(--base-6));
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
