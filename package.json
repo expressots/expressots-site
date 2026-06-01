@@ -13,7 +13,7 @@
     "lint": "next lint --cache --cache-location node_modules/.cache/eslint/",
     "lint:fix": "next lint --fix --cache --cache-location node_modules/.cache/eslint/",
     "format": "prettier --write . --cache",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",

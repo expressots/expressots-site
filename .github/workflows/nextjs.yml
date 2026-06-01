@@ -49,16 +49,16 @@ jobs:
             exit 1
           fi
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         # Removed static_site_generator to prevent auto-injection of conflicting configs
         # We manage our own Next.js configuration in next.config.js
       - name: Cache Next.js build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/.next/cache
@@ -69,11 +69,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        env:
-          NODE_ENV: ${{ secrets.NODE_ENV }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
+          NODE_ENV: ${{ secrets.NODE_ENV }}
           NEXT_TELEMETRY_DISABLED: 1
       #- name: Static HTML export with Next.js
       #run: ${{ steps.detect-package-manager.outputs.runner }} next export
