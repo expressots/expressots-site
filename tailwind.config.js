@@ -63,7 +63,7 @@ module.exports = {
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-33.333%)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
@@ -127,7 +127,7 @@ module.exports = {
         },
       },
       animation: {
-        marquee: 'marquee 45s linear infinite',
+        marquee: 'marquee 30s linear infinite',
         float: 'float 3s ease-in-out infinite',
         glow: 'glow 2s ease-in-out infinite',
         slideInUp: 'slideInUp 0.6s ease-out',

@@ -45,7 +45,6 @@ export const Header = () => {
           <ul className="flex items-center justify-end gap-4 lg:gap-6">
             <MenuLi href="/#whats-new">What&apos;s New</MenuLi>
             <MenuLi href="/#studio">Studio</MenuLi>
-            <MenuLi href="/#playground">Playground</MenuLi>
             <MenuLi href="/team">Team</MenuLi>
           </ul>
           <div className="flex items-center gap-2 lg:gap-3">

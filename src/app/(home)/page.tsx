@@ -14,7 +14,6 @@ import {
   IconChartLine,
   IconCopy,
   IconX,
-  IconBrandStackoverflow,
   IconSparkles,
   IconArrowsLeftRight,
   IconBellRinging,
@@ -27,7 +26,6 @@ import {
   IconBugFilled,
 } from '@tabler/icons-react'
 import { useState, useEffect } from 'react'
-import sdk from '@stackblitz/sdk'
 
 // Animated Counter Component
 interface AnimatedCounterProps {
@@ -167,93 +165,6 @@ const VideoModal = ({ isOpen, onClose, videoId }: VideoModalProps) => {
   )
 }
 
-// Playground Modal Component
-interface PlaygroundModalProps {
-  isOpen: boolean
-  onClose: () => void
-}
-
-const PlaygroundModal = ({ isOpen, onClose }: PlaygroundModalProps) => {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose()
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
-
-      if (!isLoaded) {
-        setTimeout(() => {
-          sdk.embedProjectId('expressots-playground-modal', 'expressots', {
-            clickToLoad: false,
-            forceEmbedLayout: true,
-            openFile: 'src/main.ts',
-            hideExplorer: false,
-            theme: 'dark',
-            height: window.innerWidth < 640 ? 400 : 600,
-            width: '100%',
-          })
-          setIsLoaded(true)
-        }, 100)
-      }
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen, onClose, isLoaded])
-
-  useEffect(() => {
-    if (!isOpen) {
-      setIsLoaded(false)
-      const container = document.getElementById('expressots-playground-modal')
-      if (container) {
-        container.innerHTML = ''
-      }
-    }
-  }, [isOpen])
-
-  if (!isOpen) return null
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative z-10 mx-4 w-full max-w-6xl animate-fadeInScale">
-        <div className="glass-card-premium overflow-hidden rounded-2xl">
-          <div className="flex items-center justify-between border-b border-neutral-6/20 p-4 sm:p-6">
-            <h3 className="text-lg font-bold text-neutral-12 sm:text-xl">Playground</h3>
-            <button
-              onClick={onClose}
-              className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-3/20 transition-all duration-300 hover:bg-red-500/20 hover:text-red-400"
-            >
-              <IconX className="h-5 w-5" />
-            </button>
-          </div>
-          <div className="p-4 sm:p-6">
-            <div className="relative min-h-[400px] w-full overflow-hidden rounded-xl bg-neutral-1 sm:min-h-[600px]">
-              {!isLoaded && (
-                <div className="flex h-[400px] items-center justify-center sm:h-[600px]">
-                  <div className="text-center">
-                    <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-base-6/30 border-t-base-6"></div>
-                    <p className="text-neutral-7">Loading ExpressoTS Playground...</p>
-                  </div>
-                </div>
-              )}
-              <div id="expressots-playground-modal" className="w-full"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // v4 Feature Card
 interface V4FeatureCardProps {
   icon: typeof IconRocket
@@ -295,7 +206,7 @@ const V4FeatureCard = ({ icon: Icon, title, description, href, tag }: V4FeatureC
 
 const InstallCommand = () => {
   const [copied, setCopied] = useState(false)
-  const command = 'npx @expressots/cli new my-app'
+  const command = 'npx @expressots/cli@next new my-app'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command)
@@ -323,7 +234,6 @@ const InstallCommand = () => {
 
 export default function Home() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
-  const [isPlaygroundModalOpen, setIsPlaygroundModalOpen] = useState(false)
 
   return (
     <main className="relative min-h-screen">
@@ -345,21 +255,21 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-base-6 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-base-6" />
                 </span>
-                ExpressoTS v4.0 is live
+                ExpressoTS v4.0 Preview is available
                 <IconArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
               </a>
             </div>
 
             {/* Main Headline */}
             <div className="mb-4 animate-fadeInScale">
-              <h1 className="max-w-3xl text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                Ship Node.js services.{' '}
+              <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                Ship Node.js services. <br className="hidden sm:block" />
                 <span className="text-gradient-premium">Without the boilerplate.</span>
               </h1>
             </div>
 
             {/* Tagline */}
-            <p className="mb-8 max-w-lg text-balance text-base leading-relaxed text-neutral-7 animate-slideInUp">
+            <p className="mb-8 max-w-lg animate-slideInUp text-balance text-base leading-relaxed text-neutral-7">
               TypeScript, DI, interceptors, events, and Studio — built in.
             </p>
 
@@ -376,13 +286,6 @@ export default function Home() {
                 Get Started
                 <IconArrowRight className="h-4 w-4" />
               </LinkButton>
-              <button
-                onClick={() => setIsPlaygroundModalOpen(true)}
-                className="btn-secondary-premium flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-6 py-3 text-base font-semibold"
-              >
-                <IconCode className="h-4 w-4" />
-                Try in Browser
-              </button>
               <button
                 onClick={() => setIsVideoModalOpen(true)}
                 className="flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-4 py-3 text-sm font-medium text-neutral-6 transition-colors duration-150 hover:text-neutral-12"
@@ -444,8 +347,8 @@ export default function Home() {
               A framework for the <span className="text-gradient-premium">next decade</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-neutral-7 sm:text-xl">
-              Everything you need to ship production-grade APIs, observable from your first
-              request to your hundredth deploy.
+              Everything you need to ship production-grade APIs, observable from your first request
+              to your hundredth deploy.
             </p>
           </div>
 
@@ -693,36 +596,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Playground Section */}
-      <section id="playground" className="relative py-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-1 to-neutral-2" />
-
-        <Container className="relative z-10">
-          <div className="text-center">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-base-6/10 px-6 py-3">
-              <IconBrandStackoverflow className="h-6 w-6 text-base-6" />
-              <span className="text-base font-semibold uppercase tracking-wider text-base-6">
-                Try It Now
-              </span>
-            </div>
-            <h2 className="mb-4 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
-              Interactive <span className="text-gradient-premium">Playground</span>
-            </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-neutral-7 sm:text-xl">
-              Experience ExpressoTS directly in your browser. No installation required.
-            </p>
-
-            <button
-              onClick={() => setIsPlaygroundModalOpen(true)}
-              className="btn-primary-premium mx-auto flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-8 py-3.5 text-base font-semibold"
-            >
-              <IconCode className="h-5 w-5" />
-              Open Playground
-            </button>
-          </div>
-        </Container>
-      </section>
-
       {/* Why ExpressoTS / Ecosystem Section */}
       <section id="ecosystem" className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-2 to-neutral-1" />
@@ -733,8 +606,8 @@ export default function Home() {
               The <span className="text-gradient-premium">complete platform</span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-neutral-7 sm:text-xl">
-              Beyond the framework: tools, CLI, and ecosystem packages built for production
-              from day one.
+              Beyond the framework: tools, CLI, and ecosystem packages built for production from day
+              one.
             </p>
           </div>
 
@@ -750,8 +623,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  Scaffold, generate, containerize, run CI/CD pipelines, and estimate cloud
-                  costs. All from one tool.
+                  Scaffold, generate, containerize, run CI/CD pipelines, and estimate cloud costs.
+                  All from one tool.
                 </p>
               }
             />
@@ -759,18 +632,15 @@ export default function Home() {
               header={
                 <>
                   <div className="mb-4 rounded-xl bg-base-6/10 p-3">
-                    <IconShieldCheck
-                      className="h-8 w-8 text-base-6"
-                      aria-hidden="true"
-                    />
+                    <IconShieldCheck className="h-8 w-8 text-base-6" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-semibold text-neutral-12">Type Safety</h3>
                 </>
               }
               content={
                 <p className="text-neutral-7">
-                  Full TypeScript with validated DTOs, typed events, typed config, and
-                  autocomplete from controller to repository.
+                  Full TypeScript with validated DTOs, typed events, typed config, and autocomplete
+                  from controller to repository.
                 </p>
               }
             />
@@ -785,8 +655,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  IoC container with introspection, lazy-loaded modules, and a permission
-                  hierarchy. Built for teams of any size.
+                  IoC container with introspection, lazy-loaded modules, and a permission hierarchy.
+                  Built for teams of any size.
                 </p>
               }
             />
@@ -801,8 +671,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  Minimal overhead on Express, lazy loading for cold-start sensitive
-                  workloads, and an unified render engine.
+                  Minimal overhead on Express, lazy loading for cold-start sensitive workloads, and
+                  an unified render engine.
                 </p>
               }
             />
@@ -817,8 +687,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  Decorators, smart defaults, helpful errors, and an opt-in dev experience
-                  platform that gets out of your way.
+                  Decorators, smart defaults, helpful errors, and an opt-in dev experience platform
+                  that gets out of your way.
                 </p>
               }
             />
@@ -833,8 +703,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  Providers, interceptors, guards, and a growing ecosystem of plugins. Drop
-                  in what you need, ignore what you don&apos;t.
+                  Providers, interceptors, guards, and a growing ecosystem of plugins. Drop in what
+                  you need, ignore what you don&apos;t.
                 </p>
               }
             />
@@ -849,8 +719,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  Studio gives you real-time observability: request timelines, architecture
-                  maps, live logs, and a security dashboard right in your browser.
+                  Studio gives you real-time observability: request timelines, architecture maps,
+                  live logs, and a security dashboard right in your browser.
                 </p>
               }
             />
@@ -865,8 +735,8 @@ export default function Home() {
               }
               content={
                 <p className="text-neutral-7">
-                  11-phase logging with transports, error inspector, security audit, and an
-                  upgrade path with ADRs and codemods.
+                  11-phase logging with transports, error inspector, security audit, and an upgrade
+                  path with ADRs and codemods.
                 </p>
               }
             />
@@ -894,9 +764,9 @@ export default function Home() {
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3 font-mono text-sm text-neutral-8 sm:text-base">
                   <span className="text-base-6">$</span>
-                  <code>npx @expressots/cli new my-app</code>
+                  <code>npx @expressots/cli@next new my-app</code>
                 </div>
-                <CopyButton command="npx @expressots/cli new my-app" />
+                <CopyButton command="npx @expressots/cli@next new my-app" />
               </div>
             </div>
 
@@ -914,12 +784,7 @@ export default function Home() {
                 href="https://github.com/expressots/expressots"
                 className="btn-secondary-premium w-full rounded-lg px-6 py-3 text-base font-semibold sm:w-auto"
               >
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                 </svg>
                 View on GitHub
@@ -934,12 +799,6 @@ export default function Home() {
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
         videoId="_Z4WLZW4zMk"
-      />
-
-      {/* Playground Modal */}
-      <PlaygroundModal
-        isOpen={isPlaygroundModalOpen}
-        onClose={() => setIsPlaygroundModalOpen(false)}
       />
     </main>
   )

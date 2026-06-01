@@ -87,7 +87,7 @@
     --xt-fg-muted: rgb(var(--neutral-5));
 
     --xt-stroke-1: rgba(255, 255, 255, 0.06);
-    --xt-stroke-2: rgba(255, 255, 255, 0.10);
+    --xt-stroke-2: rgba(255, 255, 255, 0.1);
     --xt-stroke-3: rgba(255, 255, 255, 0.16);
 
     --xt-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -328,4 +328,17 @@
     font-size: 14px;
     color: rgb(var(--base-6));
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
