@@ -264,7 +264,7 @@ export default function Home() {
             <div className="mb-4 animate-fadeInScale">
               <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 Ship Node.js services. <br className="hidden sm:block" />
-                <span className="text-gradient-premium">Without the boilerplate.</span>
+                <span className="text-gradient-premium">Architecture included.</span>
               </h1>
             </div>
 
