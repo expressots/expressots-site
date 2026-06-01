@@ -13,24 +13,44 @@ import {
 type FooterLink = { name: string; href: string; external?: boolean }
 
 const docsLinks: FooterLink[] = [
-  { name: 'Getting Started', href: 'https://doc.expresso-ts.com/docs/core/first-steps', external: true },
+  {
+    name: 'Getting Started',
+    href: 'https://doc.expresso-ts.com/docs/core/first-steps',
+    external: true,
+  },
   { name: 'CLI', href: 'https://doc.expresso-ts.com/docs/cli/overview', external: true },
   { name: 'Studio', href: 'https://doc.expresso-ts.com/docs/studio/overview', external: true },
-  { name: 'Upgrade Guide', href: 'https://doc.expresso-ts.com/docs/prologue/upgrade_guide', external: true },
+  {
+    name: 'Upgrade Guide',
+    href: 'https://doc.expresso-ts.com/docs/prologue/upgrade_guide',
+    external: true,
+  },
 ]
 
 const communityLinks: { name: string; href: string; icon: typeof IconBrandGithub }[] = [
   { name: 'GitHub', href: 'https://github.com/expressots/expressots', icon: IconBrandGithub },
   { name: 'Discord', href: 'https://discord.com/invite/PyPJfGK', icon: IconBrandDiscord },
   { name: 'X (Twitter)', href: 'https://twitter.com/expressots', icon: IconBrandX },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/expresso-ts/', icon: IconBrandLinkedin },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/expresso-ts/',
+    icon: IconBrandLinkedin,
+  },
   { name: 'YouTube', href: 'https://www.youtube.com/@expressots', icon: IconBrandYoutube },
 ]
 
 const projectLinks: FooterLink[] = [
   { name: 'Team', href: '/team' },
-  { name: 'Roadmap', href: 'https://doc.expresso-ts.com/docs/roadmap', external: true },
-  { name: 'Release Notes', href: 'https://doc.expresso-ts.com/docs/prologue/release', external: true },
+  {
+    name: 'Comparison',
+    href: 'https://doc.expresso-ts.com/docs/why-expressots/overview',
+    external: true,
+  },
+  {
+    name: 'Release Notes',
+    href: 'https://doc.expresso-ts.com/docs/prologue/release',
+    external: true,
+  },
   { name: 'Governance', href: 'https://doc.expresso-ts.com/docs/governance', external: true },
 ]
 
@@ -71,8 +91,8 @@ const Footer = () => {
                 </div>
               </Link>
               <p className="max-w-xs text-sm leading-relaxed text-neutral-6">
-                The TypeScript framework for modern Node.js applications. Fast, type-safe,
-                and built for v4.
+                The TypeScript framework for modern Node.js applications. Fast, type-safe, and built
+                for v4.
               </p>
               <div className="mt-2 flex items-center gap-3">
                 {communityLinks.slice(0, 5).map((social) => {
