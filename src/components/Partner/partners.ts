@@ -76,4 +76,9 @@ export const PARTNERS: TPartner[] = [
     name: 'Night Watch CLI',
     site: 'https://nightwatchcli.com/',
   },
+  {
+    image: '/assets/logos/sprynta-logo.svg',
+    name: 'Sprynta',
+    site: 'https://sprynta.com.br/',
+  },
 ]
