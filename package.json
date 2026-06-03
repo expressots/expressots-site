@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/config-conventional": "^21.0.2",
     "@typescript-eslint/eslint-plugin": "^8.59.3",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
