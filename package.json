@@ -41,7 +41,7 @@
     "postcss": "^8.5.14"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^19.5.0",
     "@typescript-eslint/eslint-plugin": "^8.59.3",
     "cross-env": "^7.0.3",
