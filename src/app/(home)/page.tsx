@@ -299,7 +299,7 @@ export default function Home() {
             <div className="mb-14 flex flex-col items-center gap-6 sm:flex-row sm:gap-10 lg:gap-16">
               <div className="text-center">
                 <div className="text-2xl font-bold text-neutral-12 sm:text-3xl">
-                  <AnimatedCounter target={130000} suffix="+" />
+                  <AnimatedCounter target={200000} suffix="+" />
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-[0.12em] text-neutral-6">
                   Weekly downloads
