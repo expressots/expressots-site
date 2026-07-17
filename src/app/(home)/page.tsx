@@ -212,7 +212,7 @@ const V4FeatureCard = ({ icon: Icon, title, description, href, tag }: V4FeatureC
 
 const InstallCommand = () => {
   const [copied, setCopied] = useState(false)
-  const command = 'npx @expressots/cli@next new my-app'
+  const command = 'npx @expressots/cli new my-app'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command)
@@ -261,7 +261,7 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-base-6 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-base-6" />
                 </span>
-                ExpressoTS v4.0 Preview is available
+                ExpressoTS v4.0 is now available
                 <IconArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
               </a>
             </div>
@@ -923,9 +923,9 @@ export default function Home() {
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3 font-mono text-sm text-neutral-8 sm:text-base">
                   <span className="text-base-6">$</span>
-                  <code>npx @expressots/cli@next new my-app</code>
+                  <code>npx @expressots/cli new my-app</code>
                 </div>
-                <CopyButton command="npx @expressots/cli@next new my-app" />
+                <CopyButton command="npx @expressots/cli new my-app" />
               </div>
             </div>
 
