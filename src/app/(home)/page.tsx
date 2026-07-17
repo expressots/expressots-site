@@ -24,6 +24,12 @@ import {
   IconActivity,
   IconNetwork,
   IconBugFilled,
+  IconCloudUpload,
+  IconWorld,
+  IconRobot,
+  IconBrandGithub,
+  IconServer,
+  IconGitBranch,
 } from '@tabler/icons-react'
 import { useState, useEffect } from 'react'
 
@@ -299,7 +305,7 @@ export default function Home() {
             <div className="mb-14 flex flex-col items-center gap-6 sm:flex-row sm:gap-10 lg:gap-16">
               <div className="text-center">
                 <div className="text-2xl font-bold text-neutral-12 sm:text-3xl">
-                  <AnimatedCounter target={350000} suffix="+" />
+                  <AnimatedCounter target={400000} suffix="+" />
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-[0.12em] text-neutral-6">
                   Weekly downloads
@@ -740,6 +746,159 @@ export default function Home() {
                 </p>
               }
             />
+          </div>
+        </Container>
+      </section>
+
+      {/* Deploy / GroundZero Partnership Section */}
+      <section id="deploy" className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-1 via-neutral-2/40 to-neutral-1" />
+        {/* ambient glow */}
+        <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-base-6/10 blur-[120px]" />
+
+        <Container className="relative z-10">
+          <div className="mb-14 text-center">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-base-6/30 bg-base-6/10 px-5 py-2">
+              <IconCloudUpload className="h-5 w-5 text-base-6" />
+              <span className="text-sm font-semibold uppercase tracking-wider text-base-6">
+                Official Deploy Partner
+              </span>
+            </div>
+            <h2 className="mb-4 text-3xl font-bold text-neutral-12 sm:text-4xl lg:text-5xl">
+              From <span className="text-gradient-premium font-mono">npx</span> to production,{' '}
+              <br className="hidden sm:block" />
+              in <span className="text-gradient-premium">one command.</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-neutral-7 sm:text-xl">
+              ExpressoTS is a first-class citizen on{' '}
+              <a
+                href="https://www.gzer0.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-base-5 underline decoration-base-6/40 underline-offset-4 transition-colors hover:text-base-4 hover:decoration-base-5"
+              >
+                GroundZero
+              </a>
+              , a PaaS built to receive your app. Point it at a repo, run one command, or let an AI
+              agent ship it for you.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Left: stylized deploy terminal */}
+            <div className="relative order-2 lg:order-1">
+              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-base-6/30 via-base-5/10 to-transparent opacity-60 blur-2xl" />
+              <div className="glass-card-premium relative overflow-hidden rounded-2xl">
+                {/* window chrome */}
+                <div className="flex items-center justify-between border-b border-neutral-2/60 bg-neutral-1/40 px-4 py-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+                  </div>
+                  <span className="font-mono text-[11px] text-neutral-6">zsh · ~/orders-api</span>
+                  <div className="w-12" />
+                </div>
+
+                <div className="flex flex-col gap-2.5 p-4 font-mono text-[12px] leading-relaxed sm:p-5 sm:text-[13px]">
+                  <div className="flex items-center gap-2">
+                    <span className="text-base-6">$</span>
+                    <span className="text-neutral-11">gzero deploy</span>
+                  </div>
+                  {[
+                    { label: 'Detected ExpressoTS · pushed to GitHub', ok: true },
+                    { label: 'Scanned, project created, secrets checked', ok: true },
+                    { label: 'Building managed container…', ok: true },
+                    { label: 'Wiring domain + SSL', ok: true },
+                  ].map((line) => (
+                    <div key={line.label} className="flex items-center gap-2.5 text-neutral-7">
+                      <IconCheck className="h-3.5 w-3.5 flex-shrink-0 text-base-6" />
+                      <span>{line.label}</span>
+                    </div>
+                  ))}
+                  <div className="mt-1 flex items-center gap-2.5 rounded-lg border border-base-6/30 bg-base-6/10 px-3 py-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-base-6 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-base-6" />
+                    </span>
+                    <span className="font-semibold text-base-5">Live</span>
+                    <span className="text-neutral-8">orders-api.groundzero.app</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: three ways to ship */}
+            <div className="order-1 flex flex-col gap-5 lg:order-2">
+              {[
+                {
+                  icon: IconWorld,
+                  title: 'Web dashboard',
+                  description:
+                    'Import from GitHub, auto-detect ExpressoTS, and deploy with one click. Live build logs, rollbacks, env vars, and custom domains included.',
+                },
+                {
+                  icon: IconTerminal,
+                  title: 'CLI',
+                  description:
+                    'Run gzero deploy from your terminal. It publishes to GitHub if needed, scans, builds a managed container, and hands you a live URL.',
+                },
+                {
+                  icon: IconRobot,
+                  title: 'AI agents over MCP',
+                  description:
+                    'Add one URL to Cursor or Claude and let an agent scan, create, deploy, and check status. The same MCP-native workflow ExpressoTS embraces.',
+                },
+              ].map((item) => {
+                const Icon = item.icon
+                return (
+                  <div
+                    key={item.title}
+                    className="glass-card-premium group flex items-start gap-4 rounded-2xl p-5 transition-all duration-300 sm:p-6"
+                  >
+                    <div className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-base-6/10 transition-colors group-hover:bg-base-6/20">
+                      <Icon className="h-5 w-5 text-base-6" aria-hidden="true" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-base font-bold text-neutral-12 sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-neutral-7">{item.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Feature strip */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-neutral-7">
+            {[
+              { icon: IconBrandGithub, label: 'Connect a repo' },
+              { icon: IconServer, label: 'Managed containers' },
+              { icon: IconGitBranch, label: 'Rollbacks & env vars' },
+              { icon: IconWorld, label: 'Custom domains + SSL' },
+            ].map((item) => {
+              const Icon = item.icon
+              return (
+                <span key={item.label} className="inline-flex items-center gap-2">
+                  <Icon className="h-4 w-4 text-base-6" />
+                  {item.label}
+                </span>
+              )
+            })}
+          </div>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <LinkButton
+              href="https://www.gzer0.app"
+              className="btn-primary-premium rounded-lg px-6 py-3 text-base font-semibold"
+            >
+              <IconRocket className="h-4 w-4" />
+              Deploy on GroundZero
+              <IconArrowRight className="h-4 w-4" />
+            </LinkButton>
+            <span className="text-sm text-neutral-6">3 free preview sites. No card required.</span>
           </div>
         </Container>
       </section>

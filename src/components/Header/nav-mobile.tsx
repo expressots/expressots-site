@@ -11,6 +11,7 @@ import {
   IconBrandLinkedin,
   IconChartLine,
   IconSparkles,
+  IconCloudUpload,
 } from '@tabler/icons-react'
 import Link from 'next/link'
 
@@ -85,6 +86,21 @@ export function NavMobile() {
                       className="mr-2 h-5 w-5 text-neutral-6 transition-colors duration-300 group-hover:text-base-6"
                       aria-hidden="true"
                     />
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href="/#deploy"
+                    className={`${
+                      active ? 'bg-base-6/20 text-base-6' : 'text-neutral-8'
+                    } group flex w-full items-center rounded-lg px-3 py-3 text-base font-medium transition-all duration-300`}
+                  >
+                    <div className="flex items-center justify-start gap-1">
+                      <IconCloudUpload className="mr-2 h-5 w-5" aria-hidden="true" />
+                      Deploy
+                    </div>
                   </Link>
                 )}
               </Menu.Item>

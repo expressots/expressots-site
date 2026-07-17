@@ -81,4 +81,9 @@ export const PARTNERS: TPartner[] = [
     name: 'Sprynta',
     site: 'https://sprynta.com.br/',
   },
+  {
+    image: '/assets/logos/gzer0-logo.png',
+    name: 'GroundZero',
+    site: 'https://www.gzer0.app/',
+  },
 ]
