@@ -249,23 +249,6 @@ export default function Home() {
 
         <Container className="relative z-10 w-full">
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            {/* v4 launch badge */}
-            <div className="mb-6 animate-fadeInScale">
-              <a
-                href="https://doc.expresso-ts.com/docs/prologue/release"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full border border-base-6/30 bg-base-6/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-base-6 transition-all duration-150 hover:border-base-6/60 hover:bg-base-6/20 sm:text-sm"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-base-6 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-base-6" />
-                </span>
-                ExpressoTS v4.0 is now available
-                <IconArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
-              </a>
-            </div>
-
             {/* Main Headline */}
             <div className="mb-4 animate-fadeInScale">
               <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -305,7 +288,7 @@ export default function Home() {
             <div className="mb-14 flex flex-col items-center gap-6 sm:flex-row sm:gap-10 lg:gap-16">
               <div className="text-center">
                 <div className="text-2xl font-bold text-neutral-12 sm:text-3xl">
-                  <AnimatedCounter target={400000} suffix="+" />
+                  <AnimatedCounter target={500000} suffix="+" />
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-[0.12em] text-neutral-6">
                   Weekly downloads
