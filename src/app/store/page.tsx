@@ -52,8 +52,8 @@ export default function Store() {
               The <span className="text-gradient-premium">ExpressoTS</span> Provider Store
             </h1>
             <p className="mx-auto max-w-2xl animate-slideInUp text-lg text-neutral-7 sm:text-xl">
-              A curated catalog of first-party and community providers. Drop-in
-              authentication, databases, caches, queues, and observability for your v4 app.
+              A curated catalog of first-party and community providers. Drop-in authentication,
+              databases, caches, queues, and observability for your v4 app.
             </p>
 
             <div className="mx-auto mt-8 flex max-w-lg items-center justify-center gap-2 rounded-full border border-base-6/20 bg-base-6/5 px-5 py-2.5">
@@ -77,8 +77,8 @@ export default function Store() {
               In the <span className="text-gradient-premium">pipeline</span>
             </h2>
             <p className="mx-auto max-w-2xl text-base text-neutral-7 sm:text-lg">
-              A sneak peek at the first set of officially supported providers landing after the
-              v4.0 GA.
+              A sneak peek at the first set of officially supported providers landing after the v4.0
+              GA.
             </p>
           </div>
 
@@ -122,8 +122,8 @@ export default function Store() {
               Want to <span className="text-gradient-premium">contribute</span> a provider?
             </h2>
             <p className="mb-8 text-base text-neutral-7 sm:text-lg">
-              Read the provider ecosystem guide to learn how to build, publish, and ship a
-              provider that integrates with the rest of the framework.
+              Read the provider ecosystem guide to learn how to build, publish, and ship a provider
+              that integrates with the rest of the framework.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <LinkButton
