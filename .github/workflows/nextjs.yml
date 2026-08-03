@@ -8,6 +8,15 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ['main']
+    # Documentation-only changes produce an identical site, so skip the
+    # build and deploy for them. Nothing under src/ or public/ is markdown
+    # and the build reads no markdown, so these files cannot affect output.
+    # Revisit if markdown ever becomes build input (e.g. an MDX-backed blog).
+    paths-ignore:
+      - '**/*.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.vscode/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
