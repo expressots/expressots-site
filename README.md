@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://expresso-ts.com">
-    <img src="https://github.com/expressots/expressots/blob/main/media/expressots.png" alt="ExpressoTS" width="120">
+    <img src="public/assets/logos/expressots.png" alt="ExpressoTS" width="420">
   </a>
 
   <h1>ExpressoTS Website</h1>
