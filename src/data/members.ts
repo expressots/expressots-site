@@ -114,6 +114,23 @@ const team: Member[] = [
   },
 ]
 
+const contributors: Member[] = [
+  {
+    // Yiğit
+    name: 'Yiğit Tanrıverdi',
+    position: 'Community Contributor',
+    resume:
+      'Software engineer based in Berlin. Drops by to sharpen the framework with fixes and improvements.',
+    photo: 'https://avatars.githubusercontent.com/u/10054568?v=4',
+    socials: [
+      {
+        name: 'github',
+        url: 'https://github.com/xgame92',
+      },
+    ],
+  },
+]
+
 const alumni: Member[] = [
   {
     // Daniel
@@ -242,4 +259,4 @@ const alumni: Member[] = [
   },
 ]
 
-export { team, socialIcons, alumni }
+export { team, socialIcons, contributors, alumni }

@@ -1,6 +1,6 @@
 'use client'
 
-import { alumni, team, socialIcons } from '@/data/members'
+import { alumni, contributors, team, socialIcons } from '@/data/members'
 import { Container } from '@/components'
 import { Member as MemberType } from '@/components/Member/type'
 import {
@@ -9,6 +9,7 @@ import {
   IconArrowRight,
   IconBrandGithub,
   IconMessageCircle,
+  IconGitPullRequest,
 } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -29,8 +30,12 @@ function MemberCard({
       }`}
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <div className={`flex ${featured ? 'flex-col items-center gap-6 sm:flex-row sm:items-start' : 'flex-col items-center'}`}>
-        <div className={`relative flex-shrink-0 overflow-hidden rounded-full ${featured ? 'h-28 w-28' : 'mb-4 h-20 w-20'}`}>
+      <div
+        className={`flex ${featured ? 'flex-col items-center gap-6 sm:flex-row sm:items-start' : 'flex-col items-center'}`}
+      >
+        <div
+          className={`relative flex-shrink-0 overflow-hidden rounded-full ${featured ? 'h-28 w-28' : 'mb-4 h-20 w-20'}`}
+        >
           <Image
             src={member.photo}
             alt={member.name}
@@ -45,17 +50,23 @@ function MemberCard({
         </div>
 
         <div className={featured ? 'flex-1 text-center sm:text-left' : 'text-center'}>
-          <h3 className={`font-bold text-neutral-12 ${featured ? 'mb-1 text-xl' : 'mb-1 text-base'}`}>
+          <h3
+            className={`font-bold text-neutral-12 ${featured ? 'mb-1 text-xl' : 'mb-1 text-base'}`}
+          >
             {member.name}
           </h3>
           <p className={`font-medium text-base-6 ${featured ? 'mb-3 text-sm' : 'mb-2 text-xs'}`}>
             {member.position}
           </p>
-          <p className={`leading-relaxed text-neutral-7 ${featured ? 'mb-4 text-sm' : 'mb-3 text-xs'}`}>
+          <p
+            className={`leading-relaxed text-neutral-7 ${featured ? 'mb-4 text-sm' : 'mb-3 text-xs'}`}
+          >
             {member.resume}
           </p>
 
-          <div className={`flex gap-2.5 ${featured ? 'justify-center sm:justify-start' : 'justify-center'}`}>
+          <div
+            className={`flex gap-2.5 ${featured ? 'justify-center sm:justify-start' : 'justify-center'}`}
+          >
             {member.socials.map((social, socialIndex) => (
               <a
                 key={socialIndex}
@@ -94,14 +105,13 @@ export default function Team() {
           <div className="text-center">
             <div className="mb-8 animate-fadeInScale">
               <h1 className="mb-4 text-4xl font-bold leading-tight text-neutral-12 sm:text-5xl lg:text-6xl">
-                The People Behind{' '}
-                <span className="text-gradient-premium">ExpressoTS</span>
+                The People Behind <span className="text-gradient-premium">ExpressoTS</span>
               </h1>
             </div>
             <div className="mx-auto max-w-2xl animate-slideInUp">
               <p className="text-lg leading-relaxed text-neutral-8 sm:text-xl">
-                A small, focused team of developers who believe TypeScript backends deserve
-                better tooling. We build ExpressoTS in the open and welcome every contributor.
+                A small, focused team of developers who believe TypeScript backends deserve better
+                tooling. We build ExpressoTS in the open and welcome every contributor.
               </p>
             </div>
           </div>
@@ -135,6 +145,40 @@ export default function Team() {
             {/* Rest of core team */}
             {coreMembers.map((member, index) => (
               <MemberCard key={member.name} member={member} index={index + 1} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Community Contributors */}
+      <section className="relative py-16">
+        <div className="absolute inset-0 bg-neutral-2" />
+
+        <Container className="relative z-10">
+          <div className="mb-14 text-center">
+            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-base-6/30 bg-base-6/10 px-5 py-2">
+              <IconGitPullRequest className="h-5 w-5 text-base-6" />
+              <span className="text-sm font-semibold uppercase tracking-wider text-base-6">
+                Community Contributors
+              </span>
+            </div>
+            <h2 className="mb-3 text-3xl font-bold text-neutral-12 sm:text-4xl">
+              Every <span className="text-gradient-premium">Pull Request</span> Counts
+            </h2>
+            <p className="mx-auto max-w-xl text-base text-neutral-7 sm:text-lg">
+              Developers who show up now and then with a fix, a feature, or an idea, and leave the
+              framework better than they found it.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            {contributors.map((member, index) => (
+              <div
+                key={member.name}
+                className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+              >
+                <MemberCard member={member} index={index} />
+              </div>
             ))}
           </div>
         </Container>
@@ -178,8 +222,8 @@ export default function Team() {
               Want to <span className="text-gradient-premium">Contribute</span>?
             </h2>
             <p className="mx-auto mb-8 max-w-lg text-base leading-relaxed text-neutral-7 sm:text-lg">
-              ExpressoTS is 100% open source. Whether you fix a typo, open an issue, or
-              build a new feature, every contribution matters.
+              ExpressoTS is 100% open source. Whether you fix a typo, open an issue, or build a new
+              feature, every contribution matters.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
